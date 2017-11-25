@@ -10,7 +10,6 @@
     <meta property="og:title" content="Daniel Opitz"/>
     <meta name="description" content="Webdeveloper, php, mysql, css, html, bootstrap, c#, csharp, dotnet">
     <meta name="author" content="odan">
-    <link rel="shortcut icon" href="favicon.ico">
     <style>
         body {
             font-family: 'Segoe UI', Calibri, 'Helvetica Neue', Helvetica, sans-serif, arial, consolas;
@@ -18,13 +17,18 @@
             background: #ffffff;
         }
 
-        a {
-            color: #2086bf
+        #outer {
+            width: 100%;
+            text-align: center;
         }
 
-        a:hover {
-            color: #1d2129;
-            background-color: #7ad61d;
+        #inner {
+            display: table;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #2086bf
         }
 
         .text-light {
@@ -52,12 +56,18 @@
 </head>
 
 <body style="padding: 50px;">
-<img alt="" class="site-logo-image no-grav" width="80" height="80"
-     src="https://secure.gravatar.com/avatar/f669e8ad3a77b5f766e04ed79aed03bf?s=160&amp;d=identicon&amp;r=g"
-     originals="160" scale="2">
 
-<h1 class="text-bold">Daniel Opitz</h1>
-<span style="margin:0 0 20px 0; font-style:italic">Software Engineer, Trainer, Open Source Contributor</span>
+<div id="outer" style="width:100%">
+    <div id="inner">
+        <img alt="" class="site-logo-image no-grav" width="80" height="80"
+             src="https://secure.gravatar.com/avatar/f669e8ad3a77b5f766e04ed79aed03bf?s=160&amp;d=identicon&amp;r=g"
+             originals="160" scale="2">
+
+        <h1 class="text-bold">Daniel Opitz</h1>
+        <span style="margin:0 0 20px 0; font-style:italic">Software Engineer, Trainer, Open Source Contributor</span>
+    </div>
+</div>
+
 <br><br>
 
 <h1 class="text-light">Contact me</h1>
@@ -88,7 +98,7 @@
     <li><a href="https://github.com/odan/prisma" target="_blank">Prisma - PSR-7 based Framework</a></li>
     <li><a href="https://github.com/odan/database" target="_blank">Database Query Builder</a></li>
     <li><a href="https://github.com/odan/phinx-migrations-generator" target="_blank">Migration Code Generator for
-            Phinx</a></li>
+        Phinx</a></li>
     <li><a href="https://github.com/odan/plates-asset-cache" target="_blank">Plates Assets Cache Extension</a></li>
     <li><a href="https://github.com/odan?tab=repositories" target="_blank">All projects</a></li>
 </ul>
@@ -105,7 +115,7 @@
 <ul>
     <li><a href="https://phpconference.com/de/" target="_blank">International PHP Conference 2017 | Berlin</a></li>
     <li><a href="https://www.flickr.com/photos/sunds-media/sets/72157669407073825" target="_blank">webinale & IPC 2016 |
-            Berlin</a></li>
+        Berlin</a></li>
     <li><a href="https://phpconference.com/2015se/en" target="_blank">webinale & IPC 2015 | Berlin</a></li>
     <li><a href="https://www.facebook.com/media/set/?set=a.726629500682352.1073741828.141404215871553&type=3"
            target="_blank">International PHP Conference 2013 (Munich)</a></li>
@@ -119,8 +129,6 @@
     </li>
     <li><a href="http://www.opitz-online.com/feeds/" target="_blank">IT news</a></li>
 </ul>
-
-<hr class="thin">
 
 </body>
 </html>
