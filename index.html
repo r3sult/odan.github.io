@@ -52,7 +52,11 @@
         hr.fat {
             height: 3px;
         }
+        .blog-year {
+         cursor: pointer;
+        }
     </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </head>
 
 <body style="padding: 50px;">
@@ -105,18 +109,18 @@
     <li><a href="https://github.com/odan/slim-csrf" target="_blank">Slim 3 CSRF Anti Forgery Middleware</a></li>
     <li><a href="https://github.com/odan?tab=repositories" target="_blank">All projects</a></li>
 </ul>
-    
+
 <h1 class="text-light">Blog</h1>
-    
-<h3>2018</h3>
-<ul>
+
+<h3 class="blog-year">2018</h3>
+<ul style="display: none;">
     <li><a href="https://gist.github.com/odan/890ee6bb265b2c836e4eb87d482fb948" target="_blank">
         Creating encrypted ZIP files with password in PHP</a> (2018-02-18)
     </li>
 </ul>
-    
-<h3>2017</h3>
-<ul>
+
+<h3 class="blog-year">2017</h3>
+<ul style="display: none;">
 <li><a href="https://gist.github.com/odan/d2b889c350aa2ea0ff8e5ca93ce588a2" target="_blank">Creating your first Slim Framework Application</a> 2017-12-23</li>
 <li><a href="https://gist.github.com/odan/d5cf4e85c2af7419ae123ab19a520fa0" target="_blank">Creating an immutable Value Object in C# .NET</a> 2017-12-19</li>
 <li><a href="https://gist.github.com/odan/a7a1eb3c876c9c5b2ffd2db55f29fdb8" target="_blank">Creating and downloading Excel files with Slim</a> 2017-12-16</li>
@@ -168,9 +172,9 @@
 <li><a href="https://gist.github.com/odan/b758d68ac8da82cc1ab0326cddfd950f" target="_blank">PHP / PDO - Returning a collection of real objects</a> 2017-01-02</li>
 <li><a href="https://github.com/odan/learn-php" target="_blank">Resources for PHP beginners</a> 2017-01-02</li>
 </ul>
-    
-<h3>2016</h3>
-<ul>
+
+<h3 class="blog-year">2016</h3>
+<ul style="display: none;">
 <li><a href="https://gist.github.com/odan/062d2eeab7365d877f83a6922f4ea43b" target="_blank">Useful Netbeans Plugins for PHP developers</a> 2016-12-22</li>
 <li><a href="https://gist.github.com/odan/50a22862ae422153cb6d78a743f7497b" target="_blank">Standard PHP package skeleton (extended)</a> 2016-12-17</li>
 <li><a href="https://gist.github.com/odan/172db381f9c10d0ba25a483ffdb79ae5" target="_blank">PHP: Difference between a method and a function</a> 2016-12-16</li>
@@ -191,18 +195,18 @@
 <li><a href="https://gist.github.com/odan/e4b83b5dce16efe25f836ec41cf02c5a" target="_blank">Github API example (PHP)</a> 2016-05-08</li>
 <li><a href="https://gist.github.com/odan/6587e96ef001fcddf2dfb14ae5c23024" target="_blank">Download all dilbert comics from 1900-1-1 til today</a> 2016-04-19</li>
 </ul>
-    
-<h3>2015</h3>
-<ul>
+
+<h3 class="blog-year">2015</h3>
+<ul style="display: none;">
 <li><a href="https://gist.github.com/odan/1abe76d373a9cbb15bed" target="_blank">Installing Xdebug for XAMPP with PHP 7.x</a> 2015-12-27</li>
 <li><a href="https://gist.github.com/odan/64606e3668eac0e13afc" target="_blank">Webserver and PHP configuration tester</a> 2015-09-28</li>
 <li><a href="https://gist.github.com/odan/3389621c6942c7497eac" target="_blank">Sort array of objects (stdClass) by property</a> 2015-07-24</li>
 <li><a href="https://gist.github.com/odan/83f32f6c36cf4eeb1041" target="_blank">Disabling Caching with .htaccess</a> 2015-02-20</li>
 <li><a href="https://gist.github.com/odan/059100d88bfedf2bf2f7" target="_blank">PHP Closure class</a> 2015-01-19</li>
 </ul>
-    
-<h3>2014</h3>
-<ul>
+
+<h3 class="blog-year">2014</h3>
+<ul style="display: none;">
 <li><a href="https://gist.github.com/odan/edfc1e1596b56ac2dd9f" target="_blank">Query a time server (Timeserver mittels PHP abfragen)</a> 2014-10-29</li>
 <li><a href="https://gist.github.com/odan/07993ee0ea18485af0fe" target="_blank">JavaScript HTML Encoding</a> 2014-10-29</li>
 <li><a href="https://gist.github.com/odan/76ef4b2851f66a5e5107" target="_blank">Finding out largest tables on MySql server</a> 2014-10-29</li>
@@ -236,5 +240,24 @@
     <li><a href="http://www.opitz-online.com/feeds/" target="_blank">IT news</a></li>
 </ul>
 
+<script>
+    $(function () {
+        $('.blog-year').each(function(el) {
+            var currentYear = (new Date()).getFullYear();
+            var blogYear = $(this).html();
+            var count = $(this).next('ul').find('li').length;
+            $(this).html($(this).html() + ' (' + count + ')')
+
+            if(blogYear >= currentYear - 1) {
+                // show
+                $(this).next('ul').toggle();
+            }
+        });
+
+        $('.blog-year').on('click', function () {
+           $(this).next('ul').toggle();
+        });
+    });
+</script>
 </body>
 </html>
