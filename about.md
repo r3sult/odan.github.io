@@ -1,5 +1,5 @@
 ---
-title: Daniel Opitz
+title: About
 date: 2018-01-01
 layout: default
 comments: true
@@ -8,7 +8,7 @@ description: Webdeveloper
 keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 ---
 
-# About
+# About me
 
 ## Skills
 

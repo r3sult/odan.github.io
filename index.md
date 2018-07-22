@@ -1,5 +1,5 @@
 ---
-title: Blog posts
+title: Blog
 date: 2018-01-01
 layout: default
 comments: true
@@ -8,7 +8,7 @@ description: blog posts about web development, php, dotnet
 keywords: php, dotnet, webdeveloper
 ---
 
-# Blog posts
+# Blog
 
 ## 2018
 
