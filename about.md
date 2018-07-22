@@ -15,7 +15,7 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 * PHP, C#, ASP.NET Core, JavaScript, Node.js
 * MySQL, MS SQL, InterSystems Caché
 * HTML, CSS, jQuery, Bootstrap, Vue.js
-* REST, SOAP, AJAX, JSON-RPC 2.0
+* REST, SOAP, XML, JSON
 * IT-Security
 * SEO, E-Commerce
 
