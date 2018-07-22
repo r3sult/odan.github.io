@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<h2 class="post_title">
+  <h1>{{ page.title }}</h1>
+  {% if page.date %}
+    <small>{{ page.date | date_to_string }}</small>
+  {% endif %}
+</h2>
+
+{{ content }}
+
+<hr>
+
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+
+<br>
+
+<!-- <div class="addthis_inline_share_toolbox"></div> -->
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b531f663bd160f7"></script> -->
+
+<hr>
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
