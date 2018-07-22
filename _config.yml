@@ -3,11 +3,11 @@ theme: jekyll-theme-cayman
 # Name of your site (displayed in the header)
 name: Daniel Opitz
 
-# Name of website
-title: My website
+# Name of website (site.title)
+title: Daniel Opitz
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Developer, Trainer, Open Source Contributor
 
 github:
   is_project_page: false
