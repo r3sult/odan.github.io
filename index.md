@@ -12,6 +12,7 @@ keywords: php, dotnet, webdeveloper
 
 ## 2018
 
+* [Signing an XML file with a .pfx certificate](https://odan.github.io/2018/08/01/signing-an-xml-file-with-a-pfx-certificate.html) (2018-08-01)
 * [Installing ASP.NET Core on Ubuntu 18.4 Linux](https://gist.github.com/odan/36b2ffde91102cf6c1b1170f104f8ba0) (2018-07-17)
 * [Emitting stream responses with Slim](https://gist.github.com/odan/602e3b2e16cff25c0b90c37e4badeaa6) (2018-03-09)
 * [Bringing "Actions" to your Slim application.](https://gist.github.com/odan/0b77e09444d0841fdc9098d004b83075) (2018-02-24)
