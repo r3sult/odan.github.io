@@ -8,12 +8,13 @@ description:
 keywords: php, phpstorm, static code analysis
 ---
 
-Php Inspections (EA Extended) is is very useful Plugin for PhpStorm.
+Php Inspections (EA Extended) is a very useful Plugin for PhpStorm. 
+This plugin is a Static Code Analysis tool for PHP (like phpstan).
 
 ## Installation
 
 * Download the latest version from: [plugins.jetbrains.com/plugin/7622](https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-)
-* Open PHPStorm > File > Settings > Plugins
+* Open PhpStorm > File > Settings > Plugins
 * Click: Install Plugin from Disc
 * Choose: PhpInspectionsEA.jar > OK
 * Restart PhpStorm
