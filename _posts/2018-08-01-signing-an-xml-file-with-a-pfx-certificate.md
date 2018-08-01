@@ -5,7 +5,7 @@ layout: post
 comments: true
 published: true
 description: 
-keywords: php openssl signing
+keywords:
 ---
 
 ## Requirements
@@ -13,7 +13,7 @@ keywords: php openssl signing
 * PHP 7.x
 * openssl extension
 
-## Intro
+## Introduction
 
 
 
