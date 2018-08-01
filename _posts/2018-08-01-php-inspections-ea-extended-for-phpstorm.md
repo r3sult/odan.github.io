@@ -1,5 +1,5 @@
 ---
-title: Php Inspections (EA Extended) for phpstorm
+title: Php Inspections (EA Extended) for PhpStorm
 date: 2018-08-01
 layout: post
 comments: true
@@ -8,7 +8,7 @@ description:
 keywords: php, phpstorm, static code analysis
 ---
 
-Php Inspections (EA Extended) is is very handy Plugin for PHPStorm.
+Php Inspections (EA Extended) is is very handy Plugin for PhpStorm.
 
 ## Installation
 
