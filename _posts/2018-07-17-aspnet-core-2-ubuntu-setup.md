@@ -70,6 +70,8 @@ In your command prompt, run the following commands:
 sudo apt-get install dotnet-sdk-2.1
 ```
 
+> **Notice:** It is not necessary to install the .NET SDK on a productive server. You only need to install the SDK in the development environment.
+
 Source: https://www.microsoft.com/net/learn/get-started/linux/ubuntu18-04
 
 ## Test the installation
@@ -223,7 +225,11 @@ sudo service apache2 restart
 
 You only need to set up a virtual host for TLS/SSL. The following example assumes that an SSL certificate is located at `/etc/ssl/certs/localhost.crt` and an associated key is located at `/etc/ssl/private/localhost.key`.
 
+<br>
+
 > **Security warning** For demonstration purposes I create a self-signed certificate here. If you are using a real certificate (like https://letsencrypt.org/), the browser should not complain about the certificate. Don't use a self-signed certificate in your production environment!
+
+<br>
 
 Create and install an Apache self signed certificate:
 
@@ -245,7 +251,7 @@ Common Name (e.g. server FQDN or YOUR name) []:server_IP_address
 Email Address []:admin@your_domain.com
 ```
 
-More infos: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04
+More infos: [How To Create a Self-Signed SSL Certificate for Apache in Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04)
 
 ### Configure Apache
 
@@ -255,7 +261,7 @@ Add a server's fully qualified domain name:
 sudo vim /etc/apache2/apache2.conf
 ```
 
-Insert the following line at the apache2.conf: 
+Add the following line to apache2.conf:
 
 ```
 ServerName localhost
