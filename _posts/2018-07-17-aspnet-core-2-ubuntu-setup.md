@@ -312,10 +312,16 @@ To change Kestrel's IP/port, see [Kestrel: Endpoint configuration](https://docs.
 
 Save the file and test the configuration. 
 
+Disbale the `000-default` site:
+
+```
+sudo a2dissite 000-default.conf
+```
+
 Activate the `hellomvc` site:
 
 ```
-sudo a2ensite /etc/apache2/sites-available/hellomvc.conf
+sudo a2ensite hellomvc.conf
 ```
 
 Test the configuration. If everything passes, the result should be `OK`.
