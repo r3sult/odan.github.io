@@ -38,6 +38,11 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 * [Organize Your Code - PHP Best Practices](https://docs.google.com/presentation/d/e/2PACX-1vRHEG7QspO0d5NHOw0PkPRmcO76zoO3mWPSK3lVuhtKypd2y5F_Z5M_ZMzr0hhX_pVKNtZnloT_tTwe/pub?start=false&loop=false&delayms=3000)
 * [International PHP Conference, Berlin 2017](https://docs.google.com/presentation/d/e/2PACX-1vRka40LAqG-H_xKVU-wHCqxZ-YXbhxVPW06A0l3F5NUzi0zNqXQQr2-zJlz44r5oWyOIvG1M81MRFis/pub?start=false&loop=false&delayms=3000)
 
+## Tools
+
+* [Media Downloader](http://www.opitz-online.com/media-download.php) - Download images from Twitter, Facebook and Instagram
+* [Random Domain Generator](http://www.opitz-online.com/domain-generator.php)
+
 ## Conferences
 
 * [International PHP Conference - Berlin](https://phpconference.com/) (2015, 2016, 2017, 2018)
