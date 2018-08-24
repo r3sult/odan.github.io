@@ -44,6 +44,10 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 * [Media Downloader](http://www.opitz-online.com/media-download.php) - Download images from Twitter, Facebook and Instagram
 * [Random Domain Generator](http://www.opitz-online.com/domain-generator.php)
 
+## Links
+
+* [Tech Stack](https://stackshare.io/odan/my-stack)
+
 ## Conferences
 
 * [International PHP Conference - Berlin](https://phpconference.com/) (2015, 2016, 2017, 2018)
