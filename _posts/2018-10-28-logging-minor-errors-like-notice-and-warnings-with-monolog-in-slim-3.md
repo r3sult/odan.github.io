@@ -8,7 +8,7 @@ description:
 keywords: slim, slimphp, php, monolog, logging
 ---
 
-In Slim 3 all PHP exceptions and Slim Framework specific application errors can be handled via a custom [phpErrorHandler](https://www.slimframework.com/docs/v3/handlers/error.html). But sometimes you have to log all minor errors like `notice` or `warnings` too. In this case it's also possible to handle and log all errors like this in a nice middleware.
+In Slim 3 all PHP exceptions and Slim Framework specific application errors can be handled by a custom[phpErrorHandler](https://www.slimframework.com/docs/v3/handlers/error.html). But sometimes you also have to log all minor errors like `notice` or `warning`. In this case it's also possible to handle and log all errors like this in a special middleware.
 
 ### Setup monolog
 
@@ -64,9 +64,9 @@ $container['phpErrorHandler'] = function (Container $container) {
 
 ### Setup the the middleware to handle all minor errors
 
-The problem is that this default error handler will not handle all the PHP specific `warning` and `notice` errors.
+The problem is that Slim's default error handler will not handle all the PHP specific `warning` and `notice` errors for you.
 
-To fix this, just add new new middleware to handle all errors that cannot be handled by the Slim error handler:
+To fix this, just add new middleware to handle all errors that cannot be handled by the Slim error handler:
 
 ```php
 // middleware.php
