@@ -12,6 +12,7 @@ keywords: php, dotnet, webdeveloper
 
 ## 2018
 
+* [Logging minor errors (like notice and warnings) with Monolog in Slim 3](https://odan.github.io/2018/10/28/logging-minor-errors-like-notice-and-warnings-with-monolog-in-slim-3.html) (2018-08-01)
 * [Php Inspections (EA Extended) for PhpStorm](https://odan.github.io/2018/08/01/php-inspections-ea-extended-for-phpstorm.html) (2018-08-01)
 * [Signing an XML file with a .pfx certificate](https://odan.github.io/2018/08/01/signing-an-xml-file-with-a-pfx-certificate.html) (2018-08-01)
 * [Installing ASP.NET Core on Ubuntu 18.4 Linux](https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html) (2018-07-17)
