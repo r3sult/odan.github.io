@@ -120,3 +120,9 @@ The expected logfile output should look like this:
 ```
 [2018-10-28 10:10:05] app.NOTICE: Error number [8] Undefined index: nada on line 30 in file filename.php [] []
 ``` 
+
+### Links
+
+* [Question on StackOverflow](https://stackoverflow.com/questions/53025413/i-cant-add-sentry-to-php-slim/53029999)
+* [Issue on Github](https://github.com/slimphp/Slim/issues/2527#issuecomment-433691012)
+
