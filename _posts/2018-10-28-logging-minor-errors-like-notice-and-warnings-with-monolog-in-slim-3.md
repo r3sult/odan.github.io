@@ -10,12 +10,40 @@ keywords: slim, slimphp, php, monolog, logging
 
 In Slim 3 all PHP exceptions and Slim Framework specific application errors can be handled via a custom [phpErrorHandler](https://www.slimframework.com/docs/v3/handlers/error.html).
 
+### Setup monolog
+
+```
+// container.php
+
+use Monolog\Logger;
+use Psr\Container\ContainerInterface as Container;
+use Psr\Log\LoggerInterface;
+
+$container[LoggerInterface::class] = function (Container $container) {
+    $settings = $container->get('settings');
+    $logger = new Logger($settings['logger']['name']);
+
+    $level = $settings['logger']['level'];
+    if (!isset($level)) {
+        $level = Logger::ERROR;
+    }
+    $logFile = $settings['logger']['file'];
+    $handler = new RotatingFileHandler($logFile, 0, $level, true, 0775);
+    $logger->pushHandler($handler);
+
+    return $logger;
+};
+```
+
+### Setup the Slim erorr handler
+
 Here is an example code to log all Exceptions in Slim 3 with Monolog.
 
-
 ```php
+// container.php
+
 use Psr\Container\ContainerInterface as Container;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -34,15 +62,23 @@ $container['phpErrorHandler'] = function (Container $container) {
 };
 ```
 
+### Setup the the aiddleware to handle minor errors
+
 The problem is that this default error handler will not handle all the PHP specific `warning` and `notice` errors.
 
 To fix this, just add new new middleware to handle all errors that cannot be handled by the Slim error handler:
 
 ```php
+// middleware.php
+
+use Psr\Log\LoggerInterface;
+use Slim\Http\Request;
+use Slim\Http\Response;
+
 // Middleware to handle minor errors
 $app->add(function (Request $request, Response $response, $next) {
     /** @var \Psr\Log\LoggerInterface $logger */
-    $logger = $this->get('logger');
+    $logger = $this->get(LoggerInterface::class);
 
     // error handler function
     $myHandlerForMinorErrors = function ($errno, $errstr, $errfile, $errline) use ($response, $logger) {
