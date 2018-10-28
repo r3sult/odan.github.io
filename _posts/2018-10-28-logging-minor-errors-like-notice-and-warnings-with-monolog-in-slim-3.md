@@ -75,4 +75,8 @@ $app->add(function (Request $request, Response $response, $next) {
 });
 ```
 
+The expected logfile output should look like this:
 
+```
+[2018-10-28 10:10:05] app.NOTICE: Error number [8] Undefined index: nada on line 30 in file filename.php [] []
+``` 
