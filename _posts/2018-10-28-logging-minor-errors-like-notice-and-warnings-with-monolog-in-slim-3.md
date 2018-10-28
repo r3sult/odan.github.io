@@ -53,6 +53,10 @@ $container['errorHandler'] = function (Container $container) {
 
     return function(Request $request, Response $response, Throwable $exception) use ($logger) {
         $logger->error($exception->getMessage());
+        
+        return $response->withStatus(500)
+            ->withHeader('Content-Type', 'text/html')
+            ->write('Something went wrong!');
     };
 };
 
