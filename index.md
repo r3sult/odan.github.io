@@ -35,7 +35,7 @@ keywords: php, dotnet, webdeveloper
 * [Using gettext](https://gist.github.com/odan/04bd27002b43b48b69a3e8cbd6a65392) 2017-10-06
 * [Enable autocomplete for CakePHP 3 in PhpStorm](https://gist.github.com/odan/ec125bfbf31a31351f543608b0c6138f) 2017-09-12
 * [XAMPP - Replace MariaDB with MySQL](https://gist.github.com/odan/c799417460470c3776ffa8adce57eece) 2017-08-13
-* [AES-256 encryption and decryption in PHP and C#](https://odan.github.io/2017/08/10/aes-256-encryption-and-decryption-in-php-and-csharp.html) 2017-08-10
+* [AES-256 encryption and decryption in PHP and C#](https://odan.github.io/2017/08/10/replace-mcrypt-encrypt-with-openssl-encrypt.html) 2017-08-10
 * [VueJs and PHP](https://gist.github.com/odan/066d9848b72cdd4f0feff1b592696eab) 2017-08-06
 * [Word Automation with PHP](https://gist.github.com/odan/f65629d7bb8014cc912e97647484eb2c) 2017-07-31
 * [ESLint Setup](https://gist.github.com/odan/4d2f47398b0533125c25022e0c69535b) 2017-07-23
@@ -43,7 +43,7 @@ keywords: php, dotnet, webdeveloper
 * [Parsing a XML document with PHP DOM and Xpath](https://gist.github.com/odan/6aeb43a9f9c3fbd332d364c175a760fc) 2017-07-21
 * [Finding coordinates by address with the Google Maps API](https://gist.github.com/odan/594e624e2ec15f70dd8ed07bff1341c1) 2017-07-16
 * [Converting string to numeric and back](https://gist.github.com/odan/b1a2dccedfa6614ed76a7135db7395dd) 2017-07-15
-* [Replace mcrypt\_encrypt with openssl\_encrypt](https://gist.github.com/odan/c1dc2798ef9cedb9fedd09cdfe6e8e76) 2017-07-14
+* [Replace mcrypt\_encrypt with openssl\_encrypt](https://odan.github.io/2017/07/14/replace-mcrypt-encrypt-with-openssl-encrypt.html) 2017-07-14
 * [Converting HMAC Hash from C# to PHP](https://gist.github.com/odan/4ec0810a073be1d1b5c3543f2157580f) 2017-07-05
 * [PHP Collection class](https://gist.github.com/odan/545be6c564271e45bd23f71d8590b9c8) 2017-07-04
 * [Slides from the International PHP Conference Spring 2017](https://gist.github.com/odan/355884aa7aae90fdc4a5ed6aba87f1f0) 2017-06-03
