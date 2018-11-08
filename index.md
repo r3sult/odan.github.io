@@ -35,7 +35,7 @@ keywords: php, dotnet, webdeveloper
 * [Using gettext](https://gist.github.com/odan/04bd27002b43b48b69a3e8cbd6a65392) 2017-10-06
 * [Enable autocomplete for CakePHP 3 in PhpStorm](https://gist.github.com/odan/ec125bfbf31a31351f543608b0c6138f) 2017-09-12
 * [XAMPP - Replace MariaDB with MySQL](https://gist.github.com/odan/c799417460470c3776ffa8adce57eece) 2017-08-13
-* [AES-256 encryption and decryption in PHP and C#](https://odan.github.io/2017/08/10/replace-mcrypt-encrypt-with-openssl-encrypt.html) 2017-08-10
+* [AES-256 encryption and decryption in PHP and C#](https://odan.github.io/2017/08/10/aes-256-encryption-and-decryption-in-php-and-csharp.html) 2017-08-10
 * [VueJs and PHP](https://gist.github.com/odan/066d9848b72cdd4f0feff1b592696eab) 2017-08-06
 * [Word Automation with PHP](https://gist.github.com/odan/f65629d7bb8014cc912e97647484eb2c) 2017-07-31
 * [ESLint Setup](https://gist.github.com/odan/4d2f47398b0533125c25022e0c69535b) 2017-07-23
