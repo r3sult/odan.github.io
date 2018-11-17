@@ -38,12 +38,10 @@ function verify_password_hash($password, $hash)
 {
     if (function_exists('password_verify')) {
         // php >= 5.5
-        $boolReturn = password_verify($password, $hash);
+        return password_verify($password, $hash);
     } else {
-        $strHash2 = crypt($password, $hash);
-        $boolReturn = $hash == $strHash2;
+        return $hash === crypt($password, $hash);
     }
-    return $boolReturn;
 }
 ```
 
@@ -53,7 +51,7 @@ function verify_password_hash($password, $hash)
 <?php
 
 // Test
-$hash = create_password_hash('secret', PASSWORD_DEFAULT);
+$hash = create_password_hash('secret');
 echo $hash . "\n";
 
 if (verify_password_hash('secret', $strHash)) {
