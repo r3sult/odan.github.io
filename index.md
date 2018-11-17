@@ -81,7 +81,7 @@ keywords: php, dotnet, webdeveloper
 * [Laziness driven development](https://odan.github.io/2016/12/06/laziness-driven-development.html) (2016-12-06)
 * [Geheime Informationen ausserhalb der Versionskontrolle](https://odan.github.io/2016/12/05/geheime-informationen-ausserhalb-der-versionskontrolle.html) (2016-12-05)
 * [PHPUnit - Mock global functions (like date, time) at runtime](https://odan.github.io/2016/12/05/phpunit-mock-global-functions-like-date-time-at-runtime.html) (2016-12-05)
-* [phpunit - Modify a method/function at runtime](https://odan.github.io/2016/12/05/phpunit-mock-class-methods) 2016-12-05
+* [phpunit - Modify a method/function at runtime](https://odan.github.io/2016/12/05/phpunit-mock-class-methods.html) 2016-12-05
 * [Fixing a github repo which is marked as the wrong language](https://odan.github.io/2016/12/05/fixing-a-github-repo-which-is-marked-as-the-wrong-language.html) (2016-12-05)
 * [System info for Linux and Windows (PHP)](https://gist.github.com/odan/cedbd5431544d7bdd9e5d4072db9fe7c) 2016-11-30
 * [Quick way to create a PHP stdClass](https://gist.github.com/odan/922b538ca5e69c6788e1a88a99226b92) 2016-11-30
