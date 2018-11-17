@@ -7,7 +7,11 @@ layout: default
 <h2 id="{{ year.name }}">{{ year.name }}</h2>
 <ul aria-label="posts from {{ year.name }}">
     {% for post in year.items %}
-    <li><a href="{{ post.url }}" target="_blank">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+        {% if post.title != '' %}
+        <li><a href="{{ post.url }}" target="_blank">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+        {% else %}
+        <li><a href="{{ post.url }}" target="_blank">No title</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
+        {% endif %}
     {% endfor %}
 </ul>
 {% endfor %}
