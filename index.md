@@ -58,34 +58,31 @@ keywords: php, dotnet, webdeveloper
 * [Using the Symfony Service Container with a simple service object](https://gist.github.com/odan/a7f8ed065ce3f268b69f13e360b30e04) 2017-01-31
 * [REST, RESTful, REST-like API Resources](https://gist.github.com/odan/de7f5452fb165c2d27f20d1d16bfe54d) 2017-01-30
 * [sprintf for JavaScript](https://gist.github.com/odan/d748176dfd18c8ba8e97fe4be4e3c0d0) 2017-01-26
-* [Building a Simple Web API with Vanilla PHP](https://gist.github.com/odan/e791bb29e2a1eab4ac6f2be4bbf86e12) 2017-01-23
-* [PHP, JS, CSS Coding Standards](https://gist.github.com/odan/0803ef7249b103167a03d8f978b8d4b4) 2017-01-17
-* [Designing a database](https://gist.github.com/odan/35da4d7b096e169c3c7e080426b72765) 2017-01-17
-* [MySQL - Identify Differences Among Databases](https://gist.github.com/odan/8eac94e34f16e444f83ade42cc89f18e) 2017-01-13
-* [Collection of project names](https://gist.github.com/odan/3eb5bbd32f9800de4842bfbc9d7c5968) 2017-01-13
+* [Building a Simple Web API with Vanilla PHP](https://odan.github.io/2017/01/23/building-a-simple-web-api-with-vanilla-php.html) (2017-01-23)
+* [PHP, JS, CSS Coding Standard](https://odan.github.io/2017/01/17/coding-standard.html) (2017-01-17)
+* [Designing a database](https://odan.github.io/2017/01/17/designing-a-database.html) (2017-01-17)
+* [MySQL - Identify Differences Among Databases](https://odan.github.io/2017/01/13/mysql-identify-differences-among-databases.html) (2017-01-13)
+* [Collection of project names](https://odan.github.io/2017/01/13/collection-of-project-names.html) (2017-01-13)
 * [Reset windows folder permissions (Windows)](https://gist.github.com/odan/d96e9069a10fdaf2e4aa39247f99cafa) 2017-01-13
 * [Run composer from a browser](https://gist.github.com/odan/3f5b2748f516398e93cb36716d38b6b5) 2017-01-13
-* [PHP Programming in VS Code](https://gist.github.com/odan/6a15bd7e0c6beaebeea934609404ad26) 2017-01-08
+* [PHP Programming in VS Code](https://odan.github.io/2017/01/08/php-programming-in-vs-code.html) (2017-01-08)
+* [Basic CRUD operations with PDO](https://odan.github.io/2017/01/07/basic-crud-operations-with-pdo.html) (2017-01-07)
 * [Database, Table and Column Naming Conventions](https://gist.github.com/odan/09541aafcaf9a1fa808c8cb0dd956b36) 2017-01-07
-* [Simplified CRUD operations with PDO](https://gist.github.com/odan/0c3f80eec13ac493ed64fadd0bb1a66e) 2017-01-07
-* [Framework configuration research](https://gist.github.com/odan/c742d945a80a615a28cac9d1d70a7014) 2017-01-02
+* [Basic CRUD operations with PDO](https://odan.github.io/2017/01/07/basic-crud-operations-with-pdo.html) (2017-01-07)
 * [PHP / PDO - Returning a collection of real objects](https://gist.github.com/odan/b758d68ac8da82cc1ab0326cddfd950f) 2017-01-02
 * [Resources for PHP beginners](https://github.com/odan/learn-php) 2017-01-02
 
 ## 2016
 
-* [Useful Netbeans Plugins for PHP developers](https://gist.github.com/odan/062d2eeab7365d877f83a6922f4ea43b) 2016-12-22
-* [Standard PHP package skeleton (extended)](https://gist.github.com/odan/50a22862ae422153cb6d78a743f7497b) 2016-12-17
-* [PHP: Difference between a method and a function](https://gist.github.com/odan/172db381f9c10d0ba25a483ffdb79ae5) 2016-12-16
+* [PHP: Difference between a method and a function](https://odan.github.io/2016/12/16/php-difference-between-a-method-and-a-function.html) (2016-12-16)
 * [PHP: Recursively copy / remove a directory](https://gist.github.com/odan/f3b939cbe802bb039ff44c407da0cff6) 2016-12-11
-* [PHP 7.1 Backward incompatible changes](https://gist.github.com/odan/66ee17943ee9118599e4a390d2fbb484) 2016-12-06
-* [Symfony HttpFoundation Middlware](https://gist.github.com/odan/b871f0a1f1dbd21165f6a35649ac532e) 2016-12-06
-* [Laziness driven development](https://gist.github.com/odan/a36b3c84333f2ca0c151282d142f30fe) 2016-12-06
-* [Geheime Informationen ausserhalb der Versionskontrolle](https://gist.github.com/odan/2b6b4c742b4b62f79e6ed84291b75fcc) 2016-01-02
-* [PHPUnit - Mock global functions (like date, time) at runtime](https://gist.github.com/odan/57204c4b2b75ca4c4c5c56f4fade506e) 2016-12-05
-* [phpunit - Modify a method/function at runtime](https://gist.github.com/odan/f8623000d604c8075bb2b894d7dbf985) 2016-12-05
-* [Fixing a github repo which is marked as the wrong language](https://gist.github.com/odan/998a9649ac352ff96095e1030a69dded) 2016-12-05
-* [Finding SQL injections](https://gist.github.com/odan/5a8f8bea5f5b604c99e474f695eb5e88) 2016-12-04
+* [PHP 7.1 Backward incompatible changes](https://odan.github.io/2016/12/06/php-7-1-backward-incompatible-changes.html) (2016-12-06)
+* [Symfony HttpFoundation Middlware](https://odan.github.io/2016/12/06/symfony-httpfoundation-middlware.html) (2016-12-06)
+* [Laziness driven development](https://odan.github.io/2016/12/06/laziness-driven-development.html) (2016-12-06)
+* [Geheime Informationen ausserhalb der Versionskontrolle](https://odan.github.io/2016/12/05/geheime-informationen-ausserhalb-der-versionskontrolle.html) (2016-12-05)
+* [PHPUnit - Mock global functions (like date, time) at runtime](https://odan.github.io/2016/12/05/phpunit-mock-global-functions-like-date-time-at-runtime.html) (2016-12-05)
+* [phpunit - Modify a method/function at runtime](https://odan.github.io/2016/12/05/phpunit-mock-class-methods) 2016-12-05
+* [Fixing a github repo which is marked as the wrong language](https://odan.github.io/2016/12/05/fixing-a-github-repo-which-is-marked-as-the-wrong-language.html) (2016-12-05)
 * [System info for Linux and Windows (PHP)](https://gist.github.com/odan/cedbd5431544d7bdd9e5d4072db9fe7c) 2016-11-30
 * [Quick way to create a PHP stdClass](https://gist.github.com/odan/922b538ca5e69c6788e1a88a99226b92) 2016-11-30
 * [Google Maps - Geodecoding](https://gist.github.com/odan/8abc876778722f57cad30acf49d08c55) 2016-10-05
