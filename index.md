@@ -109,7 +109,7 @@ keywords: php, dotnet, webdeveloper
 * [MySQL - Find duplicate foreign keys](https://gist.github.com/odan/83371fc470fe6a9642a8) 2014-10-29
 * [Base 64 url encode/decode (RFC 4648)](https://gist.github.com/odan/4b891d14c474c3e3e6df) 2014-10-29
 * [Get age by date of birth (JavaScript)](https://gist.github.com/odan/f2efa7790e70582f4cce) 2014-10-29
-* [Password hash with fallback for PHP <= 5.4](https://gist.github.com/odan/1d4ff4c4088e906a5a49) 2014-10-29
+* [Password hash with fallback for PHP <= 5.4](https://odan.github.io/2015/12/27/password-hash-with-fallback-for-php-54.html) 2014-10-29
 * [MySQL backup and restore](https://gist.github.com/odan/71150aa73f9f3e87b5fb) 2014-09-09
 
 
