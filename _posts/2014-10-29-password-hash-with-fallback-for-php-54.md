@@ -1,6 +1,6 @@
 ---
 title: Password hash with fallback for PHP <= 5.4
-date: 2015-12-27
+date: 2015-10-29
 layout: post
 comments: true
 published: true
