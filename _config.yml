@@ -9,7 +9,8 @@ title: Daniel Opitz
 # Short description of your site
 description: Developer, Trainer, Open Source Contributor
 
-url: https://odan.github.io
+site:
+  url: https://odan.github.io
 
 github:
   is_project_page: false
