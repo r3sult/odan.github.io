@@ -104,7 +104,6 @@ keywords: php, dotnet, webdeveloper
 * [Query a time server (Timeserver mittels PHP abfragen)](https://gist.github.com/odan/edfc1e1596b56ac2dd9f) 2014-10-29
 * [JavaScript HTML Encoding](https://gist.github.com/odan/07993ee0ea18485af0fe) 2014-10-29
 * [Finding out largest tables on MySql server](https://gist.github.com/odan/76ef4b2851f66a5e5107) 2014-10-29
-* [How to do a "git export" (like "svn export")?](https://gist.github.com/odan/f0c08b8505ec5e335ade) 2014-10-29
 * [LOCK TABLES with InnoDB](https://gist.github.com/odan/782855026e38992ebd9e) 2014-10-29
 * [jQuery quick-reference (code snippets)](https://gist.github.com/odan/5237d7e09e4e294ec5f7) 2014-10-29
 * [MySQL - Find duplicate foreign keys](https://gist.github.com/odan/83371fc470fe6a9642a8) 2014-10-29
