@@ -1,5 +1,5 @@
 ---
-title: XAMPP: How to enable PHP OPCache
+title: XAMPP - How to enable PHP OPCache
 date: 2017-02-05
 layout: post
 comments: true

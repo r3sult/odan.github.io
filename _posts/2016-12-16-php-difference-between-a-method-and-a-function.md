@@ -1,5 +1,5 @@
 ---
-title: PHP: Difference between a method and a function
+title: PHP - Difference between a method and a function
 date: 2016-12-16
 layout: post
 comments: true
