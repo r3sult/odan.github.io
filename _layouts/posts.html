@@ -1,5 +1,12 @@
 {% for post in site.posts %}
-<ul>
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+<h2 id="{{ year.name }}">{{ year.name }}</h2>
+<ul aria-label="posts from {{ year.name }}">
+    {% for post in year.items %}
+    <li>
     <li><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li> ({{ post.date | date: "%Y-%m-%d" }})
+    </li>
+    {% endfor %}
 </ul>
 {% endfor %}
