@@ -101,10 +101,10 @@ keywords: php, dotnet, webdeveloper
 
 ## 2014
 
-* [Query a time server (Timeserver mittels PHP abfragen)](https://gist.github.com/odan/edfc1e1596b56ac2dd9f) 2014-10-29
-* [JavaScript HTML Encoding](https://gist.github.com/odan/07993ee0ea18485af0fe) 2014-10-29
+* [Query Timeserver using PHP](https://odan.github.io/2014/10/29/query-timeserver-using-php.html) (2014-10-29)
+* [JavaScript HTML Encoding](https://odan.github.io/2014/10/29/javascript-html-encoding.html) (2014-10-29)
 * [Finding out largest tables on MySql server](https://odan.github.io/2014/10/25/finding-the-largest-tables-in-mysql.html) (2014-10-29)
 * [MySQL - Find duplicate foreign keys](https://odan.github.io/2014/10/29/mysql-find-duplicate-foreign-keys.html) (2014-10-29)
 * [Base 64 url encode/decode (RFC 4648)](https://odan.github.io/2014/10/29/base-64-url-encode-decode-rfc-4648.html) (2014-10-29)
-* [Password hash with fallback for PHP <= 5.4](https://odan.github.io/2015/10/29/password-hash-with-fallback-for-php-54.html) ()2014-10-29)
+* [Password hash with fallback for PHP <= 5.4](https://odan.github.io/2015/10/29/password-hash-with-fallback-for-php-54.html) (2014-10-29)
 * [MySQL backup and restore](https://odan.github.io/2014/09/09/mysql-backup-and-restore.html) (2014-09-09)
