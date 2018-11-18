@@ -9,11 +9,7 @@ title: Daniel Opitz
 # Short description of your site
 description: Developer, Trainer, Open Source Contributor
 
-site:
-  url: https://odan.github.io
-  author:
-    - name: Daniel Opitz
-    - email:
+url: https://odan.github.io
 
 github:
   is_project_page: false
@@ -53,7 +49,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Daniel Opitz
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
