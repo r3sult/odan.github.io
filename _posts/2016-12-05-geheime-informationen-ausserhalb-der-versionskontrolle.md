@@ -7,8 +7,6 @@ description:
 keywords: 
 ---
 
-### Date: 2016-01-02
-
 Geheime Informationen wie z.B. Passwörter, API-Keys, Zertifikate etc. sollten nicht in der Versionskontrolle (Git, SVN) gespeichert werden. Gerade bei OpenSource-Projekten muss man besonders darauf zu achten. Mit Suchmaschinen ist es relativ leicht nach Passwörtern zu suchen und diese Daten zu entwenden.
 
 Man darf zwar keine geheime Informationen versionieren, gleichzeitig muss man alle Änderungen zurückverfolgen und im Entwicklerteam teilen können. Ausserdem müssen diese Informationen in den automatischen Deployment-Prozess integriert werden.

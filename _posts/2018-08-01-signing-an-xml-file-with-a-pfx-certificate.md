@@ -2,7 +2,7 @@
 title: Signing an XML file with a .pfx certificate
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: php, xmldsig, xml, dsig, pfx, crt, certificate
 ---

@@ -2,7 +2,7 @@
 title: Framework configuration research
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---

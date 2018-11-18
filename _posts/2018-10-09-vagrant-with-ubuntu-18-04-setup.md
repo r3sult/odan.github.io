@@ -7,7 +7,7 @@ description:
 keywords: 
 ---
 
-## Requirments
+## Requirements
 
 * Windows
 * Vagrant (+ VirtualBox)
@@ -39,7 +39,7 @@ vagrant ssh
 
 ### Install and configure Apache:
 
-* https://gist.github.com/odan/dcf6c3155899677ee88a4f7db5aac284
+* <https://odan.github.io/2017/10/20/ubuntu-webserver-setup.html>
 
 
 ### Create a symlink
