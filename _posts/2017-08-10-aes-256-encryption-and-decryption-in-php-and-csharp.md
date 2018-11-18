@@ -1,6 +1,5 @@
 ---
 title: AES-256 encryption and decryption in PHP and C#
-date: 2017-08-10
 layout: post
 comments: true
 published: true

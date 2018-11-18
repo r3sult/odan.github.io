@@ -1,6 +1,5 @@
 ---
 title: Php Inspections (EA Extended) for PhpStorm
-date: 2018-08-01
 layout: post
 comments: true
 published: true

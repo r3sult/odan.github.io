@@ -1,6 +1,5 @@
 ---
 title: Ubuntu Webserver Setup
-date: 2017-10-20
 layout: post
 comments: true
 published: true

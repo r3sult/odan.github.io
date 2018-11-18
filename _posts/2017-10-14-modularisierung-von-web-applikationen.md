@@ -1,9 +1,8 @@
 ---
 title: Modularisierung von Web Applikationen
-date: 2017-10-14
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
@@ -118,7 +117,7 @@ Als Basis für alle weiteren Konventionen und Best Pratices dienen die CakePHP s
 
 Mit folgende Prinzipien solle sich jeder Entwickler vertraut machen in der Praxis umsetzen:
 
-* KISS - https://en.wikipedia.org/wiki/KISS_principle | https://people.apache.org/~fhanik/kiss.html
+* [KISS](https://en.wikipedia.org/wiki/KISS_principle), [KISS](https://people.apache.org/~fhanik/kiss.html) 
 * Don’t repeat yourself (DRY) - https://en.wikipedia.org/wiki/Don't_repeat_yourself
 * Return early, return often - http://blog.humphd.org/vocamus-1421/
 * Global Variables Are Bad - http://stackoverflow.com/a/10525602

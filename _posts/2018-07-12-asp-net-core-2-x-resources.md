@@ -1,6 +1,5 @@
 ---
 title: ASP.NET Core 2.x Resources
-date: 2018-07-12
 layout: post
 comments: true
 published: true

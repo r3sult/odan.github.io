@@ -1,6 +1,5 @@
 ---
 title: Creating and downloading Excel files with Slim
-date: 2017-12-16
 layout: post
 comments: true
 published: true

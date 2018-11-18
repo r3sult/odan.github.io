@@ -1,6 +1,5 @@
 ---
 title: Vagrant with Ubuntu 18.04 Setup
-date: 2018-10-09
 layout: post
 comments: true
 published: true

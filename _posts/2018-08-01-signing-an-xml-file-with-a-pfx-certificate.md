@@ -1,6 +1,5 @@
 ---
 title: Signing an XML file with a .pfx certificate
-date: 2018-08-01
 layout: post
 comments: true
 published: true

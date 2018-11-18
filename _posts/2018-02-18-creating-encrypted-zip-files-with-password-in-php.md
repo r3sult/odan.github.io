@@ -1,6 +1,5 @@
 ---
 title: Creating encrypted ZIP files with password in PHP
-date: 2018-02-18
 layout: post
 comments: true
 published: true

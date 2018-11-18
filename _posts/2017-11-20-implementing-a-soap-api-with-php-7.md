@@ -1,6 +1,5 @@
 ---
 title: Implementing a SOAP API with PHP 7
-date: 2017-11-20
 layout: post
 comments: true
 published: true

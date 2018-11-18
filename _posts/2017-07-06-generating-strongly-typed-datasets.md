@@ -4,7 +4,7 @@ layout: post
 comments: true
 published: true
 description: 
-keywords: 
+keywords: csharp, poco, database
 ---
 
 ## C# .NET

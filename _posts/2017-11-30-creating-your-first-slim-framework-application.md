@@ -1,6 +1,5 @@
 ---
 title: Creating your first Slim Framework Application
-date: 2017-11-30
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: Installing ASP.NET Core 2.1 on Ubuntu 18.4 Linux
-date: 2018-07-17
 layout: post
 comments: true
 published: true

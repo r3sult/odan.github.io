@@ -1,6 +1,5 @@
 ---
 title: Word Automation with PHP
-date: 2017-07-31
 layout: post
 comments: true
 published: true

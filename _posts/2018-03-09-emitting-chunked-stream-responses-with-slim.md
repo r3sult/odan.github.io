@@ -1,6 +1,5 @@
 ---
 title: Emitting chunked stream responses with Slim
-date: 2018-03-09
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: VueJs and PHP
-date: 2017-08-04
 layout: post
 comments: true
 published: true

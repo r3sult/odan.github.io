@@ -1,6 +1,5 @@
 ---
-title: Table of Contents
-date: 2017-10-20
+title: Creating a deployment pipeline
 layout: post
 comments: true
 published: true

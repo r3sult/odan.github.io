@@ -1,6 +1,5 @@
 ---
 title: Installing an SSL Certificate under Apache (XAMPP)
-date: 2017-10-29
 layout: post
 comments: true
 published: true

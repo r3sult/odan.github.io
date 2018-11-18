@@ -1,6 +1,5 @@
 ---
 title: Using gettext
-date: 2017-10-06
 layout: post
 comments: true
 published: true

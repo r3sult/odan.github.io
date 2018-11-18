@@ -45,11 +45,11 @@ function map_google_search_result($geo)
     ];
     return $result;
 }
+```
 
-//
-// Usage
-//
+### Usage
 
+```php
 // Your google API key
 // https://developers.google.com/maps/documentation/geocoding/usage-limits?hl=de
 // 2,500 free requests per day, calculated as the sum of client-side and server-side queries.

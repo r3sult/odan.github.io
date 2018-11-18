@@ -1,6 +1,5 @@
 ---
 title: return true to win
-date: 2018-02-15
 layout: post
 comments: true
 published: true

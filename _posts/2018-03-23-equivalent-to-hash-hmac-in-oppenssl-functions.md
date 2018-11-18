@@ -1,6 +1,5 @@
 ---
 title: Equivalent to hash_hmac in oppenssl_* functions
-date: 2018-03-23
 layout: post
 comments: true
 published: true

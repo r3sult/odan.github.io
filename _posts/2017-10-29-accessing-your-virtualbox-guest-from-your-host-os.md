@@ -1,6 +1,5 @@
 ---
 title: Accessing your Virtualbox Guest from your Host OS
-date: 2017-10-29
 layout: post
 comments: true
 published: true

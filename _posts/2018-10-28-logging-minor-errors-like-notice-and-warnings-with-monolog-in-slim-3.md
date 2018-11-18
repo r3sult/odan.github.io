@@ -1,6 +1,5 @@
 ---
 title: Logging minor errors (like notice and warnings) with Monolog in Slim 3
-date: 2018-10-28
 layout: post
 comments: true
 published: true

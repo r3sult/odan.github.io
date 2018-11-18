@@ -1,6 +1,5 @@
 ---
 title: Value Objects with "at least one item required" constraint
-date: 2018-04-30
 layout: post
 comments: true
 published: true

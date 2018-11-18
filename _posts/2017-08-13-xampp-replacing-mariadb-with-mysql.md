@@ -1,6 +1,5 @@
 ---
 title: XAMPP - Replacing MariaDB with MySQL
-date: 2017-08-13
 layout: post
 comments: true
 published: true

@@ -7,6 +7,8 @@ description:
 keywords: php
 ---
 
+Example:
+
 ```php
 <?php
 

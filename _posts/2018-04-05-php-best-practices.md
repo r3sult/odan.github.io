@@ -1,6 +1,5 @@
 ---
 title: PHP Best Practices
-date: 2018-04-05
 layout: post
 comments: true
 published: true

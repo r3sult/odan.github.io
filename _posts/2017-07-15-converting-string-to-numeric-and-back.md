@@ -7,7 +7,7 @@ description:
 keywords: 
 ---
 
-## Code
+### Code
 
 ```php
 function numeric_encode($string)

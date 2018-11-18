@@ -1,6 +1,5 @@
 ---
 title: Bringing "Actions" to your Slim application.
-date: 2018-02-24
 layout: post
 comments: true
 published: true

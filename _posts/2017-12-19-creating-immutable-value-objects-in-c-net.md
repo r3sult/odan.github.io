@@ -1,6 +1,5 @@
 ---
 title: Creating immutable Value Objects in C# .NET
-date: 2017-12-19
 layout: post
 comments: true
 published: true
