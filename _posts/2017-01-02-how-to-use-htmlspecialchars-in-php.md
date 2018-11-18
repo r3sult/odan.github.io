@@ -61,11 +61,11 @@ This result is not secure because `"` and `'` is not encoded to html.
 echo htmlspecialchars('&"\'<> ', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
 ```
 
-This result is safe because all special characters (`&"'<>`) are converted to HTML entities
-
 ```
 &amp;&quot;&#039;&lt;&gt; 
 ```
+
+[Online Demo](https://3v4l.org/PvRtm)
 
 ## Conclusion
 
