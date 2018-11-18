@@ -94,42 +94,19 @@ $response = new Response('', 200);
 $response = relay($request, $response, $queue);
 $response->send();
 ```
-## Demo App
-
-* [Micro-App](https://github.com/odan/micro-app)
-* https://github.com/odan/middleware
-
-## Warum kein PSR-7 ?
-
-Seit dem PSR-7 offiziell veröffentlicht wurde, sind nur wenig gute Implementierungen daraus entstanden. 
-Zu der bekanntesten PSR-7 Implementierung gehört z.B. [zendframework/zend-diactoros](https://github.com/zendframework/zend-diactoros). 
-In der Kritik stand das Interface-Konzept vor allem aufgrund der dogmatischen Value-Objects mit seinen 
-"gewöhnungsbedürftigen" wither-Krücken. Auch der Zugriff auf GET- und POST-Daten via Array fühlt 
-sich an wie Anno 1999. Bei jeder Änderung am Response-Objekt wird zuerst ein Klon mit dem neuen
-Wert erzeugt. Das Erzeugen von neuen Objekten ist zwar billig, geht aber auf Kosten des 
-Garbage Collectors und erzeugt memory leaks. Der gesamte Response wird in 
-IO-Streams (php://temp) gespeichert. Die Verwendung des RAM's ist zwar schnell, 
-führt jedoch bei grösseren Antworten >50 MB zu entsprechenden Problemen. 
-Auch das direkte Streaming an Daten ist nicht möglich.
-
-Bei all dem Dogma hat man es auch noch vergessen ein "interop" Session/Cookie-Interface zu definieren. 
-Das spezielle Session-Handling mit $_SESSION hat vermutlich einfach nicht ins theoretische 
-Gesamtbild gepasst und muss daher als Middleware implementiert werden. 
-Von einem Standard Session-Interface kann man also noch lange träumen. 
-Neuere PSR-7 Session Middleware Libraries wie z.B. [sessions/storageless](https://github.com/psr7-sessions/storageless) 
-oder [PhpSession](https://github.com/oscarotero/psr7-middlewares#phpsession) sollen den Schmerz etwas lindern.
-
-Für die praktische Anwendung von PSR-7 benötigt man einen Middleware Dispacher, 
-wie [relayphp](http://relayphp.com/), der die einzelnen Middleware-Funktionen (callbacks) nacheinander 
-ausführt und die Request/Response Objekte durchreicht. 
-Eine echte "interop" Lösung von PHP-FIG konnte ich bisher nicht finden.
-
-Bei all der Kritik muss man aber sagen, dass das Middleware-Konzept aus der PHP-Welt 
-nicht mehr wegzudenken ist. Aus diesem Grund wollte ich es wagen, einen 
-Middlware-Stack mithilfe der Symfony [HttpFoundation](http://symfony.com/doc/current/components/http_foundation.html) 
-Komponente zu erstellen.
-
 ## Zusammenfassung
 
 Dieses Konzept hat gezeigt, dass man auch mittels Symfony Komponenten einen
-Middleware-Stack implementieren kann. Bei Fragen und Anregungen bitte ein Feedback hinterlassen.
+Middleware-Stack implementieren kann. 
+
+Aus historischen Gründen wird Symfony wohl "niemals" auf PSR-7 und PSR-15 umstellen können.
+
+Man sollte daher das hier vorgestellte Konzept nicht produktiv einsetzen, 
+da diese Middleware konzeptionell nicht zum Symfony Kernel Event-Konzept passt. 
+
+Bei Fragen und Anregungen bitte ein Kommentar hinterlassen.
+
+## Links
+
+* <https://twitter.com/beberlei/status/1063873880677326853>
+* <https://github.com/QafooLabs/QafooLabsNoFrameworkBundle/pull/28>
