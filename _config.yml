@@ -9,7 +9,10 @@ title: Daniel Opitz
 # Short description of your site
 description: Developer, Trainer, Open Source Contributor
 
+# url is the full website URL
+# baseurl is the website's URL without the hostname
 url: https://odan.github.io
+#baseurl: "/projectname"
 
 github:
   is_project_page: false
