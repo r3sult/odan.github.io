@@ -1,6 +1,5 @@
 ---
 title: MySQL backup and restore
-date: 2014-09-09
 layout: post
 comments: true
 published: true
