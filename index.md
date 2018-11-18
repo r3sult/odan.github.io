@@ -16,9 +16,9 @@ keywords: php, dotnet, webdeveloper
 * [Php Inspections (EA Extended) for PhpStorm](https://odan.github.io/2018/08/01/php-inspections-ea-extended-for-phpstorm.html) (2018-08-01)
 * [Signing an XML file with a .pfx certificate](https://odan.github.io/2018/08/01/signing-an-xml-file-with-a-pfx-certificate.html) (2018-08-01)
 * [Installing ASP.NET Core on Ubuntu 18.4 Linux](https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html) (2018-07-17)
-* [Emitting stream responses with Slim](https://gist.github.com/odan/602e3b2e16cff25c0b90c37e4badeaa6) (2018-03-09)
-* [Bringing "Actions" to your Slim application.](https://gist.github.com/odan/0b77e09444d0841fdc9098d004b83075) (2018-02-24)
-* [Creating encrypted ZIP files with password in PHP](https://gist.github.com/odan/890ee6bb265b2c836e4eb87d482fb948) (2018-02-18)
+* [Emitting stream responses with Slim](https://odan.github.io/2018/03/09/emitting-chunked-stream-responses-with-slim.html) (2018-03-09)
+* [Bringing "Actions" to your Slim application.](https://odan.github.io/2018/02/24/bringing-actions-to-your-slim-application.html) (2018-02-24)
+* [Creating encrypted ZIP files with password in PHP](https://odan.github.io/2018/02/18/creating-encrypted-zip-files-with-password-in-php.html) (2018-02-18)
 
 ## 2017
 
@@ -85,7 +85,7 @@ keywords: php, dotnet, webdeveloper
 
 ## 2015
 
-* [Installing Xdebug for XAMPP with PHP 7.x](https://gist.github.com/odan/1abe76d373a9cbb15bed) (2015-12-27)
+* [Installing Xdebug for XAMPP with PHP 7.x](https://odan.github.io/2015/12/27/installing-xdebug-for-xampp-with-php-7-x.html) (2015-12-27)
 
 ## 2014
 
