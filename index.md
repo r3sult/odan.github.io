@@ -93,11 +93,7 @@ keywords: php, dotnet, webdeveloper
 
 ## 2015
 
-* [Installing Xdebug for XAMPP with PHP 7.x](https://gist.github.com/odan/1abe76d373a9cbb15bed) 2015-12-27
-* [Webserver and PHP configuration tester](https://gist.github.com/odan/64606e3668eac0e13afc) 2015-09-28
-* [Sort array of objects (stdClass) by property](https://gist.github.com/odan/3389621c6942c7497eac) 2015-07-24
-* [Disabling Caching with .htaccess](https://gist.github.com/odan/83f32f6c36cf4eeb1041) 2015-02-20
-* [PHP Closure class](https://gist.github.com/odan/059100d88bfedf2bf2f7) 2015-01-19
+* [Installing Xdebug for XAMPP with PHP 7.x](https://gist.github.com/odan/1abe76d373a9cbb15bed) (2015-12-27)
 
 ## 2014
 
