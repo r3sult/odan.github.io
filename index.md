@@ -75,7 +75,7 @@ keywords: php, dotnet, webdeveloper
 ## 2016
 
 * [PHP: Difference between a method and a function](https://odan.github.io/2016/12/16/php-difference-between-a-method-and-a-function.html) (2016-12-16)
-* [PHP: Recursively copy / remove a directory](https://gist.github.com/odan/f3b939cbe802bb039ff44c407da0cff6) 2016-12-11
+* [Remove directory recursively in PHP](https://odan.github.io/2016/12/11/remove-directory-recursively-in-php.html) (2016-12-11)
 * [PHP 7.1 Backward incompatible changes](https://odan.github.io/2016/12/06/php-7-1-backward-incompatible-changes.html) (2016-12-06)
 * [Symfony HttpFoundation Middlware](https://odan.github.io/2016/12/06/symfony-httpfoundation-middlware.html) (2016-12-06)
 * [Laziness driven development](https://odan.github.io/2016/12/06/laziness-driven-development.html) (2016-12-06)
@@ -83,15 +83,10 @@ keywords: php, dotnet, webdeveloper
 * [PHPUnit - Mock global functions (like date, time) at runtime](https://odan.github.io/2016/12/05/phpunit-mock-global-functions-like-date-time-at-runtime.html) (2016-12-05)
 * [phpunit - Modify a method/function at runtime](https://odan.github.io/2016/12/05/phpunit-mock-class-methods.html) 2016-12-05
 * [Fixing a github repo which is marked as the wrong language](https://odan.github.io/2016/12/05/fixing-a-github-repo-which-is-marked-as-the-wrong-language.html) (2016-12-05)
-* [System info for Linux and Windows (PHP)](https://gist.github.com/odan/cedbd5431544d7bdd9e5d4072db9fe7c) 2016-11-30
-* [Quick way to create a PHP stdClass](https://gist.github.com/odan/922b538ca5e69c6788e1a88a99226b92) 2016-11-30
-* [Google Maps - Geodecoding](https://gist.github.com/odan/8abc876778722f57cad30acf49d08c55) 2016-10-05
-* [Debugging php-cli scripts with xdebug and netbeans](https://gist.github.com/odan/49d6f4d3df7374fe77dbea80f9b9f5cf) 2016-06-20
+* [Debugging php-cli scripts with xdebug and netbeans](https://odan.github.io/2016/06/20/debugging-php-command-line-scripts-with-xdebug.html) 2016-06-20
 * [Fetching RSS Feeds with PHP](https://odan.github.io/2016/06/08/fetching-rss-feeds-with-php.html) (2016-06-08)
 * [Github API example (PHP)](https://odan.github.io/2016/06/08/github-rest-api-example.html) (2016-06-08)
 * [Download all Dilbert comics from 1990 until today](https://odan.github.io/2016/05/19/download-all-dilbert-comics-from-1990-until-today.html) (2016-05-19)
-
-
 
 ## 2015
 
