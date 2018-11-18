@@ -4,7 +4,7 @@ layout: post
 comments: true
 published: true
 description: 
-keywords: 
+keywords: PHP, CURL, SSL, Twitter, CURLOPT_SSL_VERIFYPEER
 ---
 
 To fix the SSL certificate error message "SSL certificate error: unable to get local issuer certificate" try this:
@@ -24,8 +24,6 @@ openssl.cafile="C:\xampp\php\extras\ssl\cacert.pem"
  ```
  
 * Stop / start Apache
-
-Click the Github ★ Star button :-)
 
 
 Keywords: PHP, CURL, SSL, Twitter, CURLOPT_SSL_VERIFYPEER

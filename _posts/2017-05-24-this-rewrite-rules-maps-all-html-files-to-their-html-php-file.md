@@ -2,7 +2,7 @@
 title: This rewrite rules maps all *.html files to their *.html.php file.
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
