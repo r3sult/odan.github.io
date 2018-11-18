@@ -87,9 +87,11 @@ keywords: php, dotnet, webdeveloper
 * [Quick way to create a PHP stdClass](https://gist.github.com/odan/922b538ca5e69c6788e1a88a99226b92) 2016-11-30
 * [Google Maps - Geodecoding](https://gist.github.com/odan/8abc876778722f57cad30acf49d08c55) 2016-10-05
 * [Debugging php-cli scripts with xdebug and netbeans](https://gist.github.com/odan/49d6f4d3df7374fe77dbea80f9b9f5cf) 2016-06-20
-* [Simple RSS Read (PHP)](https://gist.github.com/odan/d3024c50b752774754b8b8e2a6e266bc) 2016-06-08
-* [Github API example (PHP)](https://gist.github.com/odan/e4b83b5dce16efe25f836ec41cf02c5a) 2016-05-08
-* [Download all dilbert comics from 1900-1-1 til today](https://odan.github.io/2016/05/19/download-all-dilbert-comics-from-1990-until-today.html) (2016-05-19)
+* [Fetching RSS Feeds with PHP](https://odan.github.io/2016/06/08/fetching-rss-feeds-with-php.html) (2016-06-08)
+* [Github API example (PHP)](https://odan.github.io/2016/06/08/github-rest-api-example.html) (2016-06-08)
+* [Download all Dilbert comics from 1990 until today](https://odan.github.io/2016/05/19/download-all-dilbert-comics-from-1990-until-today.html) (2016-05-19)
+
+
 
 ## 2015
 
