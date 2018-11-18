@@ -20,9 +20,9 @@ layout: null
         <link href="{{ site.url }}{{ post.url }}" />
         <published>{{ post.date | date_to_xmlschema }}</published>
         {% if post.excerpt %}
-        <summary type="html">{{ post.excerpt | strip_html | markdownify | xml_escape }}</summary>
+        <summary type="html">{{ post.excerpt | markdownify | xml_escape }}</summary>
         {% else %}
-        <content type="html">{{ post.content | strip_html | xml_escape }}</content>
+        <content type="html">{{ post.content | xml_escape }}</content>
         {% endif %}
     </entry>
     {% endfor %}
