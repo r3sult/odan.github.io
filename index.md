@@ -22,35 +22,26 @@ keywords: php, dotnet, webdeveloper
 
 ## 2017
 
-* [Creating your first Slim Framework Application](https://gist.github.com/odan/d2b889c350aa2ea0ff8e5ca93ce588a2) 2017-12-23
-* [Creating an immutable Value Object in C# .NET](https://gist.github.com/odan/d5cf4e85c2af7419ae123ab19a520fa0) 2017-12-19
-* [Creating and downloading Excel files with Slim](https://gist.github.com/odan/a7a1eb3c876c9c5b2ffd2db55f29fdb8) 2017-12-16
-* [Implementing a SOAP API with PHP 7](https://gist.github.com/odan/1a736eefabe893fa66e4befeb226dcc8) 2017-11-20
-* [Ubuntu Webserver Setup](https://gist.github.com/odan/dcf6c3155899677ee88a4f7db5aac284) 2017-10-30
-* [Accessing your Virtualbox Guest from your Host OS](https://gist.github.com/odan/48fc744434ec6566ca9f7a993f4a7ffb) 2017-10-29
-* [Creation of a deployment pipeline](https://gist.github.com/odan/03312408364253a6a62fa85e6cb2f8c7) 2017-10-20
-* [Installing an SSL Certificate under Apache (XAMPP)](https://gist.github.com/odan/eb670845e6b6778b0c9ce2470846484f) 2017-10-20
-* [Apache Ant Setup](https://gist.github.com/odan/8296a618efdb6f007bac3bc6ec77e57c) 2017-10-20
-* [Sorting RSS feeds by date](https://gist.github.com/odan/03a31a529f6a94899fcf90e4e7472bdf) 2017-10-11
-* [Using gettext](https://gist.github.com/odan/04bd27002b43b48b69a3e8cbd6a65392) 2017-10-06
-* [Enable autocomplete for CakePHP 3 in PhpStorm](https://gist.github.com/odan/ec125bfbf31a31351f543608b0c6138f) 2017-09-12
-* [XAMPP - Replace MariaDB with MySQL](https://gist.github.com/odan/c799417460470c3776ffa8adce57eece) 2017-08-13
+* [Creating your first Slim Framework Application](https://odan.github.io/2017/11/30/creating-your-first-slim-framework-application.html) 2017-12-23
+* [Creating and downloading Excel files with Slim](https://odan.github.io/2017/12/16/creating-and-downloading-excel-files-with-slim.html) 2017-12-16
+* [Implementing a SOAP API with PHP 7](https://odan.github.io/2017/11/20/implementing-a-soap-api-with-php-7.html) 2017-11-20
+* [Ubuntu Webserver Setup](https://odan.github.io/2017/10/20/ubuntu-webserver-setup.html) 2017-10-30
+* [Accessing your Virtualbox Guest from your Host OS](https://odan.github.io/2017/10/29/accessing-your-virtualbox-guest-from-your-host-os.html) 2017-10-29
+* [Creation of a deployment pipeline](https://odan.github.io/2017-10-20-creating-a-deployment-pipeline.html) 2017-10-20
+* [Installing an SSL Certificate under Apache (XAMPP)](https://odan.github.io/2017/10/29/installing-an-ssl-certificate-under-apache-xampp.html) 2017-10-20
+* [Apache Ant Setup](https://odan.github.io/2017/10/20/apache-ant-setup.html) 2017-10-20
+* [Using gettext](https://odan.github.io/2017/10/06/using-gettext.html) 2017-10-06
+* [XAMPP - Replace MariaDB with MySQL](https://odan.github.io/2017/08/13/xampp-replacing-mariadb-with-mysql.html) 2017-08-13
 * [AES-256 encryption and decryption in PHP and C#](https://odan.github.io/2017/08/10/aes-256-encryption-and-decryption-in-php-and-csharp.html) 2017-08-10
-* [VueJs and PHP](https://gist.github.com/odan/066d9848b72cdd4f0feff1b592696eab) 2017-08-06
-* [Word Automation with PHP](https://gist.github.com/odan/f65629d7bb8014cc912e97647484eb2c) 2017-07-31
-* [ESLint Setup](https://gist.github.com/odan/4d2f47398b0533125c25022e0c69535b) 2017-07-23
-* [Running multiple Slim Framework sites with XAMPP](https://gist.github.com/odan/4d7475f15bddec50e3092854b85a3d73) 2017-07-22
-* [Parsing a XML document with PHP DOM and Xpath](https://gist.github.com/odan/6aeb43a9f9c3fbd332d364c175a760fc) 2017-07-21
-* [Finding coordinates by address with the Google Maps API](https://gist.github.com/odan/594e624e2ec15f70dd8ed07bff1341c1) 2017-07-16
-* [Converting string to numeric and back](https://gist.github.com/odan/b1a2dccedfa6614ed76a7135db7395dd) 2017-07-15
+* [VueJs and PHP](https://odan.github.io/2017/08/04/vuejs-and-php.html) 2017-08-06
+* [Word Automation with PHP](https://odan.github.io/2017/07/31/word-automation-with-php.html) 2017-07-31
+* [ESLint Setup](https://odan.github.io/2017/07/23/eslint-setup.html) 2017-07-23
+* [Running multiple Slim Framework sites with XAMPP](https://odan.github.io/2017/07/22/running-multiple-slim-framework-sites-with-xampp.html) 2017-07-22
+* [Parsing a XML document with PHP DOM and Xpath](https://odan.github.io/2017/07/21/parsing-a-xml-document-with-php-dom-and-xpath.html) 2017-07-21
+* [Finding coordinates by address with the Google Maps API](https://odan.github.io/2017/07/16/finding-coordinates-by-address-with-the-google-maps-api.html) 2017-07-16
 * [Replace mcrypt\_encrypt with openssl\_encrypt](https://odan.github.io/2017/07/14/replace-mcrypt-encrypt-with-openssl-encrypt.html) 2017-07-14
-* [Converting HMAC Hash from C# to PHP](https://gist.github.com/odan/4ec0810a073be1d1b5c3543f2157580f) 2017-07-05
-* [PHP Collection class](https://gist.github.com/odan/545be6c564271e45bd23f71d8590b9c8) 2017-07-04
-* [Slides from the International PHP Conference Spring 2017](https://gist.github.com/odan/355884aa7aae90fdc4a5ed6aba87f1f0) 2017-06-03
-* [Hydrating rows to Value Objects](https://gist.github.com/odan/ce1ecb1f665a0b6d248262531fb8d31f) 2017-05-27
-* [Converting value objects to JSON](https://gist.github.com/odan/84bbbda73a91f4496f1daf6e100cf83c) 2017-05-25
-* [The PHP loop helper function](https://gist.github.com/odan/509d445a5222bf3cbcde01e139edc4fc) 2017-05-25
-* [Builder pattern with validation](https://gist.github.com/odan/a42a33ddad373b073128cc5f02302c37) 2017-05-19
+* [Converting HMAC Hash from C# to PHP](https://odan.github.io/2017/07/05/converting-hmac-hash-from-c-to-php.html) 2017-07-05
+* [Slides from the International PHP Conference Spring 2017](https://odan.github.io/2017/06/02/slides-from-the-international-php-conference-spring-2017.html) 2017-06-03
 * [Using phpstan at Travis CI](https://odan.github.io/2017/05/16/how-to-use-phpstan-in-travis-ci.html) 2017-05-16
 * [REST, RESTful API Quick Reference](https://odan.github.io/2017/04/17/rest-restful-api-quick-reference.html) 2017-04-18
 * [Installing JavaScript packages with Composer](https://odan.github.io/2017/04/16/installing-javascript-packages-with-composer.html) 2017-04-16
