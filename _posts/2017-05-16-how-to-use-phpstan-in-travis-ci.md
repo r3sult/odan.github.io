@@ -1,5 +1,5 @@
 ---
-title: Use of PHPStan in Travis CI
+title: How to use PHPStan in Travis CI
 layout: post
 comments: true
 published: true

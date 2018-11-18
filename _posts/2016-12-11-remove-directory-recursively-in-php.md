@@ -45,7 +45,7 @@ rrmdir('/my/path');
 
 ### Testing
 
-[]vfsStream](https://github.com/mikey179/vfsStream/wiki) is a stream wrapper for a virtual file 
+[vfsStream](https://github.com/mikey179/vfsStream/wiki) is a stream wrapper for a virtual file 
 system that may be helpful in unit tests to mock the real file system. 
 It can be used with any unit test framework, like PHPUnit or SimpleTest.
 

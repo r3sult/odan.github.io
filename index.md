@@ -51,26 +51,21 @@ keywords: php, dotnet, webdeveloper
 * [Converting value objects to JSON](https://gist.github.com/odan/84bbbda73a91f4496f1daf6e100cf83c) 2017-05-25
 * [The PHP loop helper function](https://gist.github.com/odan/509d445a5222bf3cbcde01e139edc4fc) 2017-05-25
 * [Builder pattern with validation](https://gist.github.com/odan/a42a33ddad373b073128cc5f02302c37) 2017-05-19
-* [Using phpstan at Travis CI](https://gist.github.com/odan/fb64e19e5ff7bb6701746bd0fa8eb86f) 2017-05-16
-* [REST, RESTful API Quick Reference](https://gist.github.com/odan/1d2ef018adb3ea5a0d3abb35406d2c65) 2017-04-18
-* [Installing JavaScript packages with Composer](https://gist.github.com/odan/b5812c61d494d45becabaaf223875bb3) 2017-04-16
-* [XAMPP: How to enable PHP OPCache](https://gist.github.com/odan/07abee45c7439332264606dd5d5e1705) 2017-02-05
-* [Using the Symfony Service Container with a simple service object](https://gist.github.com/odan/a7f8ed065ce3f268b69f13e360b30e04) 2017-01-31
-* [REST, RESTful, REST-like API Resources](https://gist.github.com/odan/de7f5452fb165c2d27f20d1d16bfe54d) 2017-01-30
-* [sprintf for JavaScript](https://gist.github.com/odan/d748176dfd18c8ba8e97fe4be4e3c0d0) 2017-01-26
+* [Using phpstan at Travis CI](https://odan.github.io/2017/05/16/how-to-use-phpstan-in-travis-ci.html) 2017-05-16
+* [REST, RESTful API Quick Reference](https://odan.github.io/2017/04/17/rest-restful-api-quick-reference.html) 2017-04-18
+* [Installing JavaScript packages with Composer](https://odan.github.io/2017/04/16/installing-javascript-packages-with-composer.html) 2017-04-16
+* [XAMPP: How to enable PHP OPCache](https://odan.github.io/2017/02/05/xampp-how-to-enable-php-opcache.html) 2017-02-05
+* [REST, RESTful, REST-like API Resources](https://odan.github.io/2017/01/30/rest-restful-rest-like-api-resources.html) 2017-01-30
+* [sprintf for JavaScript](https://odan.github.io/2017/01/26/sprintf-for-javascript.html) 2017-01-26
 * [Building a Simple Web API with Vanilla PHP](https://odan.github.io/2017/01/23/building-a-simple-web-api-with-vanilla-php.html) (2017-01-23)
 * [PHP, JS, CSS Coding Standard](https://odan.github.io/2017/01/17/coding-standard.html) (2017-01-17)
 * [Designing a database](https://odan.github.io/2017/01/17/designing-a-database.html) (2017-01-17)
 * [MySQL - Identify Differences Among Databases](https://odan.github.io/2017/01/13/mysql-identify-differences-among-databases.html) (2017-01-13)
 * [Collection of project names](https://odan.github.io/2017/01/13/collection-of-project-names.html) (2017-01-13)
-* [Reset windows folder permissions (Windows)](https://gist.github.com/odan/d96e9069a10fdaf2e4aa39247f99cafa) 2017-01-13
-* [Run composer from a browser](https://gist.github.com/odan/3f5b2748f516398e93cb36716d38b6b5) 2017-01-13
+* [Reset windows folder permissions (Windows)](https://odan.github.io/2017/01/13/reset-windows-folder-permissions.html) 2017-01-13
 * [PHP Programming in VS Code](https://odan.github.io/2017/01/08/php-programming-in-vs-code.html) (2017-01-08)
 * [Basic CRUD operations with PDO](https://odan.github.io/2017/01/07/basic-crud-operations-with-pdo.html) (2017-01-07)
-* [Database, Table and Column Naming Conventions](https://gist.github.com/odan/09541aafcaf9a1fa808c8cb0dd956b36) 2017-01-07
-* [Basic CRUD operations with PDO](https://odan.github.io/2017/01/07/basic-crud-operations-with-pdo.html) (2017-01-07)
-* [PHP / PDO - Returning a collection of real objects](https://gist.github.com/odan/b758d68ac8da82cc1ab0326cddfd950f) 2017-01-02
-* [Resources for PHP beginners](https://github.com/odan/learn-php) 2017-01-02
+* [Resources for PHP beginners](https://odan.github.io/2017/01/02/resources-for-php.md) 2017-01-02
 
 ## 2016
 
