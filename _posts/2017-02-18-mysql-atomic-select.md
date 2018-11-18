@@ -1,6 +1,5 @@
 ---
 title: MySQL Atomic SELECT
-date: 2017-02-18
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: XAMPP - Oracle Driver Setup (v12)
-date: 2017-03-21
 layout: post
 comments: true
 published: true

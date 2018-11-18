@@ -1,6 +1,5 @@
 ---
 title: Finding SQL injections
-date: 2016-12-04
 layout: post
 comments: true
 published: true

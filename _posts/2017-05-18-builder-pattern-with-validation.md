@@ -1,6 +1,5 @@
 ---
 title: Builder pattern with validation
-date: 2017-05-18
 layout: post
 comments: true
 published: true

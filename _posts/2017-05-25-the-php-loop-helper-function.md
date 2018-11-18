@@ -1,6 +1,5 @@
 ---
 title: The PHP loop helper function
-date: 2017-05-25
 layout: post
 comments: true
 published: true

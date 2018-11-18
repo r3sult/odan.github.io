@@ -1,6 +1,5 @@
 ---
 title: Use of PHPStan in Travis CI
-date: 2017-05-16
 layout: post
 comments: true
 published: true

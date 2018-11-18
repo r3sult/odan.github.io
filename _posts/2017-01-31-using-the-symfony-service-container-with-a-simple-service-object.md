@@ -1,6 +1,5 @@
 ---
 title: Using the Symfony Service Container with a simple service object
-date: 2017-01-31
 layout: post
 comments: true
 published: true

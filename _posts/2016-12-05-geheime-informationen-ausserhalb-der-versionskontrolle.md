@@ -1,6 +1,5 @@
 ---
 title: Geheime Informationen ausserhalb der Versionskontrolle
-date: 2016-12-05
 layout: post
 comments: true
 published: true

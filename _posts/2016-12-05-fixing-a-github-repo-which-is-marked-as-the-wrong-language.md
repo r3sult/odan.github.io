@@ -1,6 +1,5 @@
 ---
 title: Fixing a github repo which is marked as the wrong language
-date: 2016-12-05
 layout: post
 comments: true
 published: true

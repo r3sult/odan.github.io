@@ -1,6 +1,5 @@
 ---
 title: This rewrite rules maps all *.html files to their *.html.php file.
-date: 2017-05-24
 layout: post
 comments: true
 published: true

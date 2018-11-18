@@ -1,6 +1,5 @@
 ---
 title: Installing JavaScript packages with Composer
-date: 2017-04-16
 layout: post
 comments: true
 published: true

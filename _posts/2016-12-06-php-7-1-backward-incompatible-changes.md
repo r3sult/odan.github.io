@@ -1,6 +1,5 @@
 ---
 title: PHP 7.1 Backward incompatible changes
-date: 2016-12-06
 layout: post
 comments: true
 published: true

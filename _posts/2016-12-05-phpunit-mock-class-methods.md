@@ -1,6 +1,5 @@
 ---
 title: phpunit - Modify a method/function at runtime
-date: 2016-12-05
 layout: post
 comments: true
 published: true

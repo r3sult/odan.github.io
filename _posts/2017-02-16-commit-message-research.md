@@ -1,6 +1,5 @@
 ---
 title: Commit message research
-date: 2017-02-16
 layout: post
 comments: true
 published: true

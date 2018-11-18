@@ -1,6 +1,5 @@
 ---
 title: Debugging php command line scripts with xdebug
-date: 2016-06-20
 layout: post
 comments: true
 published: true

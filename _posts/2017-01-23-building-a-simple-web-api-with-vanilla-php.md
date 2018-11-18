@@ -1,6 +1,5 @@
 ---
 title: Building a Simple Web API with Vanilla PHP
-date: 2017-01-23
 layout: post
 comments: true
 published: true

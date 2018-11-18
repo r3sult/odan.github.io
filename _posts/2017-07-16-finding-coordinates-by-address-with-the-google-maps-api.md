@@ -1,11 +1,10 @@
 ---
 title: Finding coordinates by address with the Google Maps API
-date: 2017-07-16
 layout: post
 comments: true
 published: true
 description: 
-keywords: 
+keywords: php
 ---
 
 ```php

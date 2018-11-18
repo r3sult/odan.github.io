@@ -1,6 +1,5 @@
 ---
 title: Installing Xdebug for XAMPP with PHP 7.x
-date: 2015-12-27
 layout: post
 comments: true
 published: true

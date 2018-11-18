@@ -1,6 +1,5 @@
 ---
 title: Converting HMAC Hash from C# to PHP
-date: 2017-07-05
 layout: post
 comments: true
 published: true

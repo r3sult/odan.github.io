@@ -1,6 +1,5 @@
 ---
 title: ESLint Setup
-date: 2017-07-23
 layout: post
 comments: true
 published: true

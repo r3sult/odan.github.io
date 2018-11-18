@@ -1,6 +1,5 @@
 ---
 title: Converting value objects to JSON
-date: 2017-05-25
 layout: post
 comments: true
 published: true

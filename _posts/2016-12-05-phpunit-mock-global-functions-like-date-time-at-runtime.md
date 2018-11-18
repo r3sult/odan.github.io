@@ -1,6 +1,5 @@
 ---
 title: PHPUnit - Mock global functions (like date, time) at runtime
-date: 2016-12-05
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: Designing a database
-date: 2017-01-17
 layout: post
 comments: true
 published: true

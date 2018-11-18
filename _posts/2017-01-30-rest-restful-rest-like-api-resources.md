@@ -1,6 +1,5 @@
 ---
 title: REST, RESTful, REST-like API Resources
-date: 2017-01-30
 layout: post
 comments: true
 published: true

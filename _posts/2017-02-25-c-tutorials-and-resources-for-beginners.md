@@ -1,6 +1,5 @@
 ---
 title: C# Tutorials and Resources for beginners
-date: 2017-02-25
 layout: post
 comments: true
 published: true

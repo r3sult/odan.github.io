@@ -1,6 +1,5 @@
 ---
 title: Replace mcrypt_encrypt with openssl_encrypt
-date: 2017-07-14
 layout: post
 comments: true
 published: true

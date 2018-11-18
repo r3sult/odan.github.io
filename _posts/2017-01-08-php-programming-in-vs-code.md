@@ -1,6 +1,5 @@
 ---
 title: PHP Programming in VS Code
-date: 2017-01-08
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: Laziness driven development
-date: 2016-12-06
 layout: post
 comments: true
 published: true

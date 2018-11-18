@@ -1,6 +1,5 @@
 ---
 title: Slides from the International PHP Conference Spring 2017
-date: 2017-06-02
 layout: post
 comments: true
 published: true

@@ -89,7 +89,7 @@ keywords: php, dotnet, webdeveloper
 * [Debugging php-cli scripts with xdebug and netbeans](https://gist.github.com/odan/49d6f4d3df7374fe77dbea80f9b9f5cf) 2016-06-20
 * [Simple RSS Read (PHP)](https://gist.github.com/odan/d3024c50b752774754b8b8e2a6e266bc) 2016-06-08
 * [Github API example (PHP)](https://gist.github.com/odan/e4b83b5dce16efe25f836ec41cf02c5a) 2016-05-08
-* [Download all dilbert comics from 1900-1-1 til today](https://gist.github.com/odan/6587e96ef001fcddf2dfb14ae5c23024) 2016-04-19
+* [Download all dilbert comics from 1900-1-1 til today](https://odan.github.io/2016/05/19/download-all-dilbert-comics-from-1990-until-today.html) (2016-05-19)
 
 ## 2015
 

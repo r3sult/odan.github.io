@@ -1,6 +1,5 @@
 ---
 title: REST, RESTful API Quick Reference
-date: 2017-04-17
 layout: post
 comments: true
 published: true

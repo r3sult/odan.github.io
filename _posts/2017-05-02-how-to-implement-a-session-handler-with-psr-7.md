@@ -1,6 +1,5 @@
 ---
 title: How to implement a session handler with PSR-7
-date: 2017-05-02
 layout: post
 comments: true
 published: true

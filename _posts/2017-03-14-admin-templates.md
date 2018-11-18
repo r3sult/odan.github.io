@@ -1,6 +1,5 @@
 ---
 title: Admin Templates
-date: 2017-03-14
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: Generating Strongly Typed DataSets
-date: 2017-07-06
 layout: post
 comments: true
 published: true

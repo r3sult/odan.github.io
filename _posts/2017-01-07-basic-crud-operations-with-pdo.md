@@ -1,6 +1,5 @@
 ---
 title: Basic CRUD operations with PDO
-date: 2017-01-07
 layout: post
 comments: true
 published: true

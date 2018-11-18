@@ -1,6 +1,5 @@
 ---
 title: Collection of project names
-date: 2017-01-13
 layout: post
 comments: true
 published: true

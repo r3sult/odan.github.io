@@ -1,6 +1,5 @@
 ---
 title: Running multiple Slim Framework sites with XAMPP
-date: 2017-07-22
 layout: post
 comments: true
 published: true

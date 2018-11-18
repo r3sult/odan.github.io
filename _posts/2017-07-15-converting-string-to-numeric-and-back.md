@@ -1,6 +1,5 @@
 ---
 title: Converting string to numeric and back
-date: 2017-07-15
 layout: post
 comments: true
 published: true

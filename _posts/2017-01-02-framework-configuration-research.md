@@ -1,6 +1,5 @@
 ---
 title: Framework configuration research
-date: 2017-01-02
 layout: post
 comments: true
 published: true

@@ -1,6 +1,5 @@
 ---
 title: XAMPP - CURL SSL Setup
-date: 2017-03-30
 layout: post
 comments: true
 published: true

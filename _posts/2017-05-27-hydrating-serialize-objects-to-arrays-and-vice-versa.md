@@ -1,6 +1,5 @@
 ---
 title: Hydrating - Serialize objects to arrays, and vice versa.
-date: 2017-05-27
 layout: post
 comments: true
 published: true
