@@ -11,6 +11,9 @@ description: Developer, Trainer, Open Source Contributor
 
 site:
   url: https://odan.github.io
+  author:
+    - name: Daniel Opitz
+    - email:
 
 github:
   is_project_page: false
