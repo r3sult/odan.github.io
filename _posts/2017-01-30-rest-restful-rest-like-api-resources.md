@@ -8,14 +8,13 @@ keywords:
 ---
 
 ## Paper
-* Roy Fielding's paper on REST (where the word comes from) - https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
-* REST APIs must be hypertext-driven - http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
-* Dissertation: Architectural Styles and
-the Design of Network-based Software Architectures - http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
+* [Roy Fielding's paper on REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) (where the word comes from)
+* [REST APIs must be hypertext-driven](http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven)
+* Dissertation: [Architectural Styles and the Design of Network-based Software Architectures](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 
 ## Blog posts
-* **Richardson Maturity Model** - https://martinfowler.com/articles/richardsonMaturityModel.html
-* HATEOAS 101: Introduction to a REST API Style (video & slides)- https://apigee.com/about/blog/technology/hateoas-101-introduction-rest-api-style-video-slides
+* **Richardson Maturity Model** - <https://martinfowler.com/articles/richardsonMaturityModel.html>
+* [HATEOAS 101: Introduction to a REST API Style](https://apigee.com/about/blog/technology/hateoas-101-introduction-rest-api-style-video-slides)
 * Learn REST: A RESTful Tutorial - http://www.restapitutorial.com/
 * Good Practices in API Design - https://swaggerhub.com/blog/api-design/api-design-best-practices/
 * 7 Tips for Designing a Better REST API - http://www.kennethlange.com/posts/7_tips_for_designing_a_better_rest_api.html
@@ -36,9 +35,9 @@ Humans can follow links, even as a website goes through significant changes. Cod
 
 `There is no REST specification, REST is a architecture style.`
 
-Read more: http://stackoverflow.com/questions/19884295/soap-vs-rest-differences/19884975#19884975
+Read more: <http://stackoverflow.com/questions/19884295/soap-vs-rest-differences/19884975#19884975>
 
-* Specification for REST APIs (OpenAPI) - http://swagger.io/specification/
+* Specification for REST APIs (OpenAPI) - <http://swagger.io/specification/>
 
 ## REST API Guidelines
 

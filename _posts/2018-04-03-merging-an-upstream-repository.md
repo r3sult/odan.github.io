@@ -50,6 +50,6 @@ git push origin master
 
 ## Links
 
-* https://help.github.com/articles/configuring-a-remote-for-a-fork/
-* https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/
-* https://stackoverflow.com/questions/11266478/git-add-remote-branch?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+* <https://help.github.com/articles/configuring-a-remote-for-a-fork/>
+* <https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/>
+* <https://stackoverflow.com/questions/11266478/git-add-remote-branch?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa>

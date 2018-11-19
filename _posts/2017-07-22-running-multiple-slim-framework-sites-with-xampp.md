@@ -55,7 +55,7 @@ Now just open the application: http://localhost/slim3-app
 
 ## Links
 
-* https://github.com/slimphp/Slim/issues/2294
+* <https://github.com/slimphp/Slim/issues/2294>
 
 ### Keywords
 

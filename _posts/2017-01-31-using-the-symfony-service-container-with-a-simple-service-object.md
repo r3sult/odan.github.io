@@ -2,7 +2,7 @@
 title: Using the Symfony Service Container with a simple service object
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---

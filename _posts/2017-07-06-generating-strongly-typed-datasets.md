@@ -41,8 +41,8 @@ using (var command = new SqlCommand(sql, con))
 Note that i've presumed that the first column is a string and the second an integer. 
 Just to demonstrate that C# is typesafe and how you use the DataReader.GetXY methods.
 
-Source: https://stackoverflow.com/a/20101807/1461181
+Source: <https://stackoverflow.com/a/20101807/1461181>
 
 ## Creating a Model
 
-* https://docs.microsoft.com/en-us/ef/core/modeling/
+* <https://docs.microsoft.com/en-us/ef/core/modeling/>

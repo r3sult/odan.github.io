@@ -70,8 +70,8 @@ var_dump($prices->items());
 
 ## Links
 
-* https://twitter.com/Ocramius/status/983817609375371264
-* https://twitter.com/nikolaposa/status/990687993009762307
+* <https://twitter.com/Ocramius/status/983817609375371264>
+* <https://twitter.com/nikolaposa/status/990687993009762307>
 
 ## Keywords
 

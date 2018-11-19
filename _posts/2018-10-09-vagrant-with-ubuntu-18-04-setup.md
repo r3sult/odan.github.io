@@ -52,4 +52,4 @@ sudo rm -rf /var/www
 sudo ln -s /vagrant/ /var/www/
 ```
 
-Open: http://localhost:8080
+Open: <http://localhost:8080>

@@ -7,7 +7,9 @@ description:
 keywords: 
 ---
 
-Sometimes you need to select rows exclusivly for only one single process. In this case you have to make sure that only the current and no other process (e.g. other cronjobs) fetches the same rows in the same (milli)second. 
+Sometimes you need to select rows exclusively for only one single process. 
+
+In this case you have to make sure that only the current and no other process (e.g. other cronjobs) fetches the same rows in the same (milli)second. 
 
 ## MySQL "[Locking Reads](https://dev.mysql.com/doc/refman/5.7/en/innodb-locking-reads.html)" 
 
@@ -31,8 +33,8 @@ After the `SELECT` statement runs, if you have another `SELECT` from a different
 Also note that `FOR UPDATE` outside of a transaction is meaningless.
 
 This behavior has some disadvantages and offers not what I'm looking for. 
-* http://stackoverflow.com/questions/8849518/mysql-select-for-update-behaviour
-* http://stackoverflow.com/questions/27865992/why-use-select-for-update
+* <http://stackoverflow.com/questions/8849518/mysql-select-for-update-behaviour>
+* <http://stackoverflow.com/questions/27865992/why-use-select-for-update>
 
 My concern (and experience) was that those records will be modified between the SELECT and UPDATE.
 A row lock does not prevent read access (e.g. a normal select without for update). Other process still could read and process this rows.

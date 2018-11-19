@@ -152,7 +152,7 @@ public string DecryptString(string cipherText, byte[] key, byte[] iv)
 }
 ```
 
-Usage
+## Usage
 
 ```csharp
 string message = "My secret message 1234";
@@ -173,4 +173,4 @@ Console.WriteLine(decrypted);
 ```
 
 
-Source: https://stackoverflow.com/a/45574121/1461181
+Source: <https://stackoverflow.com/a/45574121/1461181>

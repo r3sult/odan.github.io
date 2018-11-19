@@ -10,13 +10,13 @@ keywords:
 ## Setup
 
 * Visual C++ Redistributable Packages for Visual Studio 2013
- - https://www.microsoft.com/en-US/download/details.aspx?id=40784
+ - <https://www.microsoft.com/en-US/download/details.aspx?id=40784>
 * MySQL Utilities - http://dev.mysql.com/downloads/utilities/
 
 ## mysqldiff
 
 mysqldiff all tables in database:
-https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldiff.html
+<https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldiff.html>
 
 Example:
 ```
@@ -25,7 +25,7 @@ mysqldiff --server1=root@localhost --server2=root@localhost --difftype=sql --cha
 
 ## mysqldbcompare
 
-https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldbcompare.html
+<https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldbcompare.html>
 
 Example:
 ```
@@ -38,5 +38,5 @@ mysqldbcompare --server1=root@localhost --server2=root@localhost --difftype=sql
 
 There is a "Bug" or missing feature to disable the export of AUTO_INCREMENT.
 
-* https://bugs.mysql.com/bug.php?id=79296
-* https://bugs.mysql.com/bug.php?id=69669
+* <https://bugs.mysql.com/bug.php?id=79296>
+* <https://bugs.mysql.com/bug.php?id=69669>

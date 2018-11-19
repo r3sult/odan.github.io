@@ -199,4 +199,4 @@ clearSometing()
 
 ## Links
 
-* http://bestpractices.thecodingmachine.com/
+* <http://bestpractices.thecodingmachine.com/>

@@ -2,7 +2,7 @@
 title: Hydrating - Serialize objects to arrays, and vice versa.
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---

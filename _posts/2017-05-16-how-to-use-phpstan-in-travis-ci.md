@@ -12,7 +12,7 @@ If you run PHPStan on every commit, you find errors in your code without actuall
 ## Requirements
 
 * Travis CI (.travis.yml)
-* Ant (build.xml) Ant is preinstalled on Travis CI.
+* Ant (build.xml) Ant is pre-installed on Travis CI.
 
 ## Setup
 

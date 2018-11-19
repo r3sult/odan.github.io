@@ -8,7 +8,7 @@ description:
 keywords: 
 ---
 
-Github offerse a nice feature to verify your commits. 
+Github offers a nice feature to verify your commits. 
 
 ## Requirements
 

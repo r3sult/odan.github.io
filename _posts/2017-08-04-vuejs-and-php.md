@@ -9,8 +9,8 @@ keywords:
 
 ## Setup
 
-* Download the development version from: https://vuejs.org/js/vue.js and the production version: https://vuejs.org/js/vue.min.js
-* Copy this files into the public/js folder
+* Download the development version from: <https://vuejs.org/js/vue.js> and the production version: <https://vuejs.org/js/vue.min.js>
+* Copy this files into the `public/js` folder
 
 ## First test
 
@@ -127,9 +127,9 @@ Creating a single-page application (SPA) with Vue.js + vue-router is very easy. 
 * Open the console: `cmd`
 * Change into to public directory: `cd c:\xampp\htdocs\example.com\public`
 * Start the php webserver: `php -S localhost:8080`
-* Open the url: http://localhost:8080
+* Open the url: <http://localhost:8080>
 
-More details: https://router.vuejs.org/en/essentials/getting-started.html
+More details: <https://router.vuejs.org/en/essentials/getting-started.html>
 
 ## Package management
 
@@ -137,9 +137,9 @@ If you want to integrate and update a new VueJs package, you need `webpack` as m
 
 ### Installation
 
-* Install node.js (with npm): https://nodejs.org/en/download/
-* Install webpack: https://webpack.js.org/guides/getting-started/
-* Create a Vue.js project: https://skyronic.com/blog/vue-project-scratch
+* Install node.js (with npm): <https://nodejs.org/en/download/>
+* Install webpack: <https://webpack.js.org/guides/getting-started/>
+* Create a Vue.js project: <https://skyronic.com/blog/vue-project-scratch>
 
 ### Minimal web app
 
@@ -150,4 +150,4 @@ If you want to integrate and update a new VueJs package, you need `webpack` as m
 
 ### Read more
 
-* https://www.smashingmagazine.com/2018/02/jquery-vue-javascript/
+* <https://www.smashingmagazine.com/2018/02/jquery-vue-javascript/>

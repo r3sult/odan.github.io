@@ -9,8 +9,8 @@ keywords:
 
 ## Requirements
 
-* Latest JDK: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-* Download Ant: https://ant.apache.org/bindownload.cgi ([ZIP](http://www.pirbot.com/mirrors/apache//ant/binaries/apache-ant-1.10.1-bin.zip))
+* Latest JDK: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+* Download Ant: <https://ant.apache.org/bindownload.cgi> ([ZIP](http://www.pirbot.com/mirrors/apache//ant/binaries/apache-ant-1.10.1-bin.zip))
 
 ## Installation
 

@@ -189,4 +189,6 @@ Open: http://localhost/adminer.php
 sudo apt-get install openssh-server
 ```
 
-Read more: [How to setup a restricted SFTP server on Ubuntu?](https://askubuntu.com/questions/420652/how-to-setup-a-restricted-sftp-server-on-ubuntu)
+## Read more
+
+* [How to setup a restricted SFTP server on Ubuntu?](https://askubuntu.com/questions/420652/how-to-setup-a-restricted-sftp-server-on-ubuntu)

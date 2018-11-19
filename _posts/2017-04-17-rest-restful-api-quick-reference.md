@@ -238,5 +238,5 @@ $.ajax({
   * deleteUserReview
   
   ## Links
-  * http://blog.restcase.com/7-rules-for-rest-api-uri-design/
-  * http://zalando.github.io/restful-api-guidelines/json-guidelines/JsonGuidelines.html
+  * <http://blog.restcase.com/7-rules-for-rest-api-uri-design/>
+  * <http://zalando.github.io/restful-api-guidelines/json-guidelines/JsonGuidelines.html>

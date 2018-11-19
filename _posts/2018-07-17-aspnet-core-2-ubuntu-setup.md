@@ -59,7 +59,7 @@ sudo apt-get update
 sudo apt-get install aspnetcore-runtime-2.1
 ```
 
-Source: https://www.microsoft.com/net/download/linux-package-manager/ubuntu18-04/runtime-2.1.0
+Source: <https://www.microsoft.com/net/download/linux-package-manager/ubuntu18-04/runtime-2.1.0>
 
 ## Install the .NET SDK
 
@@ -71,7 +71,7 @@ sudo apt-get install dotnet-sdk-2.1
 
 > **Notice:** It is not necessary to install the .NET SDK on a productive server. You only need to install the SDK in the development environment.
 
-Source: https://www.microsoft.com/net/learn/get-started/linux/ubuntu18-04
+Source: <https://www.microsoft.com/net/learn/get-started/linux/ubuntu18-04>
 
 ## Test the installation
 

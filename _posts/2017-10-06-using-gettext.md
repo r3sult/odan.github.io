@@ -9,7 +9,7 @@ keywords:
 
 ### Requirements
 
-* PHP with the php_gettext extension
+* PHP with the `php_gettext` extension
 * [Poedit](https://poedit.net/)
 
 ### Introduction
@@ -86,5 +86,8 @@ echo _('Yes'); // Ja
 
 ### Summary
 
+You should know that the translations are cached until you restart the Apache web server. 
 
-You should know that the translations are cached until you restart the Apache web server. In a production environment this is quite good for performance reason, but is not as good at development. A more developer friendly solution would be the Symfony Translation Component.
+In a production environment this is quite good for performance reason, but is not as good at development. 
+
+A more developer friendly solution would be the Symfony Translation Component.

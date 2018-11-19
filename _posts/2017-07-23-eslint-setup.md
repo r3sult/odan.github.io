@@ -8,7 +8,7 @@ keywords:
 ---
 
 * Download and install [Node.js](https://nodejs.org/en/download/) (Windows Installer .msi)
-* Open `cmd` and ínstall ESLint globally: 
+* Open `cmd` and install ESLint globally: 
 
 ```sh
 npm install -g eslint

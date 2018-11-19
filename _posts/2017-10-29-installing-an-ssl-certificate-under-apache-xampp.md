@@ -13,7 +13,7 @@ keywords:
 
 ## Setup OpenSSL
 
-* Download Win32 OpenSSL: https://slproweb.com/products/Win32OpenSSL.html [Win32OpenSSL-1_0_2d.exe](https://slproweb.com/download/Win32OpenSSL-1_0_2d.exe)
+* Download Win32 OpenSSL: <https://slproweb.com/products/Win32OpenSSL.html> [Win32OpenSSL-1_0_2d.exe](https://slproweb.com/download/Win32OpenSSL-1_0_2d.exe)
 
 Run this command:
 
@@ -29,7 +29,7 @@ Run
 openssl req -new -nodes -keyout www_example_com.key -out www_example_com.csr -newkey rsa:2048
 ```
 
-Reade more: https://www.psw-group.de/support/?p=20/
+Reade more: <https://www.psw-group.de/support/?p=20/>
 
 e.g.
 ```
@@ -63,4 +63,4 @@ SSLCACertificateFile "conf/certs/2018/certificate/Sonstige (pem)/root.crt"
 
 ## Test the SSL certificate
 
-* Open: https://www.sslshopper.com/ssl-checker.html#hostname=https://www.example.com/
+* Open: <https://www.sslshopper.com/ssl-checker.html#hostname=https://www.example.com/>

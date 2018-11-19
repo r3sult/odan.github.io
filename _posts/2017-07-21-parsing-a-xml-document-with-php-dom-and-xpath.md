@@ -2,7 +2,7 @@
 title: Parsing a XML document with PHP DOM and Xpath
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: php
 ---

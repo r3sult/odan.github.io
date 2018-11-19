@@ -28,7 +28,7 @@ xdebug.remote_host = "localhost"
 
 ## Netbeans
 
-* Netbeans setup: https://postimg.org/image/8tfvemy7l/
+* Netbeans setup: <https://postimg.org/image/8tfvemy7l/>
 * Set breakpoint
 * Start Debug project (Ctrl+F5)
 * Open console (cmd) and enter:

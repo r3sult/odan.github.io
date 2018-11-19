@@ -24,7 +24,7 @@ As of XAMPP 5.5.30 and 5.6.14, XAMPP ships MariaDB instead of MySQL.
 
 ## Installation
 
-* Download MySQL Community Server: https://dev.mysql.com/downloads/mysql/
+* Download MySQL Community Server: <https://dev.mysql.com/downloads/mysql/>
 * Goto: Other Downloads > ZIP Archive	5.7.22 (mysql-5.7.22-win32.zip) > [No thanks, just start my download](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.22-win32.zip).
 * Create a new and empty folder: `c:\xampp\mysql`
 * Extract `mysql-5.7.22-win32.zip` to: `c:\xampp\mysql`
@@ -84,11 +84,13 @@ Click the Github &#9733; Star button :-)
 
 ## Known issues
 
-### Questions:
+### Questions
+
 * I can't start or stop mysql using the XAMPP control panel button
 * The XAMPP control panel is crashing while shutting down
 
-### Answers:
+### Answers
+
 * Make sure you have installed the 32-bit version of MySQL. The MySQL 64-bit version is not compatible with the XAMPP Control Panel.
 * This setup is not testet with MySQL 8.x
 * Try to fix the directory permissions with this [batch script](https://gist.github.com/odan/eb6dd532a59956f4ae9b1216fa842271)

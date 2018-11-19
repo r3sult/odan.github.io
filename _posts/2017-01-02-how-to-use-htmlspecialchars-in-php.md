@@ -61,6 +61,8 @@ This result is not secure because `"` and `'` is not encoded to html.
 echo htmlspecialchars('&"\'<> ', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
 ```
 
+This result looks perfect:
+
 ```
 &amp;&quot;&#039;&lt;&gt; 
 ```
