@@ -7,15 +7,15 @@ description:
 keywords: 
 ---
 
-## Paper
+## Papers
 
 * [Roy Fielding's paper on REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) (where the word comes from)
 * [REST APIs must be hypertext-driven](http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven)
-* Dissertation: [Architectural Styles and the Design of Network-based Software Architectures](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+* [Architectural Styles and the Design of Network-based Software Architectures](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm) (Dissertation)
 
 ## Blog posts
 
-* **Richardson Maturity Model** - <https://martinfowler.com/articles/richardsonMaturityModel.html>
+* [Richardson Maturity Model - steps toward the glory of REST](https://martinfowler.com/articles/richardsonMaturityModel.html)
 * [HATEOAS 101: Introduction to a REST API Style](https://apigee.com/about/blog/technology/hateoas-101-introduction-rest-api-style-video-slides)
 * [Learn REST: A RESTful Tutorial](https://www.restapitutorial.com/)
 * [Good Practices in API Design](https://swaggerhub.com/blog/api-design/api-design-best-practices/)
@@ -27,9 +27,11 @@ keywords:
 * [The Ultimate Guide to API Design](https://blog.qmo.io/ultimate-guide-to-api-design/#documentation)
 * [RESTful Webservices](https://www.mittwald.de/blog/webentwicklung-webdesign/webentwicklung/restful-webservices-1-was-ist-das-uberhaupt) (german)
 
-## What is HATEOAS ?
+## What is HATEOAS?
 
-* Wiki: <https://en.wikipedia.org/wiki/HATEOAS>
+<https://en.wikipedia.org/wiki/HATEOAS>
+
+### Drawbacks of HATEOAS
 
 Humans can follow links, even as a website goes through significant changes. 
 Code can follow links, but can't make clear independent decisions when significant changes happen to the API.
@@ -38,8 +40,9 @@ Code can follow links, but can't make clear independent decisions when significa
 
 `There is no REST specification, REST is a architecture style.`
 
-Read more: [SOAP vs REST differences](https://stackoverflow.com/a/19884975/1461181)
+Read more: 
 
+* [SOAP vs REST differences](https://stackoverflow.com/a/19884975/1461181)
 * OpenAPI Specification for RESTful APIs: <https://swagger.io/specification/>
 
 ## REST API Guidelines
@@ -53,7 +56,7 @@ Read more: [SOAP vs REST differences](https://stackoverflow.com/a/19884975/14611
 
 ## Books
 
-* [REST und HTTP: Entwicklung und Integration nach dem Architekturstil des Web](https://www.amazon.de/REST-HTTP-Entwicklung-Integration-Architekturstil/dp/3864901200)
+* [REST und HTTP: Entwicklung und Integration nach dem Architekturstil des Web](https://www.amazon.de/REST-HTTP-Entwicklung-Integration-Architekturstil/dp/3864901200) (german)
 * [RESTful Web APIs](https://www.amazon.de/RESTful-Web-APIs-Leonard-Richardson/dp/1449358063)
 * [RESTful Web Services](https://www.amazon.de/RESTful-Web-Services-Leonard-Richardson/dp/0596529260)
 * [REST API Design Rulebook](https://www.amazon.com/REST-Design-Rulebook-Mark-Masse/dp/1449310508)
@@ -96,7 +99,6 @@ Read more: [SOAP vs REST differences](https://stackoverflow.com/a/19884975/14611
 * [RESTful APIs, the big lie](https://mmikowski.github.io/the_lie/)
 * [When REST isn't Good Enough](https://www.braintreepayments.com/blog/when-rest-isnt-good-enough/)
 * [Why is GitHub using GraphQL and not REST?](https://developer.github.com/v4/#why-is-github-using-graphql)
-* [Notes on GraphQL](https://mwop.net/blog/2018-07-18-graphql.html)
 
 ## Discussions
 
