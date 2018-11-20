@@ -65,8 +65,8 @@ Read more:
 ## Tools
 
 * [Generate JSON schema from JSON](https://jsonschema.net/)
+* [JSON Schema](https://json-schema.org/) (Validation)
 * [XMLSpy - A Graphical JSON Schema Editor](https://www.altova.com/download-json-schema-editor.html)
-* [JSON Schema](https://json-schema.org/)
 
 ## Documentation
 
@@ -74,13 +74,14 @@ Read more:
 * <https://bocoup.com/blog/documenting-your-api>
 * [Documenting your REST API](https://gist.github.com/iros/3426278)
 
-## Building a RESTful API using PHP
+## Building a RESTful API
 
-* [Slim Framework](https://www.slimframework.com/)
+* [REST, RESTful API Quick Reference](https://odan.github.io/2017/04/17/rest-restful-api-quick-reference.html)
+* [Slim Framework](https://www.slimframework.com/) (PHP)
 
 ## Calling a RESTful API using PHP
 
-* [Guzzle](http://docs.guzzlephp.org/en/latest/)
+* [Guzzle](http://docs.guzzlephp.org/en/latest/) (recommended)
 * [Using GuzzlePHP with RESTful API's](http://josephralph.co.uk/using-guzzle-with-restful-apis-digitalocean-api/)
 * [CURL and PHP REST client](https://stackoverflow.com/a/21271348/1461181) 
 * [POSTing JSON Data With PHP cURL](https://lornajane.net/posts/2011/posting-json-data-with-php-curl)
@@ -88,10 +89,10 @@ Read more:
 ## REST alternatives
 
 * [JSON-RPC 2.0](https://www.jsonrpc.org/specification) (A mix of GraphQL and RESTful)
+* [GraphQL](https://graphql.org/) (Facebook)
 * [SOAP Webservice](https://en.wikipedia.org/wiki/SOAP) (XML)
 * [gRPC](https://grpc.io/) (Google)
 * [JSON API](https://jsonapi.org/)
-* [GraphQL](https://graphql.org/) (Facebook)
 
 ## Drawbacks
 
