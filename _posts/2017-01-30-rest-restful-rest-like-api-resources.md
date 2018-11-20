@@ -26,6 +26,7 @@ keywords:
 * [There’s a model hiding in your REST API](http://transmission.vehikl.com/theres-a-model-hiding-in-your-rest-api/)
 * [The Ultimate Guide to API Design](https://blog.qmo.io/ultimate-guide-to-api-design/#documentation)
 * [RESTful Webservices](https://www.mittwald.de/blog/webentwicklung-webdesign/webentwicklung/restful-webservices-1-was-ist-das-uberhaupt) (german)
+* [SOAP vs REST differences](https://stackoverflow.com/a/19884975/1461181)
 
 ## What is HATEOAS?
 
@@ -42,7 +43,6 @@ Code can follow links, but can't make clear independent decisions when significa
 
 Read more: 
 
-* [SOAP vs REST differences](https://stackoverflow.com/a/19884975/1461181)
 * OpenAPI Specification for RESTful APIs: <https://swagger.io/specification/>
 
 ## REST API Guidelines
