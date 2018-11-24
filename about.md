@@ -40,9 +40,9 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 
 ## Tools
 
-* [IT News Feed](http://www.opitz-online.com/feeds/) 
-* [Media Downloader](http://www.opitz-online.com/media-download.php) - Download images from Twitter, Facebook and Instagram
-* [Random Domain Generator](http://www.opitz-online.com/domain-generator.php)
+* [IT News Feed](https://odan-online.com/tools/feeds/) 
+* [Media Downloader](https://odan-online.com/tools/media-download.php) - Download images from Twitter, Facebook and Instagram
+* [Random Domain Generator](https://odan-online.com/tools/domain-generator.php)
 
 ## Links
 

@@ -109,5 +109,9 @@ Bei Fragen und Anregungen bitte ein Kommentar hinterlassen.
 ## Links
 
 * [https://inviqa.com/blog/introduction-psr-7-symfony](https://inviqa.com/blog/introduction-psr-7-symfony)
+* [Using PSR-7 in Symfony](https://dunglas.fr/2015/06/using-psr-7-in-symfony/)
 * <https://twitter.com/beberlei/status/1063873880677326853>
 * <https://github.com/QafooLabs/QafooLabsNoFrameworkBundle/pull/28>
+* <https://github.com/php-fig/fig-standards/pull/1120>
+* <https://twitter.com/fabpot/status/1064946908605685760>
+* <https://twitter.com/taylorotwell/status/1064958919842381827>

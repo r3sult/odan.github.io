@@ -11,9 +11,9 @@ keywords:
 
 All code must follow:
 
-* Clean Code by Uncle Bob.
-* DRY, KISS and SOLID.
-* Continuous Refactoring. If you edit a method clean it: Boy scout rule.
+* Clean Code by Uncle Bob
+* DRY, KISS and SOLID
+* Continuous Refactoring (If you edit a method clean it. Boy scout rule)
 * Drink water
 
 ## Coding styles
@@ -44,13 +44,13 @@ if ($objecctVar)
 * Always add full DocBlock for all classes and all methods. (PSR-5) 
 * Add an empty line before return statements to increase code clarity, except when the return is alone inside a statement group (such as an if statement).
 
-* Follow this [PHP, JS, CSS Coding Standard](https://gist.github.com/odan/0803ef7249b103167a03d8f978b8d4b4)
+* Follow this [PHP, JS, CSS Coding Standard](https://odan.github.io/2017/01/17/coding-standard.html)
 
 ## Naming things
 
 * Use english names only (variable, class, file, etc…)
 * All variable must be `$lowerCamelCase`. Underscore is not allowed.
-* All method names must be a verb
+* All method names should be a verb
 
 ```php
 doSomething()
@@ -59,17 +59,15 @@ deleteSomething()
 clearSometing()
 ```
 
-* If the return type is a boolean the name must be start with "is" or "has"
-
 ## Common rules
 
 * Don't use `static::` if you don’t want to use late static binding (use `self::`).
-* Don't use `DateTime` (not immutable), use only the `DateTimeImmutable` class.
+* Don't use `DateTime` (not immutable), better use the `DateTimeImmutable` class instead.
 * Don't use any `new` keyword in Services / Repos or a factory method.
-  * All of them must be in the action and inject the through constructor with `PHP-DI`.
-  * Except for: value objects, entities and parameter objects.
+  * All of them must be inject through the constructor.
+  * Except for: Value Objects, DTO's, Entities and Parameter objects.
 * Built in functions are allowed to use in any class level, they are mockable with PHPUnit function mocker.
-* Don't use any kind of reflection.
+* You should not use reflections.
 * Don't use traits.  [Composition or inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) is a way better solution.
 * Don't use " (double quote) for strings (use sprintf for insert variable to a string).
 * Don't use superglobals in any low level class (if it's possible don't use it anywhere).
@@ -83,15 +81,14 @@ clearSometing()
 
 ## Dependency injection
 
-* Direction: Controller / Action > Service > Repository.
-* A Constructor can accept only dependencies as object.
+* Direction: Controller Action > Domain Service > Repository.
+* A constructor can accept only dependencies as object.
 * Scalar data types (string, int, float, array) are not allowed. Pass them as parameter object.
 
 ## Controller/Action
 
-* No (business) logic allowed, expect for request data validation.
+* No business logic (behavior) allowed, expect for request data validation.
 * This method can have only one service call after the validation. If you have to handle multiple service calls, you can require other services in the called service.
-* Always use plural names for your controllers - for examples CarsController.
 * If you want to use versions for your API, just create a subdirectory inside the Controllers folder.
 
 ## Service
@@ -115,14 +112,22 @@ clearSometing()
 ### Method naming rules
 
 * getById(id) 
-  * Must return an object <Entity>
+  * Must return an object
   * No match throws a `DomainException` (Domain means data domain here. [Read more](https://stackoverflow.com/a/1103021/1461181))
   
 * findByEmail(email):
-  * Will return <Entity>[] (can be empty array)
+  * Will return <DataTransferObject>[] (can be empty array)
   
-* create(UserEntity $userEntity):
-  * Parameter must be the <Entity> object, filled up and id=null
+* create(UserData $userData):
+  * Parameter must be the <DataTransferObject> object, filled up and id=null
+
+## Data Transfer Object (DTO) 
+
+* **Only for data**
+* Maximum simple validation
+* Can be used to transfer data within or outside the domain
+* No business logic or complex behavior
+* No database access
 
 ## Entity
 
@@ -132,6 +137,7 @@ clearSometing()
 
 ## Value Object
 
+* Use it only for "small things" and as replacement for primitive data type like string, int, float, bool, array. 
 * Must be immutable
 * Can only be filled using the constructor.
 * setter methods are not allowed. 
@@ -176,10 +182,11 @@ clearSometing()
 * Add `@coversDefaultClass` to the test class. Test only ene class per test class.
 * Don’t add `@covers` to a test method DocBlock. Xdebug will detect it correctly for you.
 
-## Versioning
+## Version Control
 
 * Changes that belong together should also be committed together. Don't create micro commits.
 * Create a `feature branch` for each new feature / bugix / pull request.
+* Merge from a branch into the master (trunk)
 
 ## Security
 
