@@ -11,7 +11,7 @@ In Slim 3 all PHP exceptions and Slim Framework specific application errors can 
 
 ### Setup monolog
 
-```
+```php
 // container.php
 
 use Monolog\Logger;
