@@ -33,9 +33,9 @@ $pdo = new PDO($dsn, $username, $password, $options);
 ## Select a single row
 
 ```php
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email AND status=:status LIMIT 1");
-$stmt->execute(['email' => $email, 'status' => $status]);
-$user = $stmt->fetch();
+$statement = $pdo->prepare("SELECT * FROM users WHERE email = :email AND status=:status LIMIT 1");
+$statement->execute(['email' => $email, 'status' => $status]);
+$user = $statement->fetch();
 ```
 
 ## Select multiple rows
@@ -43,15 +43,15 @@ $user = $stmt->fetch();
 With fetch for large results.
 
 ```php
-$stmt = $pdo->prepare("SELECT * FROM employees WHERE name = :name");
-$stmt->execute(['name' => $name]);
+$statement = $pdo->prepare("SELECT * FROM employees WHERE name = :name");
+$statement->execute(['name' => $name]);
 
-foreach ($stmt as $row) {
+foreach ($statement as $row) {
     // do something with $row
 }
 
 // or with the fech method:
-while ($row = $stmt->fetch()) {
+while ($row = $statement->fetch()) {
    // do something with $row
 }
 ```
@@ -92,9 +92,10 @@ $rows[] = [
 ];
 
 $sql = "INSERT INTO users SET username=:username, email=:email;";
-$stmt = $pdo->prepare($sql);
+$statement = $pdo->prepare($sql);
+
 foreach ($rows as $row) {
-    $stmt->execute($row);
+    $statement->execute($row);
 }
 ```
 
@@ -164,9 +165,9 @@ $email = $_POST['email'];
 
 $pdo = new PDO('dsn', 'username', 'password');
 $sql = 'INSERT INTO users SET email=:email;';
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':email', $email, get_pdo_type($email));
-$stmt->execute();
+$statement = $pdo->prepare($sql);
+$statement->bindValue(':email', $email, get_pdo_type($email));
+$statement->execute();
 ```
 
 ## Prepared statements using the IN clause
@@ -205,8 +206,8 @@ $ids = [
 $sql = sprintf("SELECT id FROM users WHERE id IN(%s)", quote_values($pdo, $ids));
 echo $sql . "\n";
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
+$statement = $pdo->prepare($sql);
+$statement->execute();
 ```
 
 Generated SQL:
