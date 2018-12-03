@@ -7,6 +7,10 @@ description:
 keywords: php
 ---
 
+In this example I use the Google Geolocation API to fetch the latitude and longitude coordinates.
+
+You need a [Google API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) to run this examples.
+
 ```php
 <?php
 
@@ -55,8 +59,8 @@ function map_google_search_result($geo)
 ### Usage
 
 ```php
-// Your google API key
-// https://developers.google.com/maps/documentation/geocoding/usage-limits?hl=de
+// Your Google API key
+// https://developers.google.com/maps/documentation/javascript/get-api-key
 // 2,500 free requests per day, calculated as the sum of client-side and server-side queries.
 // 50 requests per second, calculated as the sum of client-side and server-side queries.
 $googleKey = '';
@@ -87,23 +91,22 @@ Example:
 
 ```php
 // Latitude
-$lat = 30.0478468;
+$lat = 52.5227797;
 
 // Longitude
-$lng = 31.2314606;
+$lng = 13.3880986;
 
 // The language code (en = english)
 $language = 'en';
 
 // The google API key
-// https://developers.google.com/maps/documentation/geocoding/usage-limits
 $key = '';
 
 $url = sprintf('https://maps.googleapis.com/maps/api/geocode/json?latlng=%s,%s&language=%s&key=%s', urlencode($lat),
     urlencode($lng), urldecode($language), urlencode($key));
     
 $response = file_get_contents($url);
-$data = json_decode($response, 'true');
+$data = json_decode($response, true);
 
 var_export($data);
 ```
