@@ -85,9 +85,7 @@ echo $mapData['lng']; // 13.3880986
 
 Example:
 
-``php
-<?php
-
+```php
 // Latitude
 $lat = 30.0478468;
 
@@ -108,4 +106,4 @@ $response = file_get_contents($url);
 $data = json_decode($response, 'true');
 
 var_export($data);
-``
+```
