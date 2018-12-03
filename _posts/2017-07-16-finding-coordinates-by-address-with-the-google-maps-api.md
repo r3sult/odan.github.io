@@ -80,3 +80,32 @@ echo $mapData['lat']; // 52.5227797
 echo "\n";
 echo $mapData['lng']; // 13.3880986
 ```
+
+## Finding the city name by latitude and longitude coordinates
+
+Example:
+
+``php
+<?php
+
+// Latitude
+$lat = 30.0478468;
+
+// Longitude
+$lng = 31.2314606;
+
+// The language code (en = english)
+$language = 'en';
+
+// The google API key
+// https://developers.google.com/maps/documentation/geocoding/usage-limits
+$key = '';
+
+$url = sprintf('https://maps.googleapis.com/maps/api/geocode/json?latlng=%s,%s&language=%s&key=%s', urlencode($lat),
+    urlencode($lng), urldecode($language), urlencode($key));
+    
+$response = file_get_contents($url);
+$data = json_decode($response, 'true');
+
+var_export($data);
+``
