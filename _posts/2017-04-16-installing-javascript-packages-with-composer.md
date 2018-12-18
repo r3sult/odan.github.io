@@ -2,7 +2,7 @@
 title: Installing JavaScript packages with Composer
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
