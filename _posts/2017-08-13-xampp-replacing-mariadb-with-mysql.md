@@ -91,4 +91,4 @@ Finished
 
 * Make sure you have installed the 32-bit version of MySQL. The MySQL 64-bit version is not compatible with the XAMPP Control Panel.
 * This setup is not testet with MySQL 8.x
-* Try to fix the directory permissions with this [batch script](https://gist.github.com/odan/eb6dd532a59956f4ae9b1216fa842271)
+* Try to fix the directory permissions with this [batch script](https://odan.github.io/2017/01/13/reset-windows-folder-permissions.html)
