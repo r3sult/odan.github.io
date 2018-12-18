@@ -1,5 +1,5 @@
 ---
-title: Admin Templates
+title: HTML Templates 2017
 layout: post
 comments: true
 published: true
@@ -7,23 +7,25 @@ description:
 keywords: 
 ---
 
-* Admin LTE - https://adminlte.io/
-* http://eliteadmin.themedesigner.in/
-* Horizon-Admin - http://preview.themeforest.net/item/horizon-responsive-rtl-php-angularjs-web-app-kit/full_screen_preview/16498054?_ga=2.89281372.697179420.1497468169-1609161783.1497468169
-* https://getbootstrap.com/docs/4.0/examples/dashboard/
-* https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/
+* [Admin LTE](https://adminlte.io/)
+* <http://eliteadmin.themedesigner.in/>
+* [Horizon-Admin](http://preview.themeforest.net/item/horizon-responsive-rtl-php-angularjs-web-app-kit/full_screen_preview/16498054?_ga=2.89281372.697179420.1497468169-1609161783.1497468169)
+* <https://getbootstrap.com/docs/4.0/examples/dashboard/>
+* <https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/>
 
 # Documentation templates
-* Jekyll Bootstrap Doc - http://mistic100.github.io/jekyll-bootstrap-doc/
-* Open Source Project documentation - https://github.com/bixuehujin/blink/blob/master/docs/en/README.md
-* devAid - http://themes.3rdwavemedia.com/demo/devaid/
-* Documentation page (USA) - https://standards.usa.gov/page-templates/docs/
+
+* [Jekyll Bootstrap Doc](http://mistic100.github.io/jekyll-bootstrap-doc/)
+* [devAid](https://themes.3rdwavemedia.com/demo/devaid/) A free Bootstrap 4 theme designed to help developers promote their personal projects
+* [Documentation page](https://designsystem.digital.gov/page-templates/docs/) (USA)
 
 # API documentation templates
+
 * Rest API - https://gist.github.com/iros/3426278
 * JSON-RPC 2.0 - https://github.com/miniflux/miniflux-legacy/blob/master/docs/json-rpc-api.markdown
 
 # Multipurpose HTML templates
+
 * Squadfree - https://bootstrapmade.com/demo/Squadfree/
 * Easy - http://bootstrapbay.com/theme/easy-one-page-template-B622C3A
 * Phlorence - Responsive Agency Template - http://bootstrapbay.com/theme/phlorence-responsive-agency-template-BB0C66F
@@ -31,6 +33,7 @@ keywords:
 * Agency - https://startbootstrap.com/template-overviews/agency/
 
 # Free website templates
+
 * Flexbox (flat) - https://webthemez.com/demo/flexbox-corporate-free-bootstrap-html5-web-template/index.html
 * Webthemes - https://webthemez.com/
 * Aries - http://wowthemes.net/preview/index.php?theme=arieshtml
