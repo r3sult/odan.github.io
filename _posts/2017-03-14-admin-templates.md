@@ -7,6 +7,8 @@ description:
 keywords: 
 ---
 
+# Admin templates
+
 * [Admin LTE](https://adminlte.io/)
 * <http://eliteadmin.themedesigner.in/>
 * [Horizon-Admin](http://preview.themeforest.net/item/horizon-responsive-rtl-php-angularjs-web-app-kit/full_screen_preview/16498054?_ga=2.89281372.697179420.1497468169-1609161783.1497468169)
@@ -21,8 +23,7 @@ keywords:
 
 # API documentation templates
 
-* Rest API - https://gist.github.com/iros/3426278
-* JSON-RPC 2.0 - https://github.com/miniflux/miniflux-legacy/blob/master/docs/json-rpc-api.markdown
+* [Rest API](https://gist.github.com/iros/3426278)
 
 # Multipurpose HTML templates
 
@@ -44,5 +45,5 @@ keywords:
 * Agency - https://startbootstrap.com/template-overviews/agency/
 
 # A collection of CSS, HTML5 & Responsive site templates
-* TEMPLATED- https://templated.co/
-*
+
+* <https://templated.co/>
