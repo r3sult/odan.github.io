@@ -78,9 +78,7 @@ with this command:
 c:\xampp\mysql>bin\mysqld.exe --initialize-insecure --basedir=c:\xampp\mysql --datadir=c:\xampp\mysql\data
 ```
 
-## Finished
-
-Click the Github &#9733; Star button :-)
+Finished
 
 ## Known issues
 
