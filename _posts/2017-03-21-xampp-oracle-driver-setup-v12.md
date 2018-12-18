@@ -24,7 +24,6 @@ Testest with PHP 5.6, 7.0, 7.1, 7.2
 * Make sure that the file `c:\xampp\php\ext\php_oci8_12c.dll` exists.
 * Enable php extension in php.ini: `extension=php_oci8_12c.dll` (For PHP 7.2+ use `extension=oci8_12c`)
 * Restart Apache
-* Click the Github &#9733; Star button :-)
 
 ## Known issues
 
