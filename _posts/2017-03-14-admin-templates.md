@@ -7,7 +7,7 @@ description:
 keywords: 
 ---
 
-# Admin templates
+## Admin templates
 
 * [Admin LTE](https://adminlte.io/)
 * <http://eliteadmin.themedesigner.in/>
@@ -15,35 +15,30 @@ keywords:
 * <https://getbootstrap.com/docs/4.0/examples/dashboard/>
 * <https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/>
 
-# Documentation templates
+## Documentation templates
 
 * [Jekyll Bootstrap Doc](http://mistic100.github.io/jekyll-bootstrap-doc/)
 * [devAid](https://themes.3rdwavemedia.com/demo/devaid/) A free Bootstrap 4 theme designed to help developers promote their personal projects
 * [Documentation page](https://designsystem.digital.gov/page-templates/docs/) (USA)
 
-# API documentation templates
+## API documentation templates
 
 * [Rest API](https://gist.github.com/iros/3426278)
 
-# Multipurpose HTML templates
+## Multipurpose HTML templates
 
-* Squadfree - https://bootstrapmade.com/demo/Squadfree/
-* Easy - http://bootstrapbay.com/theme/easy-one-page-template-B622C3A
-* Phlorence - Responsive Agency Template - http://bootstrapbay.com/theme/phlorence-responsive-agency-template-BB0C66F
-* Pivot Multipurpose HTML Template - http://pivot.mediumra.re/chooser.html
-* Agency - https://startbootstrap.com/template-overviews/agency/
+* [Squadfree](https://bootstrapmade.com/demo/Squadfree/)
+* [Agency](https://startbootstrap.com/template-overviews/agency/)
 
-# Free website templates
+## Free website templates
 
-* Flexbox (flat) - https://webthemez.com/demo/flexbox-corporate-free-bootstrap-html5-web-template/index.html
-* Webthemes - https://webthemez.com/
-* Aries - http://wowthemes.net/preview/index.php?theme=arieshtml
-* BlackTie - http://www.blacktie.co/demo/shield/?
-* maren - http://azmind.com/demo/maren/v1-0/
-* Free 2016 - https://almsaeedstudio.com/blog/10-Free-Responsive-Bootstrap-Templates-For-2016
-* Agency - https://blackrockdigital.github.io/startbootstrap-agency/
-* Agency - https://startbootstrap.com/template-overviews/agency/
+* [Flexbox](https://webthemez.com/demo/flexbox-corporate-free-bootstrap-html5-web-template/index.html) (flat)
+* [Webthemes](https://webthemez.com/)
+* [Aries](https://www.wowthemes.net/preview/index.php?theme=arieshtml)
+* [Azmind](https://azmind.com/free-bootstrap-themes-templates/)
+* [Agency]( https://blackrockdigital.github.io/startbootstrap-agency/)
+* [Agency](https://startbootstrap.com/template-overviews/agency/)
 
-# A collection of CSS, HTML5 & Responsive site templates
+## A collection of CSS, HTML5 & Responsive site templates
 
 * <https://templated.co/>
