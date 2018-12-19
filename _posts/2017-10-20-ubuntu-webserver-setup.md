@@ -17,9 +17,7 @@ This tutorial shows you how to install a LAMP stack under **Ubuntu 18.04 LTS (Bi
   * [Create a PHP info page](#create-a-php-info-page)
 * [Enable apache mod_rewrite](#enable-apache-mod_rewrite)
 * [Set permissions](#set-permissions)
-* [Setup a SFTP server](#setup-a-sftp-server)
 * [Change mysql root password](#change-mysql-root-password)
-* [Install composer](#install-composer)
 
 ## Requirements
 
@@ -145,22 +143,6 @@ Read more:
 
 * https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html
 * https://mariadb.com/kb/en/library/mysql_secure_installation/
-
-## Install composer
-
-```bash
-cd /var/www/
-sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-sudo php -r "unlink('composer-setup.php');"
-sudo composer
-```
-
-## Setup a SFTP server
-
-```bash
-sudo apt-get install openssh-server
-```
 
 ## Read more
 
