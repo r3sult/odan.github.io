@@ -29,9 +29,9 @@ After a lot of consideration I decided to switch to the following alternatives:
 
 ## Make a Backup!
 
-* Use [Google Takeout](https://takeout.google.com/settings/takeout) to backup your emails and most of the files stored in your google account.
-* **Warning**: Your [Google Slides](https://docs.google.com/presentation/
-) will **not be included in the backup**! Just export the Slides to PowerPoint.
+Use [Google Takeout](https://takeout.google.com/settings/takeout) to backup your emails and most of the files stored in your google account.
+
+**Warning**: Your [Google Slides](https://docs.google.com/presentation/) will **not be included in the backup**! Just export the Slides to PowerPoint.
 
 ## Moving Gmail to Outlook.com
 
@@ -43,18 +43,18 @@ By default IMAP is disabled in Gmail. To enable IMAP you have to [enable the IMA
 
 I just created my calendar events manually.
 
-But you could of course [export your Google calendar](https://support.google.com/calendar/answer/37111?hl=en) 
-into vCalendar (*.ics) files and [import the them into your outlook calendar](https://support.office.com/en-us/article/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c).
+But you can also [export your Google calendar](https://support.google.com/calendar/answer/37111?hl=en) to vCalendar (*.ics) files and [import it into your Outlook calendar](https://support.office.com/en-us/article/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c).
 
 ## Moving Notes to OneNote
 
-* I exported my [Google notes](https://keep.google.com/) manually into Google Docs and then copy/pasted the content from the 
+I exported my [Google notes](https://keep.google.com/) manually into Google Docs and then copy/pasted the content from the 
 Google Doc to OneNote. Don't forget to delete the generated Google Docs.
 
 ## Moving Google Drive to OneDrive
 
-* Install the [OneDrive client](https://onedrive.live.com/about/en-US/download/) on your PC and just move all the files out of the Google Drive directory.
-* [Empty your trash](https://support.google.com/drive/answer/2375102?co=GENIE.Platform%3DDesktop&hl=en).
+Install the [OneDrive client](https://onedrive.live.com/about/en-US/download/) on your PC and just move all the files out of the Google Drive directory.
+
+Don't for forget to [empty your trash](https://support.google.com/drive/answer/2375102?co=GENIE.Platform%3DDesktop&hl=en).
 
 ## More informations
 
