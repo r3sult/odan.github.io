@@ -33,8 +33,7 @@ Expert info: During the installation, a password for the database administrator 
 
 ```bash
 sudo apt-get update
-sudo apt-get install vim -y
-sudo apt-get install zip unzip -y
+sudo apt-get install vim zip unzip -y
 ```
 
 ```bash
