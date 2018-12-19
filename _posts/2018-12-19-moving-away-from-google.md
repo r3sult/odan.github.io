@@ -20,8 +20,8 @@ After a lot of consideration I decided to switch to the following alternatives:
 * Notes and Todos -> [OneNote](https://www.onenote.com/hrd) (very cool)
 * Google Drive -> [OneDrive](https://onedrive.live.com) (15 GB free)
 * Google Search -> No change, [DuckDuckGo](https://duckduckgo.com/) is a free alternative
-* Google Plus -> No change, Twitter
-* Blog -> Github pages
+* Google Plus -> [Twitter](https://twitter.com/)
+* Blogger -> [Github pages](https://pages.github.com/)
 * YouTube -> No change
 * Mobile (Android) -> No change
 * Google Maps -> No change, [Bing Maps](https://www.bing.com/maps) is a free alternative
