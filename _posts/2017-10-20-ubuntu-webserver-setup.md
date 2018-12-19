@@ -89,23 +89,13 @@ If you plan on using mod_rewrite in `.htaccess` files, you also need to enable t
 files by changing `AllowOverride None` to `AllowOverride All`.
 
 ```bash
-sed -i '170,174 s/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+sudo sed -i '170,174 s/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 ```
 
 Finally, the configuration of Apache has to be reloaded.
 
 ```bash
 sudo service apache2 restart
-```
-
-*Optional:* To check if mod_rewrite is installed correctly, download an run this script:
-
-[Webserver and PHP configuration tester](https://gist.github.com/odan/64606e3668eac0e13afc)
-
-```bash
-cd /var/www/html/
-sudo php -r "copy('https://gist.githubusercontent.com/odan/64606e3668eac0e13afc/raw/d0fcc8efadaab6c197f3c63f09e4232cb599c2b2/webserver-test.php', 'webserver-test.php');"
-sudo php webserver-test.php
 ```
 
 ## Set permissions
@@ -165,15 +155,6 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 sudo php -r "unlink('composer-setup.php');"
 sudo composer
 ```
-
-## Install adminer
-
-```bash
-cd /var/www/html/
-sudo php -r "copy('https://github.com/vrana/adminer/releases/download/v4.6.2/adminer-4.6.2.php', 'adminer.php');"
-```
-
-Open: http://localhost/adminer.php
 
 ## Setup a SFTP server
 
