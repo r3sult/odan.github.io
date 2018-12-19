@@ -18,7 +18,7 @@ Why should we build a API with Vanilla PHP? Because you can, and it makes fun.
 * Create a file: src/functions.php
 
 ```php
-function router($httpMethods, $route, $callback, $exit = true)
+function route($httpMethods, $route, $callback, $exit = true)
 {
     static $path = null;
     if ($path === null) {
@@ -73,7 +73,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
 ```
 
-* Create a file: public/index.php
+* Create a file: `public/index.php`
 
 ```php
 <?php
@@ -81,23 +81,23 @@ RewriteRule ^ index.php [QSA,L]
 require_once __DIR__ . '/../src/functions.php';
 
 // Default index page
-router('GET', '^/$', function() {
+route('GET', '^/$', function() {
     echo '<a href="users">List users</a><br>';
 });
 
 // GET request to /users
-router('GET', '^/users$', function() {
+route('GET', '^/users$', function() {
     echo '<a href="users/1000">Show user: 1000</a>';
 });
 
 // With named parameters
-router('GET', '^/users/(?<id>\d+)$', function($params) {
+route('GET', '^/users/(?<id>\d+)$', function($params) {
     echo "You selected User-ID: ";
     var_dump($params);
 });
 
 // POST request to /users
-router('POST', '^/users$', function() {
+route('POST', '^/users$', function() {
     header('Content-Type: application/json');
     $json = json_decode(file_get_contents('php://input'), true);
     echo json_encode(['result' => 1]);
