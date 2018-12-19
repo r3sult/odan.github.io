@@ -31,8 +31,6 @@ keywords:
 ## Default Engine/Encoding
 
 * Engine: InnoDB
-* CHARACTER SET utf8 COLLATE utf8_unicode_ci
-* OR
 * CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 
 To make sure your strings go from PHP to MySQL as UTF-8, make sure your database and tables are all set to the utf8 character set and collation, and that you use the utf8 character set in the PDO connection string.
@@ -42,7 +40,7 @@ $pdo = new PDO('mysql:host=127.0.0.1;dbname=test;charset=utf8', 'root', '',
     array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_PERSISTENT => false,
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8 COLLATE utf8_unicode_ci"
+        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
     )
 );
 ```
