@@ -48,7 +48,7 @@ But you can also [export your Google calendar](https://support.google.com/calend
 ## Moving Notes to OneNote
 
 I exported my [Google notes](https://keep.google.com/) manually into Google Docs and then copy/pasted the content from the 
-Google Doc to OneNote. Don't forget to delete the generated Google Docs.
+Google Doc to OneNote. Delete the generated Google Docs and empty the Google Keep Recycle Bin.
 
 ## Moving Google Drive to OneDrive
 
