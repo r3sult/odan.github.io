@@ -184,13 +184,14 @@ function quote_values(PDO $pdo, array $values) {
             $value = 'NULL';
             return;
         }
-        $value = $pdo->quote($value);
+        $value = $pdo->quote((string)$value);
     });
+    
     return implode(',', $values);
 }
 ```
 
-Example usage:
+### Usage
 
 ```php
 $ids = [
@@ -203,6 +204,7 @@ $ids = [
     123.456
 ];
 
+$pdo = new PDO('sqlite::memory:');
 $sql = sprintf("SELECT id FROM users WHERE id IN(%s)", quote_values($pdo, $ids));
 echo $sql . "\n";
 
