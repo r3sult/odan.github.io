@@ -41,18 +41,20 @@ By default IMAP is disabled in Gmail. To enable IMAP you have to [enable the IMA
 
 [Empty your Gmail Trash](https://support.google.com/mail/answer/7401?co=GENIE.Platform%3DDesktop&hl=en)
 
-## Moving the Google to the Outlook.com Calendar
+## Moving the Google Calendar to the Outlook.com Calendar
 
 I just created my calendar events manually.
 
 But you can also [export your Google calendar](https://support.google.com/calendar/answer/37111?hl=en) to vCalendar (*.ics) files and [import it into your Outlook calendar](https://support.office.com/en-us/article/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c).
 
-Clear all of the events on your calendar and the Google Calendar Recycle Bin.
+Clear all of the events on your calendar and empty the Google Calendar Recycle Bin.
 
 ## Moving Notes to OneNote
 
 I exported my [Google notes](https://keep.google.com/) manually into Google Docs and then copy/pasted the content from the 
-Google Doc to OneNote. Delete the generated Google Docs and empty the Google Keep Recycle Bin.
+Google Doc to OneNote. 
+
+Delete the generated Google Docs and empty the Google Keep Recycle Bin.
 
 ## Moving Google Drive to OneDrive
 
