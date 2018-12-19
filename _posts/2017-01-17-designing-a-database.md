@@ -78,11 +78,7 @@ CREATE TABLE `tablename` (
 ```sql
 CREATE TABLE `tablename_types` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `title_de` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `title_fr` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `title_it` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `title_en` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `position` INT(11) DEFAULT NULL,
+    `title` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `created_at` DATETIME DEFAULT NULL,
     `created_user_id` INT(11) DEFAULT NULL,
     `updated_at` DATETIME DEFAULT NULL,
