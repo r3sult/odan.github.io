@@ -11,8 +11,7 @@ keywords:
 
 ## Install extensions
 
-<https://code.visualstudio.com/docs/languages/php>
-
+* [PHP in Visual Studio Code](https://code.visualstudio.com/docs/languages/php)
 * [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug) 
 * [PHP Code Format](https://marketplace.visualstudio.com/items?itemName=Kasik96.format-indent)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
