@@ -17,7 +17,7 @@ After a lot of consideration I decided to switch to the following alternatives:
 
 * Gmail -> [Outlook.com](https://outlook.com)
 * Calendar -> [Calendar Outlook.com](https://office.live.com/start/Calendar.aspx)
-* Notes and Todos -> Outlook.com [OneNote](https://www.onenote.com/hrd) (very cool)
+* Notes and Todos -> [OneNote](https://www.onenote.com/hrd) (very cool)
 * Google Drive -> [OneDrive](https://onedrive.live.com) (15 GB free)
 * Google Search -> No change, [DuckDuckGo](https://duckduckgo.com/) is a free alternative
 * Google Plus -> No change, Twitter
@@ -39,11 +39,15 @@ I moved all my Gmail emails with Outlook for Windows by moving all directories v
 
 By default IMAP is disabled in Gmail. To enable IMAP you have to [enable the IMAP access for external applications](https://support.google.com/mail/answer/7126229?hl=en).
 
+[Empty your Gmail Trash](https://support.google.com/mail/answer/7401?co=GENIE.Platform%3DDesktop&hl=en)
+
 ## Moving the Google to the Outlook.com Calendar
 
 I just created my calendar events manually.
 
 But you can also [export your Google calendar](https://support.google.com/calendar/answer/37111?hl=en) to vCalendar (*.ics) files and [import it into your Outlook calendar](https://support.office.com/en-us/article/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c).
+
+Clear all of the events on your calendar and the Google Calendar Recycle Bin.
 
 ## Moving Notes to OneNote
 
