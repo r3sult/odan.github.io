@@ -31,8 +31,9 @@ keywords:
 ## Default Engine/Encoding
 
 * Engine: InnoDB
-* CHARSET: utf8
-* COLLATE: utf8_unicode_ci
+* CHARACTER SET utf8 COLLATE utf8_unicode_ci
+* OR
+* CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 
 To make sure your strings go from PHP to MySQL as UTF-8, make sure your database and tables are all set to the utf8 character set and collation, and that you use the utf8 character set in the PDO connection string.
 
@@ -46,18 +47,18 @@ $pdo = new PDO('mysql:host=127.0.0.1;dbname=test;charset=utf8', 'root', '',
 );
 ```
 
-Read more: <http://stackoverflow.com/a/766996/1461181>
+Read more: <https://stackoverflow.com/a/766996/1461181>
 
 ## Data types
 
-* Primary and foreign keys: INT(11) signed (4 bytes)
+* Primary and foreign keys: INT(11) signed (4 bytes, max id: 2'147'483'647)
 * Strings: VARCHAR(255)
 * Medium Text: TEXT (max. 64 KB)
 * Text/Blob: LONGTEXT (max. 4 GB)
 * Date-Time: DATETIME (Format: YYYY-MM-DD HH:II:SS)
 * Boolean: TINYINT(1) NOT NULL DEFAULT '0' (0 = false, 1 = true)
 * Float: DOUBLE
-* Exact monetary data/Currency: DECIMAL(19, 4)
+* Exact monetary data: DECIMAL(15, 2)
 
 ## Basic table
 
@@ -65,13 +66,13 @@ Read more: <http://stackoverflow.com/a/766996/1461181>
 CREATE TABLE `tablename` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `created_at` DATETIME DEFAULT NULL,
-    `created_by` INT(11) DEFAULT NULL,
+    `created_user_id` INT(11) DEFAULT NULL,
     `updated_at` DATETIME DEFAULT NULL,
-    `updated_by` INT(11) DEFAULT NULL,
+    `updated_user_id` INT(11) DEFAULT NULL,
     PRIMARY KEY (`id`),
-    KEY `created_by` (`created_by`),
-    KEY `updated_by` (`updated_by`)
-) ENGINE = INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+    KEY `created_user_id` (`created_user_id`),
+    KEY `updated_user_id` (`updated_user_id`)
+) ENGINE = INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ;
 ```
 
 ## Basic codelist table (type)
@@ -79,18 +80,18 @@ CREATE TABLE `tablename` (
 ```sql
 CREATE TABLE `tablename_types` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `title_de` VARCHAR (255) COLLATE utf8_unicode_ci DEFAULT NULL,
-    `title_fr` VARCHAR (255) COLLATE utf8_unicode_ci DEFAULT NULL,
-    `title_it` VARCHAR (255) COLLATE utf8_unicode_ci DEFAULT NULL,
-    `title_en` VARCHAR (255) COLLATE utf8_unicode_ci DEFAULT NULL,
+    `title_de` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `title_fr` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `title_it` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `title_en` VARCHAR (255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `position` INT(11) DEFAULT NULL,
     `created_at` DATETIME DEFAULT NULL,
-    `created_by` INT(11) DEFAULT NULL,
+    `created_user_id` INT(11) DEFAULT NULL,
     `updated_at` DATETIME DEFAULT NULL,
-    `updated_by` INT(11) DEFAULT NULL,
+    `updated_user_id` INT(11) DEFAULT NULL,
     PRIMARY KEY (`id`),
     KEY `position` (`position`),
-    KEY `created_by` (`created_by`),
-    KEY `updated_by` (`updated_by`)
-) ENGINE = INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+    KEY `created_user_id` (`created_user_id`),
+    KEY `updated_user_id` (`updated_user_id`)
+) ENGINE = INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ;
 ```
