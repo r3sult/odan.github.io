@@ -17,10 +17,10 @@ This driver requires the Microsoft Visual C++ Redistributable. The redistributab
 
 Testest with PHP 5.6, 7.0, 7.1, 7.2
 
-* [Open the download page: Instant Client Downloads 
+* Open the Oracle page: [Instant Client Downloads 
 for Microsoft Windows 32-bit](https://www.oracle.com/technetwork/topics/winsoft-085727.html)
 * Click: "Accept License Agreement"
-* Download and unzip the ZIP file: [instantclient-basiclite-nt-12.2.0.1.0.zip](http://download.oracle.com/otn/nt/instantclient/122010/instantclient-basiclite-nt-12.2.0.1.0.zip)
+* Download and unzip the ZIP file `instantclient-basiclite-nt-12.2.0.1.0.zip`
 * Copy all *.dll files: to `c:\xampp\php`
 * Copy all *.dll files to `c:\xampp\apache\bin` (Yes, a second copy!)
 * Make sure that the file `c:\xampp\php\ext\php_oci8_12c.dll` exists.
