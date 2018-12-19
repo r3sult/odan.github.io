@@ -16,20 +16,20 @@ Find all duplicate foreign keys:
 
 ```sql
 SELECT 
-    constraint_name AS 'constraint_name',
-    CONCAT(table_name, '.', column_name) AS 'foreign_key',
+    ANY_VALUE(constraint_name) AS 'constraint_name',
+    CONCAT(ANY_VALUE(table_name), '.', ANY_VALUE(column_name)) AS 'foreign_key',
     CONCAT(
-        referenced_table_name,
+        ANY_VALUE(referenced_table_name),
         '.',
-        referenced_column_name
+        ANY_VALUE(referenced_column_name)
     ) AS 'reference'
     #, COUNT(*) AS c
 FROM
     information_schema.key_column_usage 
 WHERE 
     referenced_table_name IS NOT NULL 
-    AND table_schema = database()
-GROUP BY 'column_name' 
+    AND table_schema = DATABASE()
+GROUP BY ANY_VALUE(column_name)
 # HAVING c > 1 ;
 HAVING COUNT(*) > 1;
 ```
@@ -55,6 +55,6 @@ ORDER BY NAME;
 
 ### Source
 
-* http://stackoverflow.com/questions/688549/finding-duplicate-values-in-mysql
-* http://lists.mysql.com/mysql/204859
-* http://stackoverflow.com/questions/854128/find-duplicate-records-in-mysql
+* <https://stackoverflow.com/questions/688549/finding-duplicate-values-in-mysql>
+* <https://lists.mysql.com/mysql/204859>
+* <https://stackoverflow.com/questions/854128/find-duplicate-records-in-mysql>
