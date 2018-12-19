@@ -89,15 +89,7 @@ If you plan on using mod_rewrite in `.htaccess` files, you also need to enable t
 files by changing `AllowOverride None` to `AllowOverride All`.
 
 ```bash
-sudo vim /etc/apache2/apache2.conf 
-```
-
-```xml
-<Directory /var/www/>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-</Directory>
+sed -i '170,174 s/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 ```
 
 Finally, the configuration of Apache has to be reloaded.
