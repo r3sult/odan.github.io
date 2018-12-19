@@ -2,7 +2,7 @@
 title: Password hash with fallback for PHP <= 5.4
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
