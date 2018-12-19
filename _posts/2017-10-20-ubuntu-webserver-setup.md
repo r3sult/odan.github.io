@@ -21,8 +21,8 @@ This tutorial shows you how to install a LAMP stack under **Ubuntu 18.04 LTS (Bi
 
 ## Requirements
 
-* Ubuntu 18.04 LTS (Bionic Beaver) [ISO](http://cdimage.ubuntu.com/daily-live/current/bionic-desktop-amd64.iso) 
-from the [download page](http://cdimage.ubuntu.com/daily-live/current/)
+* Ubuntu 18.04 LTS (Bionic Beaver) [ISO](http://releases.ubuntu.com/18.04/ubuntu-18.04.1.0-live-server-amd64.iso) 
+from the [Ubuntu  download page](http://releases.ubuntu.com/18.04//)
 
 ## Install Apache, PHP, MySQL
 
