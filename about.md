@@ -13,7 +13,7 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 ## Skills
 
 * PHP, C#, ASP.NET Core, JavaScript, Node.js
-* MySQL, MS SQL, SQLite, InterSystems Caché
+* MySQL, MS SQL, Oracle, SQLite, InterSystems Caché
 * HTML, CSS, jQuery, Bootstrap, Vue.js
 * Slim, Symfony, CakePHP
 * REST, SOAP, XML, JSON
