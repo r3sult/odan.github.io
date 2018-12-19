@@ -140,8 +140,8 @@ improve the security of your MySQL installation.
 
 Read more:
 
-* https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html
-* https://mariadb.com/kb/en/library/mysql_secure_installation/
+* <https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html>
+* <https://mariadb.com/kb/en/library/mysql_secure_installation/>
 
 ## Read more
 
