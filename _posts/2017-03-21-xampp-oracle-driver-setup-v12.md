@@ -33,7 +33,8 @@ Especially the `WAMP` users reported that they still get the following error mes
 
 In this case try to download the correct dll files from this link:
 
-* <http://windows.php.net/downloads/pecl/releases/oci8/2.1.8> => php_oci8-2.1.8-7.2-ts-vc15-x86.zip
+* PHP 7.2: <http://windows.php.net/downloads/pecl/releases/oci8/2.2.0/php_oci8-2.2.0-7.2-ts-vc15-x86.zip>
+* PHP 7.3: <https://windows.php.net/downloads/pecl/releases/oci8/2.2.0/php_oci8-2.2.0-7.3-ts-vc15-x86.zip>
 
 ## Connection test
 ```php
