@@ -1,5 +1,5 @@
 ---
-title: Moving away from google
+title: Moving away from Google
 layout: post
 comments: true
 published: true
@@ -17,27 +17,27 @@ After a lot of consideration I decided to switch to the following alternatives:
 
 * Gmail -> [Outlook.com](https://outlook.com)
 * Calendar -> [Calendar Outlook.com](https://office.live.com/start/Calendar.aspx)
-* Notes and Todos -> Outlook.com OneNote (very cool)
-* Google Drive -> OneDrive (15 GB free)
-* Search -> Google, but DuckDuckGo is a free alternative
-* Google Plus -> Twitter
+* Notes and Todos -> Outlook.com [OneNote](https://www.onenote.com/hrd) (very cool)
+* Google Drive -> [OneDrive](https://onedrive.live.com) (15 GB free)
+* Google Search -> No change, [DuckDuckGo](https://duckduckgo.com/) is a free alternative
+* Google Plus -> No change, Twitter
 * Blog -> Github pages
 * YouTube -> No change
 * Mobile (Android) -> No change
-* Google Maps -> No change, alternatives: [Bing Maps](https://www.bing.com/maps)
-* Chrome browser -> No change, alternative: [Chromium](https://www.chromium.org/Home)
+* Google Maps -> No change, [Bing Maps](https://www.bing.com/maps) is a free alternative
+* Chrome browser -> No change, [Chromium](https://www.chromium.org/Home) is a free alternative
 
 ## Make a Backup!
 
 * Use [Google Takeout](https://takeout.google.com/settings/takeout) to backup your emails and most of the files stored in your google account.
-* **Warning*: Your [Google Slides](https://docs.google.com/presentation/
+* **Warning**: Your [Google Slides](https://docs.google.com/presentation/
 ) will **not be included in the backup**! Just export the Slides to PowerPoint.
 
 ## Moving Gmail to Outlook.com
 
 I moved all my Gmail emails with Outlook for Windows by moving all directories via IMAP to the new Outlook mailbox. 
 
-By defalt IMAP is diabled in Gmail. To enable IMAP you have to [enable the IMAP access for external applications](https://support.google.com/mail/answer/7126229?hl=en).
+By default IMAP is disabled in Gmail. To enable IMAP you have to [enable the IMAP access for external applications](https://support.google.com/mail/answer/7126229?hl=en).
 
 ## Moving the Google to the Outlook.com Calendar
 
@@ -46,15 +46,15 @@ I just created my calendar events manually.
 But you could of course [export your Google calendar](https://support.google.com/calendar/answer/37111?hl=en) 
 into vCalendar (*.ics) files and [import the them into your outlook calendar](https://support.office.com/en-us/article/import-or-subscribe-to-a-calendar-in-outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c).
 
-## Moving Google Drive to OneDrive
-
-* Install the OneDrive client and just move all the files out of the Google Drive directory.
-* Don't forget to clean the recycle bin. You can permanently [delete all Google Drive files](https://support.google.com/drive/answer/2375102?co=GENIE.Platform%3DDesktop&hl=en) or empty your entire trash.
-
 ## Moving Notes to OneNote
 
-* I exported my [Google notes](https://keep.google.com/) manually into Google Docs and copy/pasted the content from the 
-Google Doc to OneNote.
+* I exported my [Google notes](https://keep.google.com/) manually into Google Docs and then copy/pasted the content from the 
+Google Doc to OneNote. Don't forget to delete the generated Google Docs.
+
+## Moving Google Drive to OneDrive
+
+* Install the [OneDrive client](https://onedrive.live.com/about/en-US/download/) on your PC and just move all the files out of the Google Drive directory.
+* [Empty your trash](https://support.google.com/drive/answer/2375102?co=GENIE.Platform%3DDesktop&hl=en).
 
 ## More informations
 
