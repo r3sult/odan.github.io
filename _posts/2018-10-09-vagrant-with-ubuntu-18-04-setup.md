@@ -49,7 +49,7 @@ Destination /vagrant
 
 ```
 sudo rm -rf /var/www
-sduo mkdir /var/www
+sudo mkdir /var/www
 sudo ln -s /vagrant/ /var/www/html
 ```
 
