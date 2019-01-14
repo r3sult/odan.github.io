@@ -49,7 +49,8 @@ Destination /vagrant
 
 ```
 sudo rm -rf /var/www
-sudo ln -s /vagrant/ /var/www/
+sduo mkdir /var/www
+sudo ln -s /vagrant/ /var/www/html
 ```
 
 Open: <http://localhost:8080>
