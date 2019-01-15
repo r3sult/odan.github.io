@@ -11,7 +11,7 @@ You can stop notification overload by blocking all websites:
 
 ![image](https://user-images.githubusercontent.com/781074/51209993-e514e100-1911-11e9-97ec-c9101a93e5bf.png)
 
-* Open the settings in Google Chrome: [chrome://settings/content/notifications](chrome://settings/content/notifications)
+* Open the settings in Google Chrome: `chrome://settings/content/notifications`
 * Open `Settings`, then click `Advanced settings`.
 * Click `Privacy`, you’ll see `Content settings`.
 * In the pop-up window that appears, scroll down to `Notifications`.
