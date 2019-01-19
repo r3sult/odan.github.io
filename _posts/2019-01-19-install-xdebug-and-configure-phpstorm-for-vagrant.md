@@ -31,9 +31,9 @@ sudo service apache2 restart
 
 ## Configure PhpStorm for Vagrant
 
-Now add anew port forwarding rule to your `Vagrantfile`.
-This rulle will redirect all tcp-ip connections from localhost:9001 to the vm internal port 9000.
-I don't use a mapping from port 9000 to 9000 to prevent conflicts with the local host.
+Now add a new port forwarding rule to your `Vagrantfile`.
+This rule redirects all tcp-ip connections from localhost:9001 to the vm's internal port 9000.
+I don't use mapping from port 9000 to 9000 to avoid conflicts with the local host.
 
 ```vagrantfile
 config.vm.network "forwarded_port", guest: 9000, host: 9001
@@ -55,6 +55,8 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+Start your vagrant machine with: `vagrant up`.
+
 ## Configure PhpStorm for Vagrant
 
 * Open PhpStorm
@@ -62,7 +64,7 @@ end
 
 ![image](https://user-images.githubusercontent.com/781074/51430761-dedb7900-1c1f-11e9-85b9-d45a0752cfa3.png)
 
-* Click the `+` Button, then choos "PHP Remote Debug"
+* Click the `+` Button, then choose "PHP Remote Debug"
 * Click the `...` Button and add a new Host `127.0.0.1`, Port: `9001`
 
 ![image](https://user-images.githubusercontent.com/781074/51430812-94a6c780-1c20-11e9-9b40-1ef70c0cd282.png)
@@ -77,7 +79,7 @@ end
 ## Debugging
 
 * Open the browser
-* Add the xdebug cookie with the (PhpStorm Xdebug bookmarklets)[https://www.jetbrains.com/phpstorm/marklets/]
+* Add the xdebug cookie with the [PhpStorm Xdebug bookmarklets](https://www.jetbrains.com/phpstorm/marklets/)
 * Add a breakpoint
 
 ![image](https://user-images.githubusercontent.com/781074/51430916-f3b90c00-1c21-11e9-8d06-b1a97aee98f0.png)
