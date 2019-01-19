@@ -10,7 +10,7 @@ keywords: PhpStorm, Xdebug, Vagrant, php, debugger, linux
 
 ## Intro
 
-I'm already aware that people use dockers these days, but I was dissatisfied with the performance on Mac. Even under Windows, many hacks and additional tools (docker-sync) are needed to work with Docker, and yet I wasn't satisfied. For these reasons, I'm back at Vagrant and describe here how to debug PhpStorm PHP applications that run in a (good old) Vagrant box.
+I'm already aware that people use dockers these days, but I was dissatisfied with the performance on Mac. Even under Windows, many hacks and additional tools (docker-sync) are needed to work with Docker, and yet I wasn't satisfied. For these reasons, I'm back at Vagrant and describe here how to debug with PhpStorm PHP applications that run in a (good old) Vagrant box.
 
 ## Install xdebug
 
