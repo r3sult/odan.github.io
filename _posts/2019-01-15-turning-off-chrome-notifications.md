@@ -1,5 +1,5 @@
 ---
-title: Turn off Google Chrome Notifications
+title: Turning off Google Chrome Notifications
 layout: post
 comments: true
 published: true
