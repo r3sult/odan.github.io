@@ -32,7 +32,7 @@ When you want a new version, you can just run `composer update` and copy the PHA
 * `{basedir}/vendor/phpstan/phpstan-shim/phpstan.phar`
 
 
-## Use PHPStan with Apache Ant
+## Using PHPStan with Apache Ant
 
 Add this to your `build.xml` file:
 
