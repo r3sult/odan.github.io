@@ -19,9 +19,9 @@ The download link to the latest phpstan PHAR file is:
 
 * **<https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar>**
 
-Downside: This link will allways point to the latest dev-master - inherently unstable version with BC breaks.
+**Downside:** This link always points to the latest dev-master - an inherently unstable version with BC breaks.
 
-The official and more "stable" solution is to install the [phpstan/phpstan-shim](https://github.com/phpstan/phpstan-shim) as dev dependency and use the PHAR file from there.
+The **official** and "more stable" solution is to install the [phpstan/phpstan-shim](https://github.com/phpstan/phpstan-shim) as dev dependency and use the PHAR file from there.
 
 Install phpstan-shim with composer: 
 
