@@ -13,11 +13,9 @@ It would be great if phpstan could provide a major-version download URL in addit
 
 For example PHPUnit provides such an URL: <https://phar.phpunit.de/phpunit-7.phar> for the latest PHPUnit 7 PHAR version.
 
-Now it is very easy to download the latest copy the PHAR from the [phpstan/phpstan-shim](https://github.com/phpstan/phpstan-shim) package.
+Now it is very easy to download the latest copy the PHAR from the **[phpstan/phpstan-shim](https://github.com/phpstan/phpstan-shim)** package.
 
-The download link to the latest phpstan PHAR file is: 
-
-* **<https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar>**
+The download link to the latest phpstan PHAR file is: <https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar>
 
 **Downside:** This link always points to the latest dev-master - an inherently unstable version with BC breaks.
 
@@ -26,7 +24,7 @@ The **official** and "more stable" solution is to install the [phpstan/phpstan-s
 Install phpstan-shim with composer: 
 
 ```bash
-composer require phpstan/phpstan-shim --dev`
+composer require phpstan/phpstan-shim --dev
 ```
 
 When you want a new version, you can just run `composer update` and copy the PHAR from:
