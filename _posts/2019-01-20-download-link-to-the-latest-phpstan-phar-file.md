@@ -19,29 +19,30 @@ The download link to the latest phpstan PHAR file is:
 
 * **<https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar>**
 
-## Download with curl
+Downside: This link will allways point to the latest dev-master - inherently unstable version with BC breaks.
+
+The official and more "stable" solution is to install the [phpstan/phpstan-shim](https://github.com/phpstan/phpstan-shim) as dev dependecy and use the phar file from there.
+
+Run: 
 
 ```bash
-curl https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar
+composer require phpstan/phpstan-shim --dev`
 ```
 
-To download the file into the `build/` directory use:
+ When you want a new version, you can just run composer update and copy the phar from
+ 
+* `{basedir}/vendor/phpstan/phpstan-shim/phpstan.phar`
 
-```bash
-curl https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar --output build/phpstan.phar
-```
 
-## Download with Apache Ant
+## Use PHPStan with Apache Ant
 
 Add this to your `build.xml` file:
 
 ```xml
 <target name="phpstan" description="PHP Static Analysis Tool - discover bugs in your code without running it">
     <mkdir dir="${basedir}/build"/>
-    <get src="https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar"
-         dest="${basedir}/build/phpstan.phar" skipexisting="true"/>
     <exec executable="php" searchpath="true" resolveexecutable="true" failonerror="true">
-        <arg value="${basedir}/build/phpstan.phar"/>
+        <arg value="${basedir}/vendor/phpstan/phpstan-shim/phpstan.phar"/>
         <arg value="analyse"/>
         <arg value="-l"/>
         <arg value="max"/>
