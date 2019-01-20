@@ -17,7 +17,7 @@ Now it is very easy to download the latest copy the PHAR from the [phpstan/phpst
 
 The download link to the latest phpstan PHAR file is: 
 
-* **https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar**
+* **<https://github.com/phpstan/phpstan-shim/raw/master/phpstan.phar>**
 
 ## Download with curl
 
