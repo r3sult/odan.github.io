@@ -20,7 +20,13 @@ I'm using [Ubuntu, Apache and PHP 7.2 within a vagrant box](https://odan.github.
 # install the php xdebug extension
 sudo apt-get install php-xdebug
 
+# another way to install the xdebug extension is via pecl
+#sudo apt-get install php-dev -y
+#sudo apt-get install php-pear -y
+#sudo pecl install xdebug
+
 # add the xdebug settings to php.ini
+sudo su
 sudo echo 'xdebug.remote_port=9000' >> /etc/php/7.2/apache2/php.ini
 sudo echo 'xdebug.remote_enable=1' >> /etc/php/7.2/apache2/php.ini
 sudo echo 'xdebug.remote_connect_back=1' >> /etc/php/7.2/apache2/php.ini
