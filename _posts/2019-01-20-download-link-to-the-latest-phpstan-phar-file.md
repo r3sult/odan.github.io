@@ -1,5 +1,5 @@
 ---
-title: Download link to the latest phpstan phar file
+title: Download link to the latest PHPStan PHAR file
 layout: post
 comments: true
 published: true
