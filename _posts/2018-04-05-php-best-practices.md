@@ -36,9 +36,9 @@ if (empty(stringVar))
 Not allowed:
 
 ```php
-if ($stringVar)
-if ($integerVar)
-if ($objecctVar)
+if ($string)
+if ($integer)
+if ($object)
 ```
 
 * Always add full DocBlock for all classes and all methods. (PSR-5) 
@@ -100,6 +100,7 @@ clearSometing()
 * A Service can accept another Service as an dependency.
 * Client side only validation not allowed. All requests must be validated in the Service layer (backend).
 * If the validation is very complex, move the validation to a special validation class.
+* A service class is not a util class. Don't suffix a service class with `*Service.php`. Give the service class a specific name and make it responsible for only one thing.
 
 ## Repository
 
@@ -107,20 +108,16 @@ clearSometing()
 * One method can execute one query.
 * The return value can be primitive/object or list (array) of them.
 * If you have more than one parameter for select method, you can create a custom method.
-* sprintf for SQL is not allowed. Use prepared statements or a query builder.
+* `sprintf` for SQL is not allowed. Use prepared statements or a query builder.
 * Always use singular names for your repositories - for example CustomerRepository.
 
 ### Method naming rules
 
-* getById(id) 
-  * Must return an object
+* getUserById(int $id) : array
+  * Must return an array or object
   * No match throws a `DomainException` (Domain means data domain here. [Read more](https://stackoverflow.com/a/1103021/1461181))
-  
-* findByEmail(email):
-  * Will return <DataTransferObject>[] (can be empty array)
-  
-* create(UserData $userData):
-  * Parameter must be the <DataTransferObject> object, filled up and id=null
+* findUserByEmail(string $email): array - Return array of users
+* createUser(array $userData): int - Returns the new ID
 
 ## Data Transfer Object (DTO) 
 
