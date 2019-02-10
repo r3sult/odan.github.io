@@ -62,10 +62,11 @@ clearSometing()
 ## Common rules
 
 * Don't use `static::` if you don’t want to use late static binding (use `self::`).
-* Don't use `DateTime` (not immutable), better use the `DateTimeImmutable` class instead.
+* Don't use `DateTime`, use `DateTimeImmutable` instead.
+* Don't use a string to represent a `$filename` or `$path`, use `SplFileInfo` instead.
 * Don't use any `new` keyword in Services / Repos or a factory method.
   * All of them must be inject through the constructor.
-  * Except for: Value Objects, DTO's, Entities and Parameter objects.
+  * Except for: Value Objects, DTO's and Parameter objects.
 * Built in functions are allowed to use in any class level, they are mockable with PHPUnit function mocker.
 * You should not use reflections.
 * Don't use traits.  [Composition or inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) is a way better solution.
@@ -124,28 +125,20 @@ clearSometing()
 ## Data Transfer Object (DTO) 
 
 * **Only for data**
-* Maximum simple validation
+* Simple validation logic only, no business or domain specific logic.
 * Can be used to transfer data within or outside the domain
-* No business logic or complex behavior
 * No database access
-
-## Entity
-
-* An object with data and `id`. [Read more](https://martinfowler.com/bliki/EvansClassification.html)
-* An entity does not necessarily have to be immutable.
-* Use it to represent a database table or an object that corresponds to a database table. Big things like Customer, Ship, Rental Agreement.
 
 ## Value Object
 
-* Use it only for "small things" and as replacement for primitive data type like string, int, float, bool, array. 
-* Must be immutable
+* Use it only for "small things" like Date, Money, CustomerId and as replacement for primitive data type like string, int, float, bool, array. 
+* Must be immutable.
+* A VO is responsible for keeping their state consistent [1](https://kacper.gunia.me/validating-value-objects/).
 * Can only be filled using the constructor.
-* setter methods are not allowed. 
-* A getter method name does not contain a a `get` prefix. example: `public function email(): string { return $this->email; }`
-* wither methods are allowed. Example `public function withEmail(string $email): self { ... }`
-* If you have to change a data, you have to create a new entity object (with new name, because it has changed).
+* Setter methods are not allowed. 
+* A getter method name does not contain a a `get` prefix. Example: `public function email(): string { return $this->email; }`
 * All properties must be `protected` or `private` accessed by the getter methods.
-* Use it for little things like Date, Money, CustomerId. Responsible for keeping their state consistent [1](https://kacper.gunia.me/validating-value-objects/).
+* Wither methods are allowed. Example: `public function withEmail(string $email): self { ... }`
 
 ## Parameter Object
 
