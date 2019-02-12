@@ -81,40 +81,35 @@ $db = $this->getDb();
 $result            // Mixed return value
   
 // Parts of file name and path
-$file              // Full filename with directory, filename and extension (/tmp/file.txt)
-$fileName          // Filename with extension (file.txt)
-$extension         // Filename extension without dot (txt)
-$baseName          // Filename without extension (file)
-$path              // Full path to directory name without filename (/tmp)
-$directory         // Name of a single folder (e.g. tmp) 
+$splFile = new \SplFileInfo('/tmp/file.txt');
 
-// Arrays
-$params            // Array with function paramameters e.g. function demo($params) { ... }
-$rows              // Array of rows (from select query)
-$row               // A single row
-$value = 'variant datatype';
+// Check if file or path exists
+$existsPath = $splFile->getRealPath() !== false;
+
+// Full path, filename and extension (e.g. /tmp/file.txt)
+$file = $splFile->getRealPath() ?: $splFile->getPathname();
+
+// Filename with extension (e.g. file.txt), or the last directory name
+$fileName = $splFile->getFilename();
+
+// Filename extension without dot (e.g. txt)
+$extension = $splFile->getExtension();
+
+// Filename without extension (e.g. file) or the last directory name
+$baseFileName = pathinfo($splFile->getFilename(), PATHINFO_FILENAME);
+
+// Full path to file (/tmp)
+$filePath = pathinfo($splFile->getRealPath() ?: $splFile->getPathname(), PATHINFO_DIRNAME);
+
+// Name of a single folder (e.g. tmp)
+$directory = 'tmp';
 ```
 
 ### Array index names
 
-* lowercase, underscore
-* singular if data type is string, int, float or oject
-* plural if data type is array 
-
-```php
-$rows = array();
-$rows[0] = array();
-$rows[0]['username'] = 'max';
-$rows[0]['status'] = true;
-```
-or
-```php
-$rows = array();
-$rows[0] = array(
-    'username' => '...',
-    'status' => true
-);
-```
+* lower_snake_case
+* singular by default
+* plural if content is a list of multiple values
 
 ### Comments
 
@@ -147,15 +142,16 @@ $rows[0] = array(
 * camelCase
 * No data type prefix
 * Arrays index names should be plural
-  
+* You should use `const` in all cases except when the variable would be reassigned new values. At such cases use `let` instead.
+
 ```js
-var userName = 'admin';
-var total = 100;
-var amount = 29.99;
-var visible = true;
-var config = {}
-var rows = [];
-var value = 'something';
+const userName = 'admin';
+const total = 100;
+const amount = 29.99;
+const visible = true;
+const config = {}
+const rows = [];
+const value = 'something';
 ```
 
 ### Element names
@@ -165,12 +161,12 @@ var value = 'something';
 
 ```js
 // good
-var row = {};
+let row = {};
 row.id = 100;
 row.username = 'admin';
 
 // good
-var row = {
+const row = {
     id: 100,
     username: 'admin'
 };
@@ -205,3 +201,8 @@ row.UserName = 'admin';
 #my-modal
 #anchor-name
 ```
+
+## Vue.js
+
+* Extension: .vue
+* [Style Guide](https://vuejs.org/v2/style-guide/)
