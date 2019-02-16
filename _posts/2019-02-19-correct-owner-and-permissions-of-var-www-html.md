@@ -48,7 +48,7 @@ Let me know how that works for you.
 
 ### Read more
 
-* https://askubuntu.com/questions/244406/how-do-i-give-www-data-user-to-a-folder-in-my-home-folder
-* https://gist.github.com/solancer/879105abb05eb7f13ce23e822ed70dd6
-* https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group
-* https://stackoverflow.com/questions/28918996/proper-owner-of-var-www-html
+* <https://askubuntu.com/questions/244406/how-do-i-give-www-data-user-to-a-folder-in-my-home-folder>
+* <https://gist.github.com/solancer/879105abb05eb7f13ce23e822ed70dd6>
+* <https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group>
+* <https://stackoverflow.com/questions/28918996/proper-owner-of-var-www-html>
