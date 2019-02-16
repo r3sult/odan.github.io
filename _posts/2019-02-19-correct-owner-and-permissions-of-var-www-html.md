@@ -43,7 +43,7 @@ sudo chmod -R 2774 /var/www/html/
 
 You must login again with the SFTP client
 
-This setup should allow you to manage files and the FTP client should now also have access to the files.
+This setup should allow you to manage files for the PHP scripts and the FTP client.
 
 ### Read more
 
