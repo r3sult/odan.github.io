@@ -43,8 +43,7 @@ sudo chmod -R 2774 /var/www/html/
 
 You must login again with the SFTP client
 
-Now this setup should allow you to use manage files and still allow the CMS ftp backend to still function and write to the direc. 
-Let me know how that works for you.
+This setup should allow you to manage files and the FTP client should now also have access to the files.
 
 ### Read more
 
