@@ -25,9 +25,10 @@ $xpath = new DOMXPath($dom);
 //
 // Fetch the namespaces, add a few lines to register these back with the document
 // so that you can use them in XPath expressions...
-foreach ($xpath->query('namespace::*', $dom->documentElement) as $node) {
-    //echo $node->localName . '=' . $node->nodeValue, "\n";
-    $xpath->registerNamespace($node->localName, $node->nodeValue);
+foreach ($xpath->query('//namespace::*') as $namespaceNode) {
+    $prefix = str_replace('xmlns:', '', $namespaceNode->nodeName);
+    $namespaceUri = $namespaceNode->nodeValue;
+    $xpath->registerNamespace($prefix, $namespaceUri);
 }
 
 //
