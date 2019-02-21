@@ -104,7 +104,7 @@ Send a `500 Internal Server Error` response.
 }
 ```
 
-**Content with error details:**
+**Content with error code:**
 
 ```json
 {
@@ -147,7 +147,7 @@ Sending invalid fields will result in a `422 Unprocessable Entity` response.
     "errors": [
       {
         "field": "email",
-        "message": "Missing email"
+        "message": "Email is required"
       }
     ]
   }
