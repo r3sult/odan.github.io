@@ -224,14 +224,14 @@ $.ajax({
 * Controller name: UserController
 
 * **REST-API methods** (json request and response)
-  * getUsers
+  * getUsers or findUsers
   * getUser
   * insertUser
   * updateUser
   * deleteUser
   
 * **REST-API methods for sub-resources** (json request and response)
-  * geUserReviews
+  * getUserReviews or findUserReviews
   * getUserReview
   * insertUserReview
   * updateUserReview
