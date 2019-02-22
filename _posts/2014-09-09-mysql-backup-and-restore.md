@@ -2,7 +2,7 @@
 title: MySQL backup and restore
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
