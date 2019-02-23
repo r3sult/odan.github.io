@@ -38,7 +38,7 @@ If your document root is `/var/www/html` run this to change ownership on all fil
 ```
 sudo chgrp www-data /var/www/html/
 sudo chown -R www-data: /var/www/html/
-sudo chmod -R 2774 /var/www/html/
+sudo chmod -R 2775 /var/www/html/
 ```
 
 You must login again with the SFTP client
