@@ -65,7 +65,7 @@ Mkdocs helps you create beautiful API documentation.
 
 * [Python](https://www.python.org/) + PIP
 * [Mkdocs](https://pandoc.org/installing.html#windows)
-* Some markdown files: index.md, resources.md, security.md, security.md
+* Some markdown files: index.md, security.md, resources.md
 
 Assuming you have Python already, install Mkdocs with Python PIP:
 
@@ -124,7 +124,7 @@ Content of: `toc.html`:
 ```
 {% endraw %}
 
-We can generate the html files with this command:
+Ok, let's generate the html files with this command:
 
 ```bash
 mkdocs build
