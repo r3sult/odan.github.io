@@ -16,6 +16,10 @@ url: https://odan.github.io
 
 github:
   is_project_page: false
+ 
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables", "fenced_code_blocks"]
   
 # List of links in the navigation bar
 navbar-links:
