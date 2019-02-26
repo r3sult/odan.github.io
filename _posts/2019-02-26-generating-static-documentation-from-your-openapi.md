@@ -22,7 +22,7 @@ To install widdershins run:
 ```bash
 mkdir widdershins
 cd widdershins
-npm install widdershins
+npm install -g widdershins
 ```
 
 ## Conversion into a Markdown file
