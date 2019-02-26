@@ -176,5 +176,5 @@ Just open the docx file with Microsoft Word and export the file to PDF.
 
 ## Other solutions
 
-* https://swaggerdown.io/ - Generate documentation from your OpenAPI specs.
+* <https://swaggerdown.io/> - Generate documentation from your OpenAPI specs.
 
