@@ -43,10 +43,12 @@ Content:
 }
 ```
 
+Then run widdershins to generate the markdown file.
+
 Linux: 
 
 ```bash
-node widdershins --environment widdershins.json petstore.yaml -o petstore3.md
+node widdershins --environment widdershins.json petstore.yaml -o resources.md
 ```
 
 Windows:
