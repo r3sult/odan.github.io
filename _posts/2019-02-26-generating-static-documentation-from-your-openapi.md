@@ -115,7 +115,9 @@ Content of: `toc.html`:
 {% raw %}
 ```twig
 {% for toc_item in page.toc %}
-    <li class="toctree-l{{ navlevel + 1 }}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>  
+    <li class="toctree-l{{ navlevel + 1 }}">
+        <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+    </li>  
 {% endfor %}
 ```
 {% endraw %}
