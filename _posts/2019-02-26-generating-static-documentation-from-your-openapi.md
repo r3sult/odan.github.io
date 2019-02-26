@@ -118,6 +118,26 @@ Content of: `toc.html`:
 {% endfor %}
 ```
 
+1.
+
+<pre>
+  <code class="twig">
+    {% for toc_item in page.toc %}
+    <li class="toctree-l{{ navlevel + 1 }}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>  
+{% endfor %}
+  </code>
+</pre>
+
+2.
+
+{% highlight twig %}
+
+{% for toc_item in page.toc %}
+    <li class="toctree-l{{ navlevel + 1 }}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>  
+{% endfor %}
+
+{% endhighlight %}
+
 We can generate the html files with this command:
 
 ```bash
