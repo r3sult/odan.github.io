@@ -22,7 +22,7 @@ To install widdershins run:
 ```bash
 mkdir widdershins
 cd widdershins
-npm install -g widdershins
+npm install widdershins
 ```
 
 ## Conversion into a Markdown file
@@ -33,13 +33,14 @@ Content:
 
 ```json
 {
-  "search": true,
-  "codeSamples": true,
-  "lang": true,
-  "httpsnippet": true,
-  "language_tabs": [{ "http": "HTTP" }],
-  "language_clients": [{ "shell": "curl" }],
-  "verbose": true
+  "search": false,
+  "codeSamples": false,
+  "lang": false,
+  "httpsnippet": false,
+  "language_tabs": [],
+  "language_clients": [],
+  "verbose": true,
+  "tocSummary": false
 }
 ```
 
