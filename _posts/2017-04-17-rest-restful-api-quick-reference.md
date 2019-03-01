@@ -52,13 +52,13 @@ keywords:
 
 ## HTTP Methods
 
-HTTP Method | HTTP Path | CRUD(L) | SQL | [OperationId](https://github.com/watson-developer-cloud/api-guidelines/blob/master/swagger-coding-style.md#operationid) | Description | Response codes
+HTTP Method | HTTP Path | CRUDL | SQL | [OperationId](https://github.com/watson-developer-cloud/api-guidelines/blob/master/swagger-coding-style.md#operationid) | Description | Response codes
 |--- | ---  | --- | --- | --- | --- | ---
-GET | /users | List | SELECT | listUsers / getUsers | Used for retrieving a list of resources. | 200 (OK), 404 (Not Found)
-GET | /users/{id} | Read | SELECT | getUserById | Used for retrieving a single resources. | 200 (OK), 404 (Not Found)
-POST | /users | Create | INSERT | createUser or addUser | Used for creating resources. | 201 (Created), 404 (Not Found), 409 (Conflict) if resource already exists.
-PUT | /users/{id} | Update	| UPDATE | updateUser | Used for updating the resources. | 200 (OK), 204 (No Content), 404 (Not Found)
-DELETE | /users/{id} | Delete | DELETE | deleteUser | Used for deleting resources. | 200 (OK), 404 (Not Found)
+GET | /users | List | SELECT | listUsers / getUsers | Used for retrieving a list of resources | 200 (OK), 404 (Not Found)
+GET | /users/{id} | Read | SELECT | getUserById | Used for retrieving a single resources | 200 (OK), 404 (Not Found)
+POST | /users | Create | INSERT | createUser or addUser | Used for creating resources | 201 (Created), 404 (Not Found), 409 (Conflict)
+PUT | /users/{id} | Update	| UPDATE | updateUser | Used for updating resources | 200 (OK), 204 (No Content), 404 (Not Found)
+DELETE | /users/{id} | Delete | DELETE | deleteUser | Used for deleting resources | 200 (OK), 404 (Not Found)
 
 ## HTTP Status Codes
 
