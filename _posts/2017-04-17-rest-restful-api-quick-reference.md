@@ -52,7 +52,7 @@ keywords:
 
 ## HTTP Methods
 
-HTTP Verb | HTTP Path | CRUD | [Method](https://github.com/watson-developer-cloud/api-guidelines/blob/master/swagger-coding-style.md#operationid) | Description | Response codes
+HTTP Verb | HTTP Path | CRUD | [OperationId](https://github.com/watson-developer-cloud/api-guidelines/blob/master/swagger-coding-style.md#operationid) | Description | Response codes
 --- | ---  | --- | --- | --- | ---
 GET | /users | Index | getUsers or listUsers | Used for retrieving a list of resources. | 200 (OK), 404 (Not Found)
 GET | /users/{id} | Read | getUserById | Used for retrieving a single resources. | 200 (OK), 404 (Not Found)
