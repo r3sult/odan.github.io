@@ -52,13 +52,12 @@ keywords:
 
 ## HTTP Methods
 
-HTTP Verb | HTTP Path | CRUD | Method | Description | Response codes
+HTTP Verb | HTTP Path | CRUD | [Method](https://github.com/watson-developer-cloud/api-guidelines/blob/master/swagger-coding-style.md#operationid) | Description | Response codes
 --- | ---  | --- | --- | --- | ---
-GET | /users | Index | getUsers | Used for retrieving a list of resources. | 200 (OK), 404 (Not Found)
+GET | /users | Index | getUsers or listUsers | Used for retrieving a list of resources. | 200 (OK), 404 (Not Found)
 GET | /users/{id} | Read | getUserById | Used for retrieving a single resources. | 200 (OK), 404 (Not Found)
-POST | /users | Create | insertUser | Used for creating resources. | 201 (Created), 404 (Not Found), 409 (Conflict) if resource already exists.
-PUT | /users/{id} | Update	| updateUser | Used for replacing the **entire** resources or collections. | 200 (OK), 204 (No Content). 404 (Not Found)
-PATCH | /users/{id} | Partial update  | updateUser | Used for updating resources with **partial** data.  | 200 (OK), 204 (No Content), 404 (Not Found)
+POST | /users | Create | createUser or addUser | Used for creating resources. | 201 (Created), 404 (Not Found), 409 (Conflict) if resource already exists.
+PUT | /users/{id} | Update	| updateUser | Used for updating the resources. | 200 (OK), 204 (No Content), 404 (Not Found)
 DELETE | /users/{id} | Delete | deleteUser | Used for deleting resources. | 200 (OK), 404 (Not Found)
 
 ## HTTP Status Codes
