@@ -2,7 +2,7 @@
 title: Generating static documentation from your OpenAPI 3.0
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: openapi, swagger, yaml, documentation, rest, restful
 ---
