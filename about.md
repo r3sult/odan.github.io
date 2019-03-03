@@ -10,6 +10,14 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 
 # About me
 
+Hi, my name is Daniel Opitz
+
+I am a web developer located close to Basel, Switzerland. I am currently working at ORCA in Pratteln as a Software Engineer.
+
+I am [@dopitz](https://twitter.com/dopitz) on Twitter which is a great way to reach me and if you prefer email you can always write to d.opitz (at) outlook.com.
+
+You can find all my open source code on [GitHub](https://github.com/odan).
+
 ## Skills
 
 * PHP, C#, ASP.NET Core, JavaScript, Node.js
@@ -49,7 +57,7 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 ## Contact me
 
 * d.opitz (at) outlook.com
-* [Follow me on Twitter](https://twitter.com/dopitz)
-* [Github](https://github.com/odan)
+* [Twitter](https://twitter.com/dopitz)
+* [GitHub](https://github.com/odan)
 * [LinkedIn](https://www.linkedin.com/in/daniel-opitz-493816111)
 * [Xing](https://www.xing.com/profile/Daniel_Opitz9)
