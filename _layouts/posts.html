@@ -4,6 +4,10 @@ layout: default
 
 <h1 id="blog">Blog</h1>
 
+<a href="https://odan.github.io/feed.xml">
+    <img src="https://user-images.githubusercontent.com/781074/53696957-3d257b00-3dcc-11e9-8b7f-f8e5fa7dbb9d.png" width="16">
+</a>
+
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% for year in postsByYear %}
 <h2 class="blog-year" id="{{ year.name }}">{{ year.name }}</h2>
