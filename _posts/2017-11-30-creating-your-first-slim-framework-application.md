@@ -595,16 +595,14 @@ $connection = $this->get(Connection::class);
 $query = $connection->newQuery();
 
 // Retrieving a single Row
-$userRow = $query
-    ->select(['id', 'username', 'email'])
+$userRow = $query->select(['id', 'username', 'email'])
     ->from('users')
     ->andWhere(['id' => 1])
     ->execute()
     ->fetch('assoc') ?: [];
 
 // Retrieving all rows from a table as array
-$userRows = $query
-    ->select(['id', 'username', 'email'])
+$userRows = $query->select(['id', 'username', 'email'])
     ->from('users')
     ->execute()
     ->fetchAll('assoc') ?: [];
