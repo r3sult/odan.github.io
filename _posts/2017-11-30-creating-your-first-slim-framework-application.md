@@ -526,7 +526,6 @@ For security reasons (SQL injections), SQL statements should no longer be writte
 
 * [CakePHP Database](https://github.com/cakephp/database)
 * [Illuminate Database](https://github.com/illuminate/database)
-* [odan/database](https://github.com/odan/database)
 
 You should use a query builder only within a persistent oriented Repository or a DataMapper class.
 Here you can find some examples of a Data Mapper class. [TicketMapper](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/TicketMapper.php), [ComponentMapper.php](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/ComponentMapper.php).
@@ -629,7 +628,7 @@ $userId = (int)$query->insert(array_keys($data))
 $query->delete('users')->andWhere(['id' => 1])->execute();
 
 // Delete all users where users.votes > 100
-$query->delete('users')->andWhere(['id >' => 100])->execute();
+$query->delete('users')->andWhere(['users.votes >' => 100])->execute();
 ```
 
 Here you can find the full [documentation](https://book.cakephp.org/3.0/en/orm/query-builder.html).
