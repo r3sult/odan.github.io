@@ -32,11 +32,10 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 
 * [odan/prisma](https://github.com/odan/prisma) A skeleton project for Slim 3
 * [odan/phinx-migrations-generator](https://github.com/odan/phinx-migrations-generator) Migration Code Generator for Phinx
-* [odan/database](https://github.com/odan/database) Database Query Builder
 * [odan/twig-assets](https://github.com/odan/twig-assets) A Twig Assets Extension
 * [odan/twig-translation](https://github.com/odan/twig-translation) A Twig Translation Extension
 * [odan/slim-session](https://github.com/odan/slim-session) A secure and flexible session handler
-* [odan/slim-csrf](https://github.com/odan/slim-csrf) Slim 3 CSRF Anti Forgery Middleware
+* [Learn modern PHP](https://odan.github.io/learn-php/)
 * [All projects](https://github.com/odan?tab=repositories)
 
 ## Tools
