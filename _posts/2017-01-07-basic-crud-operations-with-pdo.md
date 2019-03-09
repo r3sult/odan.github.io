@@ -146,6 +146,7 @@ function get_pdo_type($value)
 {
     switch (true) {
         case is_bool($value):
+            // Waring: bool works only in MySQL if ATTR_EMULATE_PREPARES is true
             $dataType = PDO::PARAM_BOOL;
             break;
         case is_int($value):
