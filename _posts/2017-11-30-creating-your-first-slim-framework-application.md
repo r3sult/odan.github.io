@@ -250,12 +250,22 @@ $settings['twig'] = [
 ];
 
 // Database settings
-$settings['db']['host'] = 'localhost';
-$settings['db']['username'] = 'root';
-$settings['db']['password'] = '';
-$settings['db']['database'] = 'test';
-$settings['db']['charset'] = 'utf8';
-$settings['db']['collation'] = 'utf8_unicode_ci';
+$settings['db'] = [
+    'driver' => 'mysql',
+    'host' => 'localhost',
+    'username' => 'root',
+    'database' => 'test',
+    'password' => '',
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'flags' => [
+        PDO::ATTR_PERSISTENT => false,
+        // Enable exceptions
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        // Set default fetch mode
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ],
+];
 
 return $settings;
 ```
@@ -486,7 +496,7 @@ Adjust the necessary connection settings in the file `config/settings.php`.
 Add a container entry for the PDO connection:
 
 ```php
-$container['pdo'] = function (Container $container) {
+$container[PDO::class] = function (Container $container) {
     $settings = $container->get('settings');
     
     $host = $settings['db']['host'];
@@ -501,7 +511,7 @@ $container['pdo'] = function (Container $container) {
     $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_PERSISTENT => false,
-        PDO::ATTR_EMULATE_PREPARES => false,
+        PDO::ATTR_EMULATE_PREPARES => true,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES $charset COLLATE $collate"
     ];
@@ -514,68 +524,62 @@ $container['pdo'] = function (Container $container) {
 
 For security reasons (SQL injections), SQL statements should no longer be written by yourself, but generated using a query builder. For this purpose, the PHP community offers already established and tested libraries. Here is a selection I can recommend:
 
-* [Illuminate Database](https://github.com/illuminate/database)
 * [CakePHP Database](https://github.com/cakephp/database)
+* [Illuminate Database](https://github.com/illuminate/database)
 * [odan/database](https://github.com/odan/database)
 
-You should use a query builder only within a [Data Mapper](https://martinfowler.com/eaaCatalog/dataMapper.html) or Repository class.
+You should use a query builder only within a persistent oriented Repository or a DataMapper class.
 Here you can find some examples of a Data Mapper class. [TicketMapper](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/TicketMapper.php), [ComponentMapper.php](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/ComponentMapper.php).
 
-The Laravel [Illuminate Database query builder](https://laravel.com/docs/master/queries) brings a super natrual, fluent and smooth query builder to you. The only disadvantage is that you get a lot of global laravel functions and classes as dependencies on board. Caution: Laravel Illuminate does not return arrays, but collections with stdClass instances. You should get along with that, too.
+In this tutorial I will use the [CakePHP Database query builder](https://github.com/cakephp/database), because with Illuminate Database we would get to much global laravel functions and classes as dependencies on board. Laravel Illuminate does not return arrays, but collections with stdClass instances. The CakePHP Database query builder is a very flexible and powerful Database abstraction library with a familiar PDO-like API. I have been able to achieve the best results so far, even with very complex queries.
 
 **Installation**
 
 ```
-composer require illuminate/database
+composer require cakephp/database
 ```
 
 Add a new container entry in the file: `config/container.php`
 
 ```php
-use Illuminate\Database\Connectors\ConnectionFactory;
-use Illuminate\Database\Connection;
+use Cake\Database\Connection;
 
-$container['db'] = function (Container $container) {
+$container[Connection::class] = function (Container $container) {
     $settings = $container->get('settings');
-    
-    $config = [
-        'driver' => 'mysql',
-        'host' => $settings['db']['host'],
-        'database' => $settings['db']['database'],
-        'username' => $settings['db']['username'],
-        'password' => $settings['db']['password'],
-        'charset'  => $settings['db']['charset'],
-        'collation' => $settings['db']['collation'],
-    ];
-    
-    $factory = new ConnectionFactory(new \Illuminate\Container\Container());
-    
-    $connection = $factory->make($config);	
-    
-    // Disable the query log to prevent memory issues	
-    $connection->disableQueryLog();
-    
-    return $connection;
+    $driver = new Mysql($settings['db']);
+
+    return new Connection(['driver' => $driver]);
 };
 
-$container['pdo'] = function (Container $container) {
-    return $container->get('db')->getPdo();
+$container[PDO::class] = function (Container $container) {
+    /** @var Connection $db */
+    $db = $container->get(Connection::class);
+    $db->getDriver()->connect();
+
+    return $db->getDriver()->getConnection();
 };
 ```
 
 Generate and execute a query:
 
 ```php
-use Illuminate\Database\Connection;
+use Cake\Database\Connection;
+use Slim\Container;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 $app->get('/databases', function (Request $request, Response $response) {
     /** @var Container $this */
     /** @var Connection $db */
-    
-    $db = $this->get('db');
 
-    // fetch all rows as collection
-    $rows = $db->table('information_schema.schemata')->get();
+    $query = $this->get(Connection::class)->newQuery();
+
+    // fetch all rows as array
+    $query = $query
+        ->select('*')
+        ->from('information_schema.schemata');
+
+    $rows = $query->execute()->fetchAll('assoc') ?: [];
 
     // return a json response
     return $response->withJson($rows);
@@ -585,31 +589,50 @@ $app->get('/databases', function (Request $request, Response $response) {
 You can build very complex sql queries. Here are just some CRUD examples:
 
 ```php
+// Create a new Query instance for this connection
+$query = $this->get(Connection::class)->newQuery();
+
 // Retrieving a single Row
-$user = $this->db->table('users')->select('id', 'username', 'email')->where('id', '=', 1)->first();
+$userRow = $query
+    ->select(['id', 'username', 'email'])
+    ->from('users')
+    ->andWhere(['id' => 1])
+    ->execute()
+    ->fetch('assoc') ?: [];
 
-// Retrieving all rows as stdClass
-$users = $this->db->table('users')->select('id', 'username', 'email')->get();
+// Retrieving all rows from a table as array
+$userRows = $query
+    ->select(['id', 'username', 'email'])
+    ->from('users')
+    ->execute()
+    ->fetchAll('assoc') ?: [];
 
-// Retrieving all rows as array
-$users = $this->db->table('users')->select('id', 'username', 'email')->get()->toArray();
 
 // Insert a new row
-$success = $this->db->table('users')->insert(['username' => 'max', 'email' => 'max@example.com']);
+$data = ['username' => 'max', 'email' => 'max@example.com'];
 
-// Insert a new row and get the new ID (primary key)
-$userId = $this->db->table('users')->insertGetId(['username' => 'sofia', 'email' => 'sofia@example.com']);
+$query->insert(array_keys($data))
+    ->into('users')
+    ->values($data)
+    ->execute();
+
+// Insert a new row and get the last inserted id (primary key)
+$data = ['username' => 'max', 'email' => 'max@example.com'];
+
+$userId = (int)$query->insert(array_keys($data))
+    ->into('users')
+    ->values($data)
+    ->execute()
+    ->lastInsertId();
 
 // Delete user with id = 1
-$this->db->table('users')->delete(1);
+$query->delete('users')->andWhere(['id' => 1])->execute();
 
 // Delete all users where users.votes > 100
-$this->db->table('users')->where('votes', '>', 100)->delete();
+$query->delete('users')->andWhere(['id >' => 100])->execute();
 ```
 
-Here you can find the [documentation](https://laravel.com/docs/5.6/queries)
-and a [Eloquent Cheat Sheet](http://laragems.com/post/eloquent-cheat-sheet).
-
+Here you can find the full [documentation](https://book.cakephp.org/3.0/en/orm/query-builder.html).
 
 ## Deployment
 
