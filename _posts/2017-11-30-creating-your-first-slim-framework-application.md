@@ -588,8 +588,11 @@ $app->get('/databases', function (Request $request, Response $response) {
 You can build very complex sql queries. Here are just some CRUD examples:
 
 ```php
+use Cake\Database\Connection;
+
 // Create a new Query instance for this connection
-$query = $this->get(Connection::class)->newQuery();
+$connection = $this->get(Connection::class);
+$query = $connection->newQuery();
 
 // Retrieving a single Row
 $userRow = $query
@@ -623,6 +626,9 @@ $userId = (int)$query->insert(array_keys($data))
     ->values($data)
     ->execute()
     ->lastInsertId();
+    
+// A shortcut for insert statements
+$userId = (int)$connection->insert('users', $data)->lastInsertId();
 
 // Delete user with id = 1
 $query->delete('users')->andWhere(['id' => 1])->execute();
