@@ -11,42 +11,31 @@ If you run PHPStan on every commit, you find errors in your code without actuall
 
 ## Requirements
 
+* PHP
 * Travis CI (.travis.yml)
-* Ant (build.xml) Ant is pre-installed on Travis CI.
+* [PHPStan-Shim](https://github.com/phpstan/phpstan-shim)
 
-## Setup
+## Installation
 
-* Add a new ant target in `build.xml`
+phpstan-shim provides easy way to install PHPStan without the risk of conflicting dependencies.
 
-```xml
-<target name="phpstan" description="PHP Static Analysis Tool - discover bugs in your code without running it">
-    <mkdir dir="${basedir}/build"/>
-    <get src="https://github.com/phpstan/phpstan/releases/download/0.9.2/phpstan.phar"
-         dest="${basedir}/build/phpstan.phar" skipexisting="true"/>
-    <exec executable="php" searchpath="true" resolveexecutable="true" failonerror="true">
-        <arg value="${basedir}/build/phpstan.phar"/>
-        <arg value="analyse"/>
-        <arg value="-l"/>
-        <arg value="5"/>
-        <arg value="${basedir}/src"/>
-        <arg value="${basedir}/tests"/>
-        <arg value="--no-interaction"/>
-        <arg value="--no-progress"/>
-    </exec>
-</target>
+Install the package
+
 ```
+composer require --dev phpstan/phpstan-shim
+```
+
+## PHPStan configuration
+
+* Create a empty file `phpstan.neon`
+
+## Travis Setup
 
 * Open `.travis.yml` and add this script command:
 
 ```yml
 script:
-  - ant phpstan
-```
-
-* Test
-
-```bash
-$ ant phpstan
+  - vendor/bin/phpstan.phar analyse -l max -c phpstan.neon src --no-interaction --no-progress
 ```
 
 * Commit the changes to github.
