@@ -328,15 +328,17 @@ Run composer
 composer require slim/twig-view
 ```
 
-Add this code to the file: `config/container.php`
+Add this code to the container settings file: `config/container.php`
 
 ```php
+use Slim\Views\Twig;
+
 // Register Twig View helper
-$container['view'] = function (Container $container) {
+$container[Twig::class] = function (Container $container) {
     $settings = $container->get('settings');
     $viewPath = $settings['twig']['path'];
 
-    $twig = new \Slim\Views\Twig($viewPath, [
+    $twig = new Twig($viewPath, [
         'cache' => $settings['twig']['cache_enabled'] ? $settings['twig']['cache_path'] : false
     ]);
 
@@ -374,12 +376,14 @@ Current time: {{ now }}
 Add a new route in `config/routes.php`
 
 ```php
+use Slim\Views\Twig;
+
 $app->get('/time', function (Request $request, Response $response) {
     $viewData = [
         'now' => date('Y-m-d H:i:s')
     ];
 
-    return $this->get('view')->render($response, 'time.twig', $viewData);
+    return $this->get(Twig::class)->render($response, 'time.twig', $viewData);
 });
 ```
 
@@ -444,7 +448,7 @@ use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 
-$container['logger'] = function (Container $container) {
+$container[LoggerInterface::class] = function (Container $container) {
     $settings = $container->get('settings');
     $logger = new Logger($settings['logger']['name']);
     
@@ -471,7 +475,7 @@ $app->get('/logger-test', function (Request $request, Response $response) {
     /** @var Container $this */
     /** @var LoggerInterface $logger */
 
-    $logger = $this->get('logger');
+    $logger = $this->get(LoggerInterface::class);
     $logger->error('My error message!');
 
     $response->getBody()->write("Success");
@@ -490,7 +494,7 @@ You should see the logged error message. Example: `[2018-04-24 21:12:47] app.ERR
 
 ### Database configuration
 
-Adjust the necessary connection settings in the file `config/settings.php`.
+Adjust the necessary connection settings to the file `config/settings.php`.
 
 ### PDO
 
