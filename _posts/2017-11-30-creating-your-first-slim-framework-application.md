@@ -542,6 +542,7 @@ Add a new container entry in the file: `config/container.php`
 
 ```php
 use Cake\Database\Connection;
+use Cake\Database\Driver\Mysql;
 
 $container[Connection::class] = function (Container $container) {
     $settings = $container->get('settings');
