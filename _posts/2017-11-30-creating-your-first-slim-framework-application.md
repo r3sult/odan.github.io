@@ -357,6 +357,7 @@ $container['view'] = function (Container $container) {
 
 Add a new template: `templates/time.twig`
 
+{% raw %}
 ```twig
 <!DOCTYPE html>
 <html>
@@ -367,8 +368,8 @@ Add a new template: `templates/time.twig`
 Current time: {{ now }}
 </body>
 </html>
-
 ```
+{% endraw %}
 
 Add a new route in `config/routes.php`
 
