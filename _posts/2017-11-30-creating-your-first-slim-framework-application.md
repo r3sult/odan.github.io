@@ -530,7 +530,7 @@ For security reasons (SQL injections), SQL statements should no longer be writte
 You should use a query builder only within a persistent oriented Repository or a DataMapper class.
 Here you can find some examples of a Data Mapper class. [TicketMapper](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/TicketMapper.php), [ComponentMapper.php](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/ComponentMapper.php).
 
-In this tutorial I will use the [CakePHP Database query builder](https://github.com/cakephp/database), because with Illuminate Database we would get to much global laravel functions and classes as dependencies on board. Laravel Illuminate does not return arrays, but collections with stdClass instances. The CakePHP Database query builder is a very flexible and powerful Database abstraction library with a familiar PDO-like API. I have been able to achieve the best results so far, even with very complex queries.
+In this tutorial I will use the [CakePHP Database query builder](https://github.com/cakephp/database), because with Illuminate Database we would get too much global laravel functions and classes as dependencies on board. Laravel Illuminate does not return arrays, but collections with stdClass instances. The CakePHP Database query builder is a very flexible and powerful Database abstraction library with a familiar PDO-like API. I have been able to achieve the best results so far, even with very complex queries.
 
 **Installation**
 
@@ -586,7 +586,7 @@ $app->get('/databases', function (Request $request, Response $response) {
 });
 ```
 
-You can build very complex sql queries. Here are just some CRUD examples:
+You can also create very complex SQL queries. Here are just some CRUD examples:
 
 ```php
 use Cake\Database\Connection;
@@ -596,18 +596,17 @@ $connection = $this->get(Connection::class);
 $query = $connection->newQuery();
 
 // Retrieving a single Row
-$userRow = $query->select(['id', 'username', 'email'])
+$query = $query->select(['id', 'username', 'email'])
     ->from('users')
-    ->andWhere(['id' => 1])
-    ->execute()
-    ->fetch('assoc') ?: [];
+    ->andWhere(['id' => 1]);
+    
+$userRow = $query->execute()->fetch('assoc') ?: [];
 
 // Retrieving all rows from a table as array
-$userRows = $query->select(['id', 'username', 'email'])
-    ->from('users')
-    ->execute()
-    ->fetchAll('assoc') ?: [];
-
+$query = $query->select(['id', 'username', 'email'])
+    ->from('users');
+    
+$userRows = $query->execute()->fetchAll('assoc') ?: [];
 
 // Insert a new row
 $data = ['username' => 'max', 'email' => 'max@example.com'];
