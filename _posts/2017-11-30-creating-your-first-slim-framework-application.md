@@ -575,10 +575,8 @@ $app->get('/databases', function (Request $request, Response $response) {
     $query = $this->get(Connection::class)->newQuery();
 
     // fetch all rows as array
-    $query = $query
-        ->select('*')
-        ->from('information_schema.schemata');
-
+    $query = $query->select('*')->from('information_schema.schemata');
+    
     $rows = $query->execute()->fetchAll('assoc') ?: [];
 
     // return a json response
