@@ -28,7 +28,7 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 * IT-Security
 * SEO, E-Commerce
 
-## Projects
+## My projects
 
 * [odan/prisma](https://github.com/odan/prisma) A skeleton project for Slim 3
 * [odan/phinx-migrations-generator](https://github.com/odan/phinx-migrations-generator) Migration Code Generator for Phinx
@@ -37,6 +37,13 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 * [odan/session](https://github.com/odan/session) A secure and flexible session handler
 * [Learn modern PHP](https://odan.github.io/learn-php/)
 * [All projects](https://github.com/odan?tab=repositories)
+
+## Projects I contribute to
+
+* [slimphp/slim](https://github.com/slimphp/Slim) A PHP micro framework
+* [slimphp/slim-website](https://github.com/slimphp/Slim-Website) The Slim framework website
+* [cakephp/cakephp](https://github.com/cakephp/cakephp) A rapid development framework for PHP
+* [cakephp/chronos](https://github.com/cakephp/chronos) A standalone DateTime library
 
 ## Tools
 
