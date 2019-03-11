@@ -16,7 +16,9 @@ set VERZ=c:\xampp
 echo %VERZ%
 
 rem Transfer permissions to the current user for all files in a directory
-takeown /F "%VERZ%\*.*" /R /D J
+rem takeown /F "%VERZ%\*.*" /R /D J
+rem This command only works on english computers
+takeown /F "%VERZ%\*.*" /R /D Y
 
 rem Reset permissions to default
 icacls "%VERZ%" /reset /t
