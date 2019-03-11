@@ -30,7 +30,7 @@ echo "Password:" . $password . "\n";
 $iv = chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0);
 
 // Most secure iv
-// Never ever use iv=0 in real live. Better use this:
+// Never ever use iv=0 in real life. Better use this iv:
 // $ivlen = openssl_cipher_iv_length($method);
 // $iv = openssl_random_pseudo_bytes($ivlen);
 
