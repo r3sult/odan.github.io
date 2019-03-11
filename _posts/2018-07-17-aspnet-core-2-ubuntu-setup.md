@@ -226,7 +226,7 @@ You only need to set up a virtual host for TLS/SSL. The following example assume
 
 <br>
 
-> **Security warning** For demonstration purposes I create a self-signed certificate here. If you are using a real certificate (like https://letsencrypt.org/), the browser should not complain about the certificate. Don't use a self-signed certificate in your production environment!
+> **Security warning** For demonstration purposes I create a self-signed certificate here. If you are using a real certificate (like <https://letsencrypt.org/>), the browser should not complain about the certificate. Don't use a self-signed certificate in your production environment!
 
 <br>
 
@@ -311,7 +311,7 @@ To change Kestrel's IP/port, see [Kestrel: Endpoint configuration](https://docs.
 
 Save the file and test the configuration. 
 
-Disbale the `000-default` site:
+Disable the `000-default` site:
 
 ```
 sudo a2dissite 000-default.conf
@@ -341,7 +341,7 @@ Start your dotnet application:
 sudo dotnet run
 ```
 
-If you browse to http://localhost/ you should be redirected to https://localhost/.
+If you open http://localhost/ you should be redirected to https://localhost/.
 
 After you have accepted the self-signed certificate you should the `Hello World!` message.
 
@@ -363,7 +363,7 @@ sudo apt-get install supervisor
 ```
 
 Now publish the application into a final location. Run `dotnet publish`, then copy the content of `publish/`
-into `/var/aspnetcore` where it will live.
+into `/var/aspnetcore` where it will go live.
 
 Build the application:
 
