@@ -11,11 +11,15 @@ This article is inspired by Brad Cypert's blog post: <http://www.bradcypert.com/
 
 Why should we build a API with Vanilla PHP? Because you can, and it makes fun.
 
+## Requirements
+
+* PHP
+
 ## Let's go
 
-* Create a directory /src
+* Create a directory: `/src`
 
-* Create a file: src/functions.php
+* Create a file: `src/functions.php`
 
 ```php
 function route($httpMethods, $route, $callback, $exit = true)
@@ -63,8 +67,8 @@ RewriteRule ^$ public/ [L]
 RewriteRule (.*) public/$1 [L]
 ```
 
-* Create a directory /public
-* Create a file: public/.htaccess
+* Create a directory: `/public`
+* Create a file: `public/.htaccess`
 
 ```
 RewriteEngine On
@@ -73,7 +77,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
 ```
 
-* Create a file: `public/index.php`
+* Create a front controller file: `public/index.php`
 
 ```php
 <?php
@@ -108,13 +112,6 @@ echo '404 Not Found';
 
 ```
 
-## Start the webserver
-
-```
-cd public
-php -S localhost:8080
-```
-
-Open the browser: http://localhost:8080
+And that’s it! Now open the website and navigate through the pages.
 
 Have fun :-)
