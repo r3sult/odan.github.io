@@ -41,15 +41,15 @@ Organisation Unit: HeadOffice
 Common-Name: www.example.com
 E-Mail: info@example.com
 Password: secret123
-Opional company name: keep empty, press enter
+Optional company name: keep empty, press enter
 ```
 
-* Order SSL cert at psw.net with file: www_example_com.csr
+* Order a real SSL certificate, e.g. from <psw.net> with file: www_example_com.csr
 * Download and extract the ZIP file from psw.net
 
 ## Install the Apache SSL certificate
 
-* Open file with Notepad++: httpd-ssl.conf
+* Open file with Notepad++: `C:\xampp\apache\conf\extra\httpd-ssl.conf`
 * Add the lines
 
 ```
