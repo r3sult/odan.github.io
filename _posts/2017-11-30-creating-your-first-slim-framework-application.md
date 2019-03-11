@@ -409,20 +409,22 @@ $settings['displayErrorDetails'] = true;
 
 ### Logging of errors
 
-It becomes more difficult if you have worked in the server configuration files. 
-Tiny errors in the `.htaccess` file or the filesystem permissions can lead to such errors.
+Error logging is an essential part of a web application or API. After each change to the system or configuration, new minor errors may occur. Therefore it is important to log these errors at least in log files and to check them regularly.
 
 A quick checklist:
 
 * Does your Apache `DocumentRoot` points to the `public` folder?
-* Did you set the write permissions to the `temp` and `upload` folder correctly?
+* Is the Apache `mod_rewrite` module enabled?
+* Are the file system permissions correct?
 * Are the database connection parameters correct?
 
-To see where the problem is, you should log all errors in a logfile. Here you can find instructions:
+To see where the problem is, you should log all errors in a logfile. Here you can find more instructions:
 
 [Logging errors in Slim 3](https://akrabat.com/logging-errors-in-slim-3/)
 
 ### Logging
+
+No we add Monolog to our Slim application.
 
 Installation
 
@@ -449,18 +451,14 @@ use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 
 $container[LoggerInterface::class] = function (Container $container) {
-    $settings = $container->get('settings');
-    $logger = new Logger($settings['logger']['name']);
-    
-    $level = $settings['logger']['level'];
-    if (!isset($level)) {
-        $level = Logger::ERROR;
-    }
-    
-    $logFile = $settings['logger']['file'];
+    $settings = $container->get('settings')['logger'];
+    $level = isset($settings['level']) ?: Logger::ERROR;
+    $logFile = $settings['file'];
+
+    $logger = new Logger($settings['name']);
     $handler = new RotatingFileHandler($logFile, 0, $level, true, 0775);
     $logger->pushHandler($handler);
-    
+
     return $logger;
 };
 ```
@@ -557,11 +555,11 @@ $container[Connection::class] = function (Container $container) {
 };
 
 $container[PDO::class] = function (Container $container) {
-    /** @var Connection $db */
-    $db = $container->get(Connection::class);
-    $db->getDriver()->connect();
+    /** @var Connection $connection */
+    $connection = $container->get(Connection::class);
+    $connection->getDriver()->connect();
 
-    return $db->getDriver()->getConnection();
+    return $connection->getDriver()->getConnection();
 };
 ```
 
@@ -575,7 +573,6 @@ use Slim\Http\Response;
 
 $app->get('/databases', function (Request $request, Response $response) {
     /** @var Container $this */
-    /** @var Connection $db */
 
     $query = $this->get(Connection::class)->newQuery();
 
@@ -608,7 +605,7 @@ $userRow = $query->execute()->fetch('assoc') ?: [];
 // Retrieving all rows from a table as array
 $query = $query->select(['id', 'username', 'email'])
     ->from('users');
-    
+
 $userRows = $query->execute()->fetchAll('assoc') ?: [];
 
 // Insert a new row
