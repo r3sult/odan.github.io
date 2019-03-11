@@ -102,12 +102,13 @@ route('GET', '^/users/(?<id>\d+)$', function($params) {
 
 // POST request to /users
 route('POST', '^/users$', function() {
+    // Send a json response
     header('Content-Type: application/json');
     $json = json_decode(file_get_contents('php://input'), true);
-    echo json_encode(['result' => 1]);
+    echo json_encode(['success' => true]);
 });
 
-header("HTTP/1.0 404 Not Found");
+header('HTTP/1.0 404 Not Found');
 echo '404 Not Found';
 
 ```
