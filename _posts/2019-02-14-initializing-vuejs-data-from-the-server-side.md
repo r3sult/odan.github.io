@@ -13,10 +13,9 @@ With the help of server-side rendered initial data we get more speed, a better S
 
 The idea is that we generate the initial data for Vue on the server and then we put this data into the `Vue.prototype` property. When creating the Vue.js instance, we will fetch the initial data and merge it with the existing `data` property. This works so fast that you won't have to wait any longer or see any flickering. 
 
-In my example I use the Twig Template Engine from Symfony on the server side. 
-
-
 ### Requirements
+
+In this example I use the PHP Twig Template Engine from Symfony on the server side. 
 
 * PHP
 * Twig
