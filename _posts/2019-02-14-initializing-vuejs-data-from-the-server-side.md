@@ -7,7 +7,7 @@ description:
 keywords: vuejs, ssr, php, twig
 ---
 
-Inspired by the blog post [Server-side apps with client-side rendering](https://reinink.ca/articles/server-side-apps-with-client-side-rendering) from @reinink I wrote this article.
+> Inspired by the blog post [Server-side apps with client-side rendering](https://reinink.ca/articles/server-side-apps-with-client-side-rendering) from @reinink I wrote this article.
 
 With the help of server-side rendered initial data we get more speed, a better SEO score and of course more happy users. This demo does't make use of a special `Data Store` like Vuex, because I want to keep it lean and simple.
 
