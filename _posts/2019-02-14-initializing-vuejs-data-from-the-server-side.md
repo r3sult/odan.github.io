@@ -9,7 +9,7 @@ keywords: vuejs, ssr, php, twig
 
 > Inspired by the blog post [Server-side apps with client-side rendering](https://reinink.ca/articles/server-side-apps-with-client-side-rendering) from @reinink I wrote this article.
 
-With the help of server-side rendered initial data we get more speed, a better SEO score and of course more happy users. This demo does't make use of a special `Data Store` like Vuex, because I want to keep it lean and simple.
+With the help of server-side rendered initial data we get more speed, a better SEO score and of course more happy users. This demo does't make use of a special Data Store like Vuex, because I want to keep it lean and simple.
 
 The idea is that we generate the initial data for Vue on the server and then we put this data into the `Vue.prototype` property. When creating the Vue.js instance, we will fetch the initial data and merge it with the existing `data` property. This works so fast that you won't have to wait any longer or see any flickering. 
 
