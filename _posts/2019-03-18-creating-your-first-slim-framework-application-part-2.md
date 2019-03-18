@@ -189,7 +189,7 @@ $app->get('/hello', \App\Action\HelloAction::class);
 Ok you can see, this was very easy. Great. But what if your action has more specific dependencies?
 Very easy, add a custom `__construct` method to the action class and fetch more objects from the container.
 
-Example file: `src/Action/UserEditAction.php`
+Example file: `src/Action/LoggerAction.php`
 
 ```php
 namespace App\Action;
@@ -200,7 +200,7 @@ use Slim\Container;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-class UserEditAction extends BaseAction
+class LoggerAction extends BaseAction
 {
     /**
      * @var LoggerInterface
