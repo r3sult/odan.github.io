@@ -17,7 +17,7 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Single Action Controllers](#single-action-controllers)
 * [Dependency injection](#dependency-injection)
 * [Repositories](#repositories)
-* [Business logic](#businsess-logic)
+* [Business logic](#business-logic)
 * [Validation](#validation)
 * [Handling Ajax requests](#handling-ajax-requests)
 * [Transformers](#transformers)
