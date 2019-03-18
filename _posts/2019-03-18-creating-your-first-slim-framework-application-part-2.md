@@ -128,11 +128,6 @@ abstract class BaseAction
     protected $view;
 
     /**
-     * @var LoggerInterface
-     */
-    protected $logger;
-
-    /**
      * Constructor.
      *
      * @param Container $container
@@ -142,7 +137,6 @@ abstract class BaseAction
     public function __construct(Container $container)
     {
         $this->db = $container->get(Connection::class);
-        $this->logger = $container->get(LoggerInterface::class);
         $this->router = $container->get('router');
         $this->view = $container->get(Twig::class);
     }
@@ -151,7 +145,7 @@ abstract class BaseAction
 
 Next we create a new action class and extend it from the our base class:
 
-File: `src/Action/`
+File: `src/Action/HelloAction.php`
 
 ```php
 namespace App\Action;
@@ -195,34 +189,38 @@ $app->get('/hello', \App\Action\HelloAction::class);
 Ok you can see, this was very easy. Great. But what if your action has more specific dependencies?
 Very easy, add a custom `__construct` method to the action class and fetch more objects from the container.
 
-Example:
+Example file: `src/Action/UserEditAction.php`
 
 ```php
+namespace App\Action;
+
+use Psr\Log\LoggerInterface;
+
 class UserEditAction extends BaseAction
 {
     /**
-     * @var Auth
+     * @var LoggerInterface
      */
-    protected $auth;
+    protected $logger;
 
-  /**
-   * Constructor.
-   *
-   * @param Container $container The container
-   */
-  public function __construct(Container $container)
-  {
-      // call the parent constructor
-      parent::__construct($container);
-      
-      // fetch more custom dependencies here
-      $this->auth = $container->get(Auth::class);
-  }
-  
-  public function __invoke(Request $request, Response $response): ResponseInterface
-  {
-    // ...
-  }
+    /**
+     * Constructor.
+     *
+     * @param Container $container The container
+     */
+    public function __construct(Container $container)
+    {
+        // call the parent constructor
+        parent::__construct($container);
+
+        // fetch more custom dependencies here
+        $this->logger = $container->get(LoggerInterface::class);
+    }
+
+    public function __invoke(Request $request, Response $response): ResponseInterface
+    {
+        $this->logger->warning('my warning message');
+    }
 }
 ```
 
