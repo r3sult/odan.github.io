@@ -15,6 +15,7 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Requirements](#requirements)
 * [Introduction](#introduction)
 * [Single Action Controllers](#single-action-controllers)
+* [Dependency injection](#dependency-injection)
 * [Repositories](#repositories)
 * [Business logic](#businsess-logic)
 * [Validation](#validation)
@@ -228,6 +229,22 @@ class LoggerAction extends BaseAction
 }
 ```
 
+## Repositories
 
+todo
 
+## Business logic
 
+todo
+
+## Validation
+
+todo
+
+## Handling Ajax requests
+
+todo
+
+## Transformers
+
+todo
