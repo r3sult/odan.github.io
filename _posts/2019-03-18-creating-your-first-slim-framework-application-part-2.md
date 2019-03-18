@@ -194,7 +194,11 @@ Example file: `src/Action/UserEditAction.php`
 ```php
 namespace App\Action;
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Slim\Container;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class UserEditAction extends BaseAction
 {
