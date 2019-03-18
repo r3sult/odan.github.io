@@ -15,11 +15,11 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Requirements](#requirements)
 * [Introduction](#introduction)
 * [Single Action Controllers](#single-action-controllers)
-* [Sessions](#sessions)
-* [Business logic](#businsess-logic)
 * [Repositories](#repositories)
+* [Business logic](#businsess-logic)
 * [Validation](#validation)
 * [Handling Ajax requests](#handling-ajax-requests)
+* [Transformers](#transformers)
 
 ## Requirements
 
