@@ -520,21 +520,18 @@ class UserEdit
 
 ## Validation
 
-For security reasons the service side validation is a MUST, 
-the client side validation is a nice to have for the usebility.
+For security reasons, server-side validation is a MUST. Client-side validation is useful for the usability.
 
-There are tons of concepts and validation librarie out there that will help you to 
-validate and block potential dangerous the user (or api or hackers) input.
+There are countless concepts and validation libraries to help you validate the potentially dangerous user input.
 
-Slim does not come with a validation functionality. We have to decide ourself
-what's the best solutions for our specific requirements. 
+Slim does not have a validation functionality.
 
-On of the most popular validation engine for PHP is [Respect\Validation](https://github.com/Respect/Validation).
-You may try it out and maybe it's a good match for you.
+We have to decide for ourselves which is the best solution for our specific requirements. 
 
-But in my job I have vervy complex business validation rules where even this libryries was not the right tool for me.
+One of the most popular validation engines for PHP is [Respect\Validation](https://github.com/Respect/Validation).
+You can try it and maybe it's a good solution for you.
 
-The only solution that **really works** for me in a large enterprise application was [Martin Fowler's validation concept](https://martinfowler.com/articles/replaceThrowWithNotification.html).
+Personally, I don't use a special validation library, because PHP itself offers more flexible and better possibilities for input validation. The only solution that **really works** for me in a large enterprise application was [Martin Fowler's validation concept](https://martinfowler.com/articles/replaceThrowWithNotification.html).
 
 If you like to read more about this topic, please contact me or write a comment.
 
