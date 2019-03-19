@@ -97,6 +97,8 @@ By default the Slim 3 framework will inject the container into the constructor o
 
 Then we just have to fetch the reqired dependencies from the container an put them into the class member variables.
 
+> Of course, I know, that injecting a container inside something is an anti-pattern. But in Slim 3 it is like it is.
+
 Here we create a base class for all actions:
 
 File: `src/Action/BaseAction.php`
