@@ -24,12 +24,9 @@ This Tutorial shows how to create a very basic but flexible project for every us
 
 ## Requirements
 
-* PHP 7.x
+* PHP 7+
 * MySQL 5.7+
-* Slim framework 3
-* [Apache](https://gist.github.com/odan/dcf6c3155899677ee88a4f7db5aac284#install-apache-php-mysql)
-* Apache [mod_rewrite](https://gist.github.com/odan/dcf6c3155899677ee88a4f7db5aac284#enable-apache-mod_rewrite) module
-* [Composer](https://gist.github.com/odan/dcf6c3155899677ee88a4f7db5aac284#install-composer)
+* Slim Framework 3
 
 ## Introduction
 
@@ -537,8 +534,9 @@ If you like to read more about this topic, please contact me or write a comment.
 
 ## Handling Ajax requests
 
-todo
+Today we have multiple different possiblilities to invoke an Ajax request from the client side like jQuery, Axios or the native `fetch` function. I still prefer jQuery bacause it's bulletproof and simply works in any browser.
 
-## Transformers
+### Client side
 
-todo
+
+### Server side
