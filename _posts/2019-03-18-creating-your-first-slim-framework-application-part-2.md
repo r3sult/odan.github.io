@@ -249,7 +249,7 @@ Quick summary:
 
 Here is an example of a base repository class:
 
-Filename: `src/Repository/BaseRepository`
+Filename: `src/Repository/BaseRepository.php`
 
 ```php
 <?php
@@ -417,7 +417,7 @@ A concrete repository which is responsible for user data could look like this:
 
 Filename: `src/Domain/User/UserRepository.php`
 
-```
+```php
 <?php
 
 namespace App\Domain\User;
@@ -449,14 +449,68 @@ class UserRepository extends BaseRepository
 }
 ```
 
-In some cases it makes more sense to return just an raw array of data or objects. In other cases (like an insert)
-it's more usefull to just return the last inserted id as integer. For delete operations it's good to return just a boolean value like `true`.
+**Return types**
 
-Select methods that must return a value starting with the name `get` and should throw an Exception instead of return empty data. If the select method can return nothing, that the method name starts with `find`.
+In some cases, it makes more sense to return only a simple array of data or objects. In other cases (like an insert), it makes more sense to simply return the last inserted ID as an integer. For deletions, it is recommended to return only a boolean value such as `true`.
+
+**Method names**
+
+Methods that fetch data and must return a value starting with `get` and should throw an exception instead of returning empty data. If the select method cannot return anything, the method name starts with `find`.
+
+**Exception handling**
+
+In case no data can be found, a `DomainException` should be thrown. This rule applies only for `get*` and not for `find*` methods.
 
 ## Business logic
 
-todo
+The business logic (e.g. calulation, validation, file creation etc.) should be placed in service classes.
+
+The service class is invoked directly by the controller layer (in our case the action method).
+
+Normally, a service class reads or changes data from the database. 
+For this reason, we must provide the service class with a `Repository`.
+You could consider these two classes (service and repository) as bundled, because they form a kind of symbiosis. 
+
+**Example**
+
+Filename: `src/Domain/User/UserEdit.php`
+
+```php
+<?php
+
+namespace App\Domain\User;
+
+class UserEdit
+{
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
+
+    /**
+     * Constructor.
+     *
+     * @param UserRepository $userRepository The repository
+     */
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
+     * Get user by ID.
+     *
+     * @param int $userId The user ID
+     *
+     * @return User The data
+     */
+    public function getUserById(int $userId): User
+    {
+        return $this->userRepository->getById($userId);
+    }
+}
+
+```
 
 ## Validation
 
