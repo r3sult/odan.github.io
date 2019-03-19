@@ -233,7 +233,226 @@ class LoggerAction extends BaseAction
 
 ## Repositories
 
-todo
+The `Active Record Pattern` is an so called anti-pattern, because it voilates the Single Responsibility Principle of SOLID.
+
+Instead we are implementing our persistend oriented Repositores as a [Data Mapper](https://designpatternsphp.readthedocs.io/en/latest/Structural/DataMapper/README.html), which follows the Single Responsibility Principle.
+
+A repository improves code maintainability, testing and readability by separating `business logic` from `data access logic` and provides centrally managed and consistent access rules for a data source. Each public repository method represents a query. The return values represent the result set of a query and can be primitive/object or list (array) of them. Database transactions must be handled on a higher level (domain service) and not within a repository.
+
+Quick summary:
+
+* Communication with the database.
+* Place for the data access logic (query logic).
+* This is no place for the business logic! Use domain services for the complex business and domain logic.
+
+### Example
+
+Here is an example of a base repository class:
+
+Filename: `src/Repository/BaseRepository`
+
+```php
+<?php
+
+namespace App\Repository;
+
+use Cake\Database\Connection;
+use Cake\Database\Query;
+
+/**
+ * Repository (persistence oriented).
+ */
+abstract class BaseRepository implements RepositoryInterface
+{
+    /**
+     * Connection.
+     *
+     * @var Connection
+     */
+    protected $db;
+
+    /**
+     * Constructor.
+     *
+     * @param Connection $db
+     */
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    /**
+     * Create a new query.
+     *
+     * @return Query
+     */
+    protected function newQuery(): Query
+    {
+        return $this->db->newQuery();
+    }
+
+    /**
+     * Create a new select query.
+     *
+     * @param string $table The table name
+     *
+     * @return Query A select query
+     */
+    protected function newSelect(string $table): Query
+    {
+        $query = $this->newQuery()->from($table);
+
+        if (!$query instanceof Query) {
+            throw new RuntimeException('Failed to create query');
+        }
+
+        return $query;
+    }
+    
+    /**
+     * Executes an UPDATE statement on the specified table.
+     *
+     * @param string $table the table to update rows from
+     * @param array $data values to be updated [optional]
+     *
+     * @return Query Query
+     */
+    protected function newUpdate(string $table, array $data = []): Query
+    {
+        return $this->newQuery()->update($table)->set($data);
+    }
+
+    /**
+     * Executes an UPDATE statement on the specified table.
+     *
+     * @param string $table the table to update rows from
+     * @param array $data values to be updated
+     *
+     * @return Query Query
+     */
+    protected function newInsert(string $table, array $data): Query
+    {
+        $columns = array_keys($data);
+
+        return $this->newQuery()->insert($columns)
+            ->into($table)
+            ->values($data);
+    }
+
+    /**
+     * Create a DELETE query.
+     *
+     * @param string $table the table to delete from
+     *
+     * @return Query Query
+     */
+    protected function newDelete(string $table): Query
+    {
+        return $this->newQuery()->delete($table);
+    }
+    
+    /**
+     * Fetch row by id.
+     *
+     * @param string $table Table name
+     * @param int $id ID
+     *
+     * @return array Result set
+     */
+    protected function fetchById(string $table, int $id): array
+    {
+        return $this->newSelect($table)
+            ->select('*')
+            ->where(['id' => $id])
+            ->execute()
+            ->fetch('assoc')?: [];
+    }
+
+    /**
+     * Fetch row by id.
+     *
+     * @param string $table Table name
+     * @param int|string $id ID
+     *
+     * @return bool True if the row exists
+     */
+    protected function existsById(string $table, $id): bool
+    {
+        return $this->newSelect($table)
+            ->select('id')
+            ->andWhere(['id' => $id])
+            ->execute()
+            ->fetch('assoc') ? true : false;
+    }
+
+    /**
+     * Fetch all rows.
+     *
+     * @param string $table Table name
+     *
+     * @return array Result set
+     */
+    protected function fetchAll(string $table): array
+    {
+        return $this->newSelect($table)->select('*')->execute()->fetchAll('assoc') ?: [];
+    }
+}
+```
+
+The repository interface:
+
+Filename: `src/Repository/RepositoryInterface.php`
+
+```php
+<?php
+
+namespace App\Repository;
+
+interface RepositoryInterface
+{
+}
+```
+
+A concrete repository which is responsible for user data could look like this:
+
+Filename: `src/Domain/User/UserRepository.php`
+
+```
+<?php
+
+namespace App\Domain\User;
+
+use App\Repository\BaseRepository;
+use DomainException;
+
+class UserRepository extends BaseRepository
+{
+    /**
+     * Finds a user from by the given User ID and returns a User object located in memory.
+     *
+     * @param int $userId the user id
+     *
+     * @throws DomainException
+     *
+     * @return User the User business object
+     */
+    public function getById(int $userId): User
+    {
+        $row = $this->fetchById('users', $userId);
+
+        if (empty($row)) {
+            throw new DomainException(sprintf('User not found: %s', $userId));
+        }
+
+        return User::fromArray($row);
+    }
+}
+```
+
+In some cases it makes more sense to return just an raw array of data or objects. In other cases (like an insert)
+it's more usefull to just return the last inserted id as integer. For delete operations it's good to return just a boolean value like `true`.
+
+Select methods that must return a value starting with the name `get` and should throw an Exception instead of return empty data. If the select method can return nothing, that the method name starts with `find`.
 
 ## Business logic
 
