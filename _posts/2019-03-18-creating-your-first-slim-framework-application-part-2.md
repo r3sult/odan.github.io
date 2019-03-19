@@ -269,16 +269,16 @@ abstract class BaseRepository implements RepositoryInterface
      *
      * @var Connection
      */
-    protected $db;
+    protected $connection;
 
     /**
      * Constructor.
      *
      * @param Connection $db
      */
-    public function __construct(Connection $db)
+    public function __construct(Connection $connection)
     {
-        $this->db = $db;
+        $this->connection = $connection;
     }
 
     /**
@@ -288,7 +288,7 @@ abstract class BaseRepository implements RepositoryInterface
      */
     protected function newQuery(): Query
     {
-        return $this->db->newQuery();
+        return $this->connection->newQuery();
     }
 
     /**
@@ -455,11 +455,17 @@ In some cases, it makes more sense to return only a simple array of data or obje
 
 **Method names**
 
-Methods that fetch data and must return a value starting with `get` and should throw an exception instead of returning empty data. If the select method cannot return anything, the method name starts with `find`.
+Use the prefix `get` to indicate that this method must return a value, otherwise throw an exception.
+If the select method can return an empty result set, the method name starts with `find` and doesn't throws an exception.
 
-**Exception handling**
+**Examples**
 
-In case no data can be found, a `DomainException` should be thrown. This rule applies only for `get*` and not for `find*` methods.
+* findUserById(int $id)
+* getUserById(int $id)
+* findActiveUsers(): array
+* insertUser(array $data): int
+* deleteUser(int $userId): bool
+* updateUser(int $userId, array $data): bool
 
 ## Business logic
 
@@ -514,7 +520,23 @@ class UserEdit
 
 ## Validation
 
-todo
+For security reasons the service side validation is a MUST, 
+the client side validation is a nice to have for the usebility.
+
+There are tons of concepts and validation librarie out there that will help you to 
+validate and block potential dangerous the user (or api or hackers) input.
+
+Slim does not come with a validation functionality. We have to decide ourself
+what's the best solutions for our specific requirements. 
+
+On of the most popular validation engine for PHP is [Respect\Validation](https://github.com/Respect/Validation).
+You may try it out and maybe it's a good match for you.
+
+But in my job I have vervy complex business validation rules where even this libryries was not the right tool for me.
+
+The only solution that **really works** for me in a large enterprise application was [Martin Fowler's validation concept](https://martinfowler.com/articles/replaceThrowWithNotification.html).
+
+If you like to read more about this topic, please contact me or write a comment.
 
 ## Handling Ajax requests
 
