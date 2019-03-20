@@ -680,3 +680,5 @@ Instead you could store them in a file like `env.php` and place this file one di
 ```
 /var/www/example.com/env.php
 ```
+
+Read more: [Part 2](https://odan.github.io/2019/03/18/creating-your-first-slim-framework-application-part-2.html)
