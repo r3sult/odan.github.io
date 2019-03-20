@@ -263,7 +263,7 @@ abstract class BaseRepository implements RepositoryInterface
     }
     
     /**
-     * Executes an UPDATE statement on the specified table.
+     * Executes an update statement on the specified table.
      *
      * @param string $table the table to update rows from
      * @param array $data values to be updated [optional]
@@ -276,7 +276,7 @@ abstract class BaseRepository implements RepositoryInterface
     }
 
     /**
-     * Executes an UPDATE statement on the specified table.
+     * Executes an update statement on the specified table.
      *
      * @param string $table the table to update rows from
      * @param array $data values to be updated
@@ -293,7 +293,7 @@ abstract class BaseRepository implements RepositoryInterface
     }
 
     /**
-     * Create a DELETE query.
+     * Create a delete query.
      *
      * @param string $table the table to delete from
      *
@@ -305,7 +305,7 @@ abstract class BaseRepository implements RepositoryInterface
     }
     
     /**
-     * Fetch row by id.
+     * Fetch row by ID.
      *
      * @param string $table Table name
      * @param int $id ID
@@ -413,22 +413,22 @@ If the select method can return an empty result set, the method name starts with
 
 **Examples**
 
-* findUserById(int $id)
-* getUserById(int $id)
-* findActiveUsers(): array
-* insertUser(array $data): int
-* deleteUser(int $userId): bool
-* updateUser(int $userId, array $data): bool
+* findUserById(int $id): ?User
+* getUserById(int $id): User
+* findActiveUsers(): array  (array of Users, e.g. User[])
+* insertUser(array $data): int (last inserted ID)
+* deleteUser(int $userId): bool (success)
+* updateUser(int $userId, array $data): bool (success)
 
 ## Business logic
 
-The business logic (e.g. calulation, validation, file creation etc.) should be placed in service classes.
+The business logic (e.g. calulation, validation, file creation etc.) should be placed in service classes (domain service).
 
-The service class is invoked directly by the controller layer (in our case the action method).
+The domain service object is invoked directly by the controller layer (in our case the action method).
 
-Normally, a service class reads or changes data from the database. 
-For this reason, we must provide the service class with a `Repository`.
-You could consider these two classes (service and repository) as bundled, because they form a kind of symbiosis. 
+Normally, a service object reads or changes data from the database. 
+For this reason, we must provide the service object with a `Repository`.
+You could consider these two objects (service and repository) as bundled, because they form a kind of symbiosis. 
 
 **Example**
 
@@ -486,13 +486,59 @@ You can try it and maybe it's a good solution for you.
 
 Personally, I don't use a special validation library, because PHP itself offers more flexible and better possibilities for input validation. The only solution that **really works** for me in a large enterprise application was [Martin Fowler's validation concept](https://martinfowler.com/articles/replaceThrowWithNotification.html).
 
+I have written a small library in PHP to collect all vallidation errors: [odan/validation](https://github.com/odan/validation).
+
 If you like to read more about this topic, please contact me or write a comment.
 
 ## Handling Ajax requests
 
-Today we have multiple different possiblilities to invoke an Ajax request from the client side like jQuery, Axios or the native `fetch` function. I still prefer jQuery bacause it's bulletproof and simply works in any browser.
+Today we have multiple different possiblilities to invoke an Ajax request from the client side like jQuery, Axios or the native `fetch` function. I still prefer jQuery because it's bulletproof and simply works in any browser.
 
 ### Client side
 
+Invoking a server side action can be done in jQuery with the [ajax](http://api.jquery.com/jquery.ajax/) function:
+
+Sample `POST` request:
+
+```javascript
+const data = {
+    username: "max",
+    email: "max@example.com"
+};
+
+$.ajax({
+    url: 'users',
+    type: "POST",
+    contentType: 'application/json',
+    dataType: 'json',
+    data: JSON.stringify(data)
+}).done(function (data) {
+    alert('Success');
+}).fail(function (xhr) {
+    alert('Server error');
+});
+```
 
 ### Server side
+
+On the server side we need a new route and a new action class to handle the ajax request:
+
+In `config/routes.php` add:
+
+```php
+$app->post('/users', \App\Action\UserCreateAction::class);
+```
+
+In `config/container.php` add:
+
+```php
+$app->post('/users', \App\Action\UserCreateAction::class);
+```
+
+File: `src/Action/UserCreateAction.php`
+
+Content:
+
+```php
+$app->post('/users', \App\Action\UserCreateAction::class);
+```
