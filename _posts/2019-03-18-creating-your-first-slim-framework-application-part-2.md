@@ -167,6 +167,8 @@ $app->get('/', \App\Action\HomeIndexAction::class);
 
 We also have to inject the dependencies exlicitly (and not automaticaly) here to implement proper dependency injection.
 
+To implement correct dependency injection, we explicitly inject the dependencies into the constructor.
+
 In `container.php` add this definition:
 
 ```php
