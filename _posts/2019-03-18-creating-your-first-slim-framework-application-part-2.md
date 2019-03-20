@@ -19,8 +19,6 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Repositories](#repositories)
 * [Business logic](#business-logic)
 * [Validation](#validation)
-* [Handling Ajax requests](#handling-ajax-requests)
-* [Transformers](#transformers)
 
 ## Requirements
 
@@ -517,28 +515,4 @@ $.ajax({
 }).fail(function (xhr) {
     alert('Server error');
 });
-```
-
-### Server side
-
-On the server side we need a new route and a new action class to handle the ajax request:
-
-In `config/routes.php` add:
-
-```php
-$app->post('/users', \App\Action\UserCreateAction::class);
-```
-
-In `config/container.php` add:
-
-```php
-$app->post('/users', \App\Action\UserCreateAction::class);
-```
-
-File: `src/Action/UserCreateAction.php`
-
-Content:
-
-```php
-$app->post('/users', \App\Action\UserCreateAction::class);
 ```
