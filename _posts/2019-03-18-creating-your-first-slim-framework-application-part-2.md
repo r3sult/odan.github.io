@@ -97,6 +97,8 @@ By default the Slim framework will inject the container into the constructor of 
 
 > Injecting a container inside something is an anti-pattern and must be avoided.
 
+Of course, we try to avoid this mistake by injecting all dependencies. With Pimple this is very easy and straightforward.
+
 **Example**
 
 Let's create a new action class for the first url route (/) that will render a twig template for us.
