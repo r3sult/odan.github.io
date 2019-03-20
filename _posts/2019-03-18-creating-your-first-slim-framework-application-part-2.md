@@ -88,78 +88,48 @@ The static code analysis using `phpstan` will also benefit from this technique.
 
 ### Dependency injection
 
-The first example was quite basic. In real life we need a database connection, a template engine, a logger and so on...
+Ok, this is a bit of a controversial topic, because Slim doesn't recommend any particular way to implement it.
 
-By default the Slim 3 framework will inject the container into the constructor of the Action class for us.
+However, it is clear that all necessary dependencies must be injected via the constructor. 
+It is important that in no case the container itself is given, but only the explicit dependencies.
 
-Then we just have to fetch the reqired dependencies from the container an put them into the class member variables.
+By default the Slim framework will inject the container into the constructor of the Action class for us.
 
-> Of course, I know, that injecting a container inside something is an anti-pattern. But in Slim 3 it is like it is.
+> Injecting a container inside something is an anti-pattern and must be avoided.
 
-Here we create a base class for all actions:
+**Example**
 
-File: `src/Action/BaseAction.php`
+Let's create a new action class for the first url route (/) that will render a twig template for us.
+
+File: `src/Action/HomeIndexAction.php`
 
 ```php
+<?php
+
 namespace App\Action;
 
-use Cake\Database\Connection;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Log\LoggerInterface;
-use Slim\Container;
-use Slim\Router;
+use Slim\Http\Request;
+use Slim\Http\Response;
 use Slim\Views\Twig;
 
-abstract class BaseAction
+class HomeIndexAction implements ActionInterface
 {
-    /**
-     * @var Router
-     */
-    protected $router;
-
-    /**
-     * @var Connection
-     */
-    protected $db;
-
     /**
      * @var Twig
      */
-    protected $view;
+    protected $twig;
 
     /**
      * Constructor.
      *
-     * @param Container $container
-     *
-     * @throws ContainerException
+     * @param Twig $twig
      */
-    public function __construct(Container $container)
+    public function __construct(Twig $twig)
     {
-        $this->db = $container->get(Connection::class);
-        $this->router = $container->get('router');
-        $this->view = $container->get(Twig::class);
+        $this->twig = $twig;
     }
-}
-```
 
-Next we create a new action class and extend it from the our base class:
-
-File: `src/Action/HelloAction.php`
-
-```php
-namespace App\Action;
-
-use Psr\Http\Message\ResponseInterface;
-use Slim\Container;
-use Slim\Http\Request;
-use Slim\Http\Response;
-
-/**
- * Action.
- */
-class HelloAction extends BaseAction
-{
     /**
      * Action.
      *
@@ -170,63 +140,45 @@ class HelloAction extends BaseAction
      */
     public function __invoke(Request $request, Response $response): ResponseInterface
     {
-        $result = [
-            'message' => 'Hello World,
-            'now' => date('Y-m-d H:i:s'),
+        $viewData = [
+            'name' => 'World',
         ];
 
-        return $response->withJson($result);
+        return $this->twig->render($response, 'Home/home-index.twig', $viewData);
     }
 }
 ```
+
+Create a twig template file: `templates/Home/home-index.twig`
+
+Content:
+
+{% raw %}
+```twig
+Hello {{ name }}!
+```
+{% endraw %}
 
 Then we map the url to the action class in `routes.php`:
 
 ```php
-$app->get('/hello', \App\Action\HelloAction::class);
+$app->get('/', \App\Action\HomeIndexAction::class);
 ```
 
-Ok you can see, this was very easy. Great. But what if your action has more specific dependencies?
-Very easy, add a custom `__construct` method to the action class and fetch more objects from the container.
+We also have to inject the dependencies exlicitly (and not automaticaly) here to implement proper dependency injection.
 
-Example file: `src/Action/LoggerAction.php`
+In `container.php` add this definition:
 
 ```php
-namespace App\Action;
-
-use Psr\Http\Message\ResponseInterface;
-use Psr\Log\LoggerInterface;
-use Slim\Container;
-use Slim\Http\Request;
-use Slim\Http\Response;
-
-class LoggerAction extends BaseAction
-{
-    /**
-     * @var LoggerInterface
-     */
-    protected $logger;
-
-    /**
-     * Constructor.
-     *
-     * @param Container $container The container
-     */
-    public function __construct(Container $container)
-    {
-        // call the parent constructor
-        parent::__construct($container);
-
-        // fetch more custom dependencies here
-        $this->logger = $container->get(LoggerInterface::class);
-    }
-
-    public function __invoke(Request $request, Response $response): ResponseInterface
-    {
-        $this->logger->warning('my warning message');
-    }
-}
+$container[\App\Action\HomeIndexAction::class] = function (Container $container) {
+    $twig = $container->get(\Slim\Views\Twig::class);
+    return new \App\Action\HomeIndexAction($twig);
+};
 ```
+
+> If you don't want to write this manually, you can use the [PHP-DI Bridge for Slim](https://github.com/PHP-DI/Slim-Bridge).
+
+Ok you can see, this was very easy. If we open the index page we should see the the content: `Hello World!`.
 
 ## Repositories
 
