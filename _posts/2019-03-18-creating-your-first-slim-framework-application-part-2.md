@@ -19,6 +19,7 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Repositories](#repositories)
 * [Business logic](#business-logic)
 * [Validation](#validation)
+* [Handling Ajax requests](#handling-ajax-requests)
 
 ## Requirements
 
