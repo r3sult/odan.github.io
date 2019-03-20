@@ -2,7 +2,7 @@
 title: Creating your first Slim Framework Application Part 2
 layout: post
 comments: true
-published: false
+published: true
 description: 
 keywords: php slim
 ---
