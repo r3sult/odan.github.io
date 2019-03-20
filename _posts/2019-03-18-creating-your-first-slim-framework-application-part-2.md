@@ -97,11 +97,13 @@ By default the Slim framework will inject the container into the constructor of 
 
 > Injecting a container inside something is an anti-pattern and must be avoided.
 
-Of course, we try to avoid this mistake by injecting all dependencies. With Pimple this is very easy and straightforward.
+Of course, we try to avoid this mistake by injecting all dependencies explicitly.
+
+With Pimple this is very easy and straightforward.
 
 **Example**
 
-Let's create a new action class for the first url route (/) that will render a twig template for us.
+Let's create a new action class for the first url route (`/`) that will render a twig template for us.
 
 File: `src/Action/HomeIndexAction.php`
 
@@ -153,7 +155,7 @@ class HomeIndexAction implements ActionInterface
 
 Create a twig template file: `templates/Home/home-index.twig`
 
-Content:
+**Content:**
 
 {% raw %}
 ```twig
@@ -166,8 +168,6 @@ Then we map the url to the action class in `routes.php`:
 ```php
 $app->get('/', \App\Action\HomeIndexAction::class);
 ```
-
-We also have to inject the dependencies exlicitly (and not automaticaly) here to implement proper dependency injection.
 
 To implement correct dependency injection, we explicitly inject the dependencies into the constructor.
 
