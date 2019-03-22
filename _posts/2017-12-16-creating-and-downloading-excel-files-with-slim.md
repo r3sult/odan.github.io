@@ -19,53 +19,40 @@ Here is a tiny example how to create and download the created file directly from
 composer require phpoffice/phpspreadsheet
 ```
 
-## Controller action
-
-Add a new route and a controller action with this code:
-
-File: config/routes.php
-
-```php
-$app->get('/excel', 'App\Controller\ExcelController:downloadExcelAction');
-```
+## Action
 
 ```php
 <?php
-
-namespace App\Controller;
-
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
-class UserController
-{
-    public function downloadExcelAction(Request $request, Response $response): ResponseInterface
-    {
-        $excel = new Spreadsheet();
+$app->get('/excel', function (Request $request, Response $response) {
+    $excel = new Spreadsheet();
 
-        $sheet = $excel->setActiveSheetIndex(0);
-        $cell = $sheet->getCell('A1');
-        $cell->setValue('Test');
-        $sheet->setSelectedCells('A1');
-        $excel->setActiveSheetIndex(0);
+    $sheet = $excel->setActiveSheetIndex(0);
+    $cell = $sheet->getCell('A1');
+    $cell->setValue('Test');
+    $sheet->setSelectedCells('A1');
+    $excel->setActiveSheetIndex(0);
 
-        $excelWriter = new Xlsx($excel);
+    $excelWriter = new Xlsx($excel);
 
-        $excelFileName = __DIR__ . '/file.xlsx';
-        $excelWriter->save($excelFileName);
+    $excelFileName = __DIR__ . '/file.xlsx';
+    $excelWriter->save($excelFileName);
 
-        // For Excel2007 and above .xlsx files   
-        $response = $response->withHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        $response = $response->withHeader('Content-Disposition', 'attachment; filename="file.xlsx"');
+    // For Excel2007 and above .xlsx files   
+    $response = $response->withHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    $response = $response->withHeader('Content-Disposition', 'attachment; filename="file.xlsx"');
 
-        $stream = fopen($excelFileName, 'r+');
-        
-        return $response->withBody(new \Slim\Http\Stream($stream));
-    }
-}
+    $stream = fopen($excelFileName, 'r+');
+
+    return $response->withBody(new \Slim\Http\Stream($stream));
+});
 ```
 
-Then open the url: http://localhost/project/excel and the download should start automatically.
+Then open the url: http://localhost/excel and the download should start automatically.
 
 ## Downloading CSV files
 
@@ -80,8 +67,10 @@ $app->get('/csv', 'App\Controller\ExcelController:downloadCsvAction');
 Create a new action:
 
 ```php
-public function downloadCsvAction(Request $request, Response $response): ResponseInterface
-{
+use Slim\Http\Request;
+use Slim\Http\Response;
+
+$app->get('/csv', function (Request $request, Response $response) {
     $list = array(
         array('aaa', 'bbb', 'ccc', 'dddd'),
         array('123', '456', '789'),
@@ -100,5 +89,5 @@ public function downloadCsvAction(Request $request, Response $response): Respons
     $response = $response->withHeader('Content-Disposition', 'attachment; filename="file.csv"');
 
     return $response->withBody(new \Slim\Http\Stream($stream));
-}
+});
 ```
