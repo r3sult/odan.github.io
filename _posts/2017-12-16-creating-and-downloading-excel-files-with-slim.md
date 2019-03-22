@@ -21,6 +21,8 @@ composer require phpoffice/phpspreadsheet
 
 ## Action
 
+Create a new route:
+
 ```php
 <?php
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -57,14 +59,6 @@ Then open the url: http://localhost/excel and the download should start automati
 ## Downloading CSV files
 
 Creating an CSV file is even simpler.
-
-Create a new route:
-
-```php
-$app->get('/csv', 'App\Controller\ExcelController:downloadCsvAction');
-```
-
-Create a new action:
 
 ```php
 use Slim\Http\Request;
