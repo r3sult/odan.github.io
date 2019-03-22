@@ -85,3 +85,30 @@ $app->get('/csv', function (Request $request, Response $response) {
     return $response->withBody(new \Slim\Http\Stream($stream));
 });
 ```
+
+### Generating images
+
+Example:
+
+```php
+use Slim\Http\Request;
+use Slim\Http\Response;
+
+$app->get('/image', function (Request $request, Response $response) {
+    $image = imagecreate(200, 80);
+    imagecolorallocate($image, 255, 255, 255);
+    $textColor = imagecolorallocate($image, 113, 158, 64);
+    $lineColor = imagecolorallocate($image, 170, 170, 170);
+    imagestring($image, 8, 35, 25, 'slim framework', $textColor);
+    imagesetthickness($image, 2);
+    imageline($image, 35, 45, 160, 45, $lineColor);
+
+    ob_start();
+    imagepng($image);
+    $image = ob_get_clean();
+
+    $response->write($image);
+
+    return $response->withHeader('Content-Type', 'image/png');
+});
+```
