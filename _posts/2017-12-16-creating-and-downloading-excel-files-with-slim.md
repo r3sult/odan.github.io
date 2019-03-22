@@ -86,7 +86,7 @@ $app->get('/csv', function (Request $request, Response $response) {
 });
 ```
 
-### Generating images
+## Generating images
 
 Example:
 
