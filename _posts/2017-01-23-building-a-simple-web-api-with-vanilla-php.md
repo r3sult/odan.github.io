@@ -117,5 +117,5 @@ And that’s it! Now open the website and navigate through the pages.
 
 Have fun :-)
 
-> **Attention::** Please do not use this funny example in a production system.<br>
+> **Attention:** Please do not use this funny example in a production system.<br>
 > A better approach would be to use the slim framework: https://www.slimframework.com/
