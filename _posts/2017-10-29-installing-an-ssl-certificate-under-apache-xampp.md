@@ -13,13 +13,9 @@ keywords:
 
 ## Installation
 
-Download and installe the 32-Bit or the 64-Bit version of OpenSSL here: <https://slproweb.com/products/Win32OpenSSL.html>
+Download and install the 32-Bit version of [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
 
 * OpenSSL 32-Bit: [Win32OpenSSL-1_1_0j](https://slproweb.com/download/Win32OpenSSL-1_1_0j.exe)
-
-or
-
-* OpenSSL 64-Bit: [Win64OpenSSL-1_1_0j.exe](https://slproweb.com/download/Win64OpenSSL-1_1_0j.exe)
 
 ## Configuration
 
@@ -27,12 +23,6 @@ or
 
 ```
 set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
-```
-
-or
-
-```
-set OPENSSL_CONF=c:\OpenSSL-Win64\openssl.cnf 
 ```
 
 ## Create a certificate
