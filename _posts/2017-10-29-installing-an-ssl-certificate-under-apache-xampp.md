@@ -25,7 +25,7 @@ Download and install the 32-Bit version of [OpenSSL](https://slproweb.com/produc
 set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
 ```
 
-## Create a certificate
+## Create a certificate request file
 
 Run
 
@@ -50,7 +50,7 @@ Optional company name: keep empty, press enter
 
 * Order a real SSL certificate, e.g. from <https://letsencrypt.org/>, psw.net, GlobalSign, Sectigo, Thawte with the certificate request file: `www_example_com.csr`
 
-## Install the Apache SSL certificate
+## Installing the SSL Certificate
 
 * Open the file `C:\xampp\apache\conf\extra\httpd-ssl.conf` with Notepad++
 * Add these lines:
@@ -64,6 +64,6 @@ SSLCACertificateFile "conf/ssl.crt/root.crt"
 
 * Restart apache
 
-## Test the SSL certificate
+## Testing the SSL certificate
 
-To test the certificate online open: <https://www.sslshopper.com/ssl-checker.html#hostname=https://www.example.com/>
+This [SSL Checker](https://www.sslshopper.com/ssl-checker.html) will help you diagnose problems with your SSL certificate installation. You can verify the SSL certificate on your web server to make sure it is correctly installed, valid, trusted and doesn't give any errors to any of your users. To use the SSL Checker, simply enter your server's hostname (must be public) in the box below and click the Check SSL button.
