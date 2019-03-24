@@ -18,7 +18,7 @@ All code must follow:
 
 ## Coding styles
 
-* All files PHP files must be styled with PSR-1, PSR-2.
+* All PHP files files must be styled with PSR-1 and PSR-2.
 * Maximum number of method lines: 25.
   * Except for long queries in repositories and test provider methods.
 * Maximum number of class lines: 1000.
@@ -78,7 +78,7 @@ clearSometing()
   * No fully qualified class inside in any class, not even if it's a type hint.
   * The only exception is the PHPUnit annotation, fully qualified necessary (known bug in PHPUnit).
 * Use static code analysis to detect bugs and error. 
-  * For example: phpstan and the PHPStorm Code Inspector (Code > Inspect code...).
+  * For example: phpstan and the PhpStorm Code Inspector (Code > Inspect code...).
 
 ## Dependency injection
 
@@ -98,14 +98,14 @@ clearSometing()
 * All dependencies must be injected via constructor injection.
 * If two methods are using completely different dependencies they must be separated into other service: [SRP](https://app.letscode.hu/videos/single-responsibility).
 * A Service can accept another Service as an dependency.
-* Client side only validation not allowed. All requests must be validated in the Service layer (backend).
+* Client side only validation is not allowed. All requests must be validated in the Service layer (backend).
 * If the validation is very complex, move the validation to a special validation class.
 * A service class is not a util class. Don't suffix a service class with `*Service.php`. Give the service class a specific name and make it responsible for only one thing.
 
 ## Repository
 
+* Data access logic (database queries)
 * No transactions in a repository, must be handled in higher level (Service).
-* One method can execute one query.
 * The return value can be primitive/object or list (array) of them.
 * If you have more than one parameter for select method, you can create a custom method.
 * `sprintf` for SQL is not allowed. Use prepared statements or a query builder.
@@ -115,7 +115,7 @@ clearSometing()
 
 * getUserById(int $id) : array
   * Must return an array or object
-  * No match throws a `DomainException` (Domain means data domain here. [Read more](https://stackoverflow.com/a/1103021/1461181))
+  * No match throws a `DomainException` (Domain means `data domain` here. [Read more](https://stackoverflow.com/a/1103021/1461181))
 * findUserByEmail(string $email): array - Return array of users
 * createUser(array $userData): int - Returns the new ID
 
