@@ -17,6 +17,7 @@ To fix the SSL certificate error message "SSL certificate error: unable to get l
 
  ```ini
 [curl]
+; A default value for the CURLOPT_CAINFO option.
 ; This must be an absolute path.
 curl.cainfo="C:\xampp\php\extras\ssl\cacert.pem"
 openssl.cafile="C:\xampp\php\extras\ssl\cacert.pem"
