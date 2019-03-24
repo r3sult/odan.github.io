@@ -11,14 +11,28 @@ keywords:
 
 * XAMPP for Windows
 
-## Setup OpenSSL
+## Installation
 
-* Download Win32 OpenSSL: <https://slproweb.com/products/Win32OpenSSL.html> [Win32OpenSSL-1_0_2d.exe](https://slproweb.com/download/Win32OpenSSL-1_0_2d.exe)
+Download and installe the 32-Bit or the 64-Bit version of OpenSSL here: <https://slproweb.com/products/Win32OpenSSL.html>
 
-Run this command:
+* OpenSSL 32-Bit: [Win32OpenSSL-1_1_0j](https://slproweb.com/download/Win32OpenSSL-1_1_0j.exe)
+
+or
+
+* OpenSSL 64-Bit: [Win64OpenSSL-1_1_0j.exe](https://slproweb.com/download/Win64OpenSSL-1_1_0j.exe)
+
+## Configuration
+
+* OpenSSL requires a "openssl.cnf" configuration file. Enter this command:
 
 ```
-set OPENSSL_CONF=c:\xampp\openssl\bin\openssl.cfg
+set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
+```
+
+or
+
+```
+set OPENSSL_CONF=c:\OpenSSL-Win64\openssl.cnf 
 ```
 
 ## Create a certificate
@@ -44,23 +58,22 @@ Password: secret123
 Optional company name: keep empty, press enter
 ```
 
-* Order a real SSL certificate, e.g. from <psw.net> with file: www_example_com.csr
-* Download and extract the ZIP file from psw.net
+* Order a real SSL certificate, e.g. from <https://letsencrypt.org/>, psw.net, GlobalSign, Sectigo, Thawte with the certificate request file: `www_example_com.csr`
 
 ## Install the Apache SSL certificate
 
-* Open file with Notepad++: `C:\xampp\apache\conf\extra\httpd-ssl.conf`
-* Add the lines
+* Open the file `C:\xampp\apache\conf\extra\httpd-ssl.conf` with Notepad++
+* Add these lines:
 
 ```
-SSLCertificateFile "conf/certs/2018/certificate/Sonstige (pem)/certificate.crt"
-SSLCertificateKeyFile "conf/certs/2018/www_example_com.key"
-SSLCertificateChainFile "conf/certs/2018/certificate/Sonstige (pem)/intermediate1.crt"
-SSLCACertificateFile "conf/certs/2018/certificate/Sonstige (pem)/root.crt"
+SSLCertificateFile "conf/ssl.crt/certificate.crt"
+SSLCertificateKeyFile "conf/ssl.key/www_example_com.key"
+SSLCertificateChainFile "conf/ssl.crt/intermediate1.crt"
+SSLCACertificateFile "conf/ssl.crt/root.crt"
 ```
 
 * Restart apache
 
 ## Test the SSL certificate
 
-* Open: <https://www.sslshopper.com/ssl-checker.html#hostname=https://www.example.com/>
+To test the certificate online open: <https://www.sslshopper.com/ssl-checker.html#hostname=https://www.example.com/>
