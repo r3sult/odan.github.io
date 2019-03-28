@@ -645,7 +645,7 @@ You can use composer to generate an optimized build of your application.
 All dev-dependencies are removed and the Composer autoloader is optimized for performance. 
 
 ```
-composer update --no-dev --optimized-autoloader
+composer install --no-dev --optimize-autoloader
 ```
 
 Furthermore, you should activate caching for Twig to increase the performance of the template engine. 
