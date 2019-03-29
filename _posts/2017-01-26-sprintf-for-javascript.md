@@ -58,3 +58,7 @@ function sprintf() {
     return result;
 }
 ```
+
+### Other libraries
+
+* <http://www.diveintojavascript.com/projects/javascript-sprintf>
