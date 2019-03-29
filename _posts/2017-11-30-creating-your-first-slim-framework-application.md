@@ -644,6 +644,8 @@ For deployment on a productive server, there are some important settings and sec
 You can use composer to generate an optimized build of your application. 
 All dev-dependencies are removed and the Composer autoloader is optimized for performance. 
 
+Run this command in the same directory as the project’s composer.json file:
+
 ```
 composer install --no-dev --optimize-autoloader
 ```
