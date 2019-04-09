@@ -25,9 +25,13 @@ As of XAMPP 5.5.30 and 5.6.14, XAMPP ships MariaDB instead of MySQL.
 ## Installation
 
 * Download MySQL Community Server: <https://dev.mysql.com/downloads/mysql/>
-* Goto: Other Downloads > ZIP Archive	5.7.22 (mysql-5.7.22-win32.zip) > [No thanks, just start my download](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.22-win32.zip).
+* Click: `Looking for the latest GA version?`
+* Select Version: 5.7.25
+* Select Operating System: Microsoft Windows
+* Select OS Version: Windows (x86, 32-bit)
+* Scroll down to `ZIP Archive` and click [Download](https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.25-win32.zip).
 * Create a new and empty folder: `c:\xampp\mysql`
-* Extract `mysql-5.7.22-win32.zip` to: `c:\xampp\mysql`
+* Extract `mysql-5.7.25-win32.zipp` to: `c:\xampp\mysql`
 * Create a new file: `c:\xampp\mysql\bin\my.ini` and copy this content:
 
 ```ini
