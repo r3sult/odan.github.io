@@ -79,7 +79,7 @@ mysqlcheck.exe -u root -p --check --all-databases
 with this command:
 
 ```cmd
-c:\xampp\mysql>bin\mysqld.exe --initialize-insecure --basedir=c:\xampp\mysql --datadir=c:\xampp\mysql\data
+c:\xampp\mysql\bin>mysqld.exe --initialize-insecure --basedir=c:\xampp\mysql --datadir=c:\xampp\mysql\data
 ```
 
 Finished
