@@ -528,7 +528,7 @@ $container[PDO::class] = function (Container $container) {
 For security reasons (SQL injections), SQL statements should no longer be written by yourself, but generated using a query builder. For this purpose, the PHP community offers already established and tested libraries. Here is a selection I can recommend:
 
 * [CakePHP Database](https://github.com/cakephp/database)
-* [Illuminate Database](https://github.com/illuminate/database)
+* ~~[Illuminate Database](https://github.com/illuminate/database)~~
 
 You should use a query builder only within a persistent oriented Repository or a DataMapper class.
 Here you can find some examples of a Data Mapper class. [TicketMapper](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/TicketMapper.php), [ComponentMapper.php](https://github.com/slimphp/Tutorial-First-Application/blob/master/src/classes/ComponentMapper.php).
