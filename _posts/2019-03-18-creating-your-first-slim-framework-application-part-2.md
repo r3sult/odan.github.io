@@ -485,7 +485,7 @@ You can try it and maybe it's a good solution for you.
 
 Personally, I don't use a special validation library, because PHP itself offers more flexible and better possibilities for input validation. The only solution that **really works** for me in a large enterprise application was [Martin Fowler's validation concept](https://martinfowler.com/articles/replaceThrowWithNotification.html).
 
-I have written a small library in PHP to collect all vallidation errors: [odan/validation](https://github.com/odan/validation).
+I have written a small library in PHP to collect all vallidation errors: [selective/validation](https://github.com/selective-php/validation).
 
 If you like to read more about this topic, please contact me or write a comment.
 
