@@ -223,7 +223,7 @@ class UserRepository
     
     public function getById(int $userId): array
     {
-        $statement = $pdo->prepare("SELECT * FROM users WHERE id = :userId");
+        $statement = $this->pdo->prepare('SELECT * FROM users WHERE id = :userId');
         $statement->execute(['id' => $userId]);
         $row = $statement->fetch() ?: [];
 
