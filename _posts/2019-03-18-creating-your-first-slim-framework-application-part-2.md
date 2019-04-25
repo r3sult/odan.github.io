@@ -299,6 +299,10 @@ class UserEdit
      */
     public function getUserById(int $userId): User
     {
+        // do complex things here, like validation, logging, calculation, 
+        // external api requests, caching, generate csv, excel, pdf files and so on.
+        // ...
+        
         return $this->userRepository->getUserById($userId);
     }
 }
