@@ -36,7 +36,7 @@ Replace usename with your SFTP client username.
 If your document root is `/var/www/html` run this to change ownership on all files and directories.
 
 ```
-sudo chgrp www-data /var/www/html/
+sudo chgrp -R www-data /var/www/html/
 sudo chown -R www-data: /var/www/html/
 sudo chmod -R 2775 /var/www/html/
 ```
