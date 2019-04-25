@@ -199,172 +199,6 @@ Quick summary:
 
 ### Example
 
-Here is an example of a base repository class:
-
-Filename: `src/Repository/BaseRepository.php`
-
-```php
-<?php
-
-namespace App\Repository;
-
-use Cake\Database\Connection;
-use Cake\Database\Query;
-
-/**
- * Repository (persistence oriented).
- */
-abstract class BaseRepository implements RepositoryInterface
-{
-    /**
-     * Connection.
-     *
-     * @var Connection
-     */
-    protected $connection;
-
-    /**
-     * Constructor.
-     *
-     * @param Connection $db
-     */
-    public function __construct(Connection $connection)
-    {
-        $this->connection = $connection;
-    }
-
-    /**
-     * Create a new query.
-     *
-     * @return Query
-     */
-    protected function newQuery(): Query
-    {
-        return $this->connection->newQuery();
-    }
-
-    /**
-     * Create a new select query.
-     *
-     * @param string $table The table name
-     *
-     * @return Query A select query
-     */
-    protected function newSelect(string $table): Query
-    {
-        $query = $this->newQuery()->from($table);
-
-        if (!$query instanceof Query) {
-            throw new RuntimeException('Failed to create query');
-        }
-
-        return $query;
-    }
-    
-    /**
-     * Executes an update statement on the specified table.
-     *
-     * @param string $table the table to update rows from
-     * @param array $data values to be updated [optional]
-     *
-     * @return Query Query
-     */
-    protected function newUpdate(string $table, array $data = []): Query
-    {
-        return $this->newQuery()->update($table)->set($data);
-    }
-
-    /**
-     * Executes an update statement on the specified table.
-     *
-     * @param string $table the table to update rows from
-     * @param array $data values to be updated
-     *
-     * @return Query Query
-     */
-    protected function newInsert(string $table, array $data): Query
-    {
-        $columns = array_keys($data);
-
-        return $this->newQuery()->insert($columns)
-            ->into($table)
-            ->values($data);
-    }
-
-    /**
-     * Create a delete query.
-     *
-     * @param string $table the table to delete from
-     *
-     * @return Query Query
-     */
-    protected function newDelete(string $table): Query
-    {
-        return $this->newQuery()->delete($table);
-    }
-    
-    /**
-     * Fetch row by ID.
-     *
-     * @param string $table Table name
-     * @param int $id ID
-     *
-     * @return array Result set
-     */
-    protected function fetchById(string $table, int $id): array
-    {
-        return $this->newSelect($table)
-            ->select('*')
-            ->where(['id' => $id])
-            ->execute()
-            ->fetch('assoc')?: [];
-    }
-
-    /**
-     * Fetch row by id.
-     *
-     * @param string $table Table name
-     * @param int|string $id ID
-     *
-     * @return bool True if the row exists
-     */
-    protected function existsById(string $table, $id): bool
-    {
-        return $this->newSelect($table)
-            ->select('id')
-            ->andWhere(['id' => $id])
-            ->execute()
-            ->fetch('assoc') ? true : false;
-    }
-
-    /**
-     * Fetch all rows.
-     *
-     * @param string $table Table name
-     *
-     * @return array Result set
-     */
-    protected function fetchAll(string $table): array
-    {
-        return $this->newSelect($table)->select('*')->execute()->fetchAll('assoc') ?: [];
-    }
-}
-```
-
-The repository interface:
-
-Filename: `src/Repository/RepositoryInterface.php`
-
-```php
-<?php
-
-namespace App\Repository;
-
-interface RepositoryInterface
-{
-}
-```
-
 A concrete repository which is responsible for user data could look like this:
 
 Filename: `src/Domain/User/UserRepository.php`
@@ -374,29 +208,30 @@ Filename: `src/Domain/User/UserRepository.php`
 
 namespace App\Domain\User;
 
-use App\Repository\BaseRepository;
 use DomainException;
+use PDO;
 
-class UserRepository extends BaseRepository
+class UserRepository
 {
-    /**
-     * Finds a user from by the given User ID and returns a User object located in memory.
-     *
-     * @param int $userId the user id
-     *
-     * @throws DomainException
-     *
-     * @return User the User business object
-     */
-    public function getById(int $userId): User
+
+    private $pdo;
+
+    public function __construct(PDO $pdo)
     {
-        $row = $this->fetchById('users', $userId);
+        $this->pdo = $pdo;
+    }
+    
+    public function getById(int $userId): array
+    {
+        $statement = $pdo->prepare("SELECT * FROM users WHERE id = :userId");
+        $statement->execute(['id' => $userId]);
+        $row = $statement->fetch() ?: [];
 
         if (empty($row)) {
             throw new DomainException(sprintf('User not found: %s', $userId));
         }
 
-        return User::fromArray($row);
+        return $row;
     }
 }
 ```
