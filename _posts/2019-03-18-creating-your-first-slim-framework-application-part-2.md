@@ -221,7 +221,7 @@ class UserRepository
         $this->pdo = $pdo;
     }
     
-    public function getById(int $userId): array
+    public function getUserById(int $userId): array
     {
         $statement = $this->pdo->prepare('SELECT * FROM users WHERE id = :userId');
         $statement->execute(['id' => $userId]);
