@@ -247,8 +247,8 @@ If the select method can return an empty result set, the method name starts with
 
 **Examples**
 
-* findUserById(int $id): ?User
-* getUserById(int $id): User
+* findUserById(int $userId): ?User
+* getUserById(int $userId): User
 * findActiveUsers(): array  (array of Users, e.g. User[])
 * insertUser(array $data): int (last inserted ID)
 * deleteUser(int $userId): bool (success)
@@ -299,7 +299,7 @@ class UserEdit
      */
     public function getUserById(int $userId): User
     {
-        return $this->userRepository->getById($userId);
+        return $this->userRepository->getUserById($userId);
     }
 }
 
