@@ -35,7 +35,7 @@ $pdo = new PDO($dsn, $username, $password, $options);
 ```php
 $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email AND status=:status LIMIT 1");
 $statement->execute(['email' => $email, 'status' => $status]);
-$user = $statement->fetch();
+$userRow = $statement->fetch();
 ```
 
 ## Select multiple rows
@@ -59,7 +59,7 @@ while ($row = $statement->fetch()) {
 With fetchAll for small results.
 
 ```php
-$news = $pdo->query('SELECT * FROM news')->fetchAll();
+$userRows = $pdo->query('SELECT * FROM users')->fetchAll();
 ```
 
 ## Insert a single row
@@ -73,8 +73,7 @@ $sql = "INSERT INTO users SET username=:username, email=:email;";
 $status = $pdo->prepare($sql)->execute($row);
 
 if ($status) {
-    $lastId = $pdo->lastInsertId();
-    echo $lastId;
+    $userId = (int)$pdo->lastInsertId();
 }
 ```
 
@@ -82,10 +81,12 @@ if ($status) {
 
 ```php
 $rows = [];
+
 $rows[] = [
     'username' => 'bob',
     'email' => 'bob@example.com'
 ];
+
 $rows[] = [
     'username' => 'max',
     'email' => 'max@example.com'
@@ -107,8 +108,9 @@ $row = [
     'username' => 'bob',
     'email' => 'bob2@example.com'
 ];
+
 $sql = "UPDATE users SET username=:username, email=:email WHERE id=:id;";
-$status = $pdo->prepare($sql)->execute($row);
+$pdo->prepare($sql)->execute($row);
 ```
 
 ## Update multiple rows
@@ -117,9 +119,11 @@ $status = $pdo->prepare($sql)->execute($row);
 $row = [
     'updated_at' => '2017-01-01 00:00:00'
 ];
+
 $sql = "UPDATE users SET updated_at=:updated_at";
 $pdo->prepare($sql)->execute($row);
 
+// optional
 $affected = $pdo->rowCount();
 ```
 
@@ -164,9 +168,7 @@ function get_pdo_type($value)
 // Usage
 $email = $_POST['email'];
 
-$pdo = new PDO('dsn', 'username', 'password');
-$sql = 'INSERT INTO users SET email=:email;';
-$statement = $pdo->prepare($sql);
+$statement = $pdo->prepare('INSERT INTO users SET email=:email;');
 $statement->bindValue(':email', $email, get_pdo_type($email));
 $statement->execute();
 ```
@@ -219,7 +221,7 @@ Generated SQL:
 SELECT id FROM users WHERE id IN('1','2','3','\'',NULL,'string','123.456')
 ```
 
-Other solutions:
+Other solutions to create a IN clause:
 
 * [PHP PDO Prepared Statements to Prevent SQL Injection](https://websitebeaver.com/php-pdo-prepared-statements-to-prevent-sql-injection#where-in-array)
 
