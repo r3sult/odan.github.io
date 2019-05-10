@@ -20,50 +20,23 @@ I'm using [Ubuntu, Apache and PHP 7.2 within a vagrant box](https://odan.github.
 # install the php xdebug extension
 sudo apt-get install php-xdebug
 
-# another way to install the xdebug extension is via pecl
-#sudo apt-get install php-dev -y
-#sudo apt-get install php-pear -y
-#sudo pecl install xdebug
-
 # add the xdebug settings to php.ini
 sudo su
-sudo echo 'xdebug.remote_port=9000' >> /etc/php/7.2/apache2/php.ini
-sudo echo 'xdebug.remote_enable=1' >> /etc/php/7.2/apache2/php.ini
-sudo echo 'xdebug.remote_connect_back=1' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_port=9000' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_enable=true' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_connect_back=true' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_autostart=on' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_host=' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.max_nesting_level=1000' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.2/apache2/php.ini
 
 # restart apache
 sudo service apache2 restart
 ```
 
-## Configure PhpStorm for Vagrant
-
-Now add a new port forwarding rule to your `Vagrantfile`.
-This rule redirects all tcp-ip connections from localhost:9001 to the vm's internal port 9000.
-I don't use mapping from port 9000 to 9000 to avoid conflicts with the local host.
-
-```vagrantfile
-config.vm.network "forwarded_port", guest: 9000, host: 9001
-```
-
-The complete `Vagrantfile` looks like this:
-
-```vagrantfile
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/bionic64"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 9000, host: 9001
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
-    vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
-  end
-end
-```
-
 Start your vagrant machine with: `vagrant up`.
 
-## Configure PhpStorm for Vagrant
+## PhpStorm Configuration
 
 * Open PhpStorm
 * Click "Add configuration" (or Edit Configuration)
@@ -71,9 +44,11 @@ Start your vagrant machine with: `vagrant up`.
 ![image](https://user-images.githubusercontent.com/781074/51430761-dedb7900-1c1f-11e9-85b9-d45a0752cfa3.png)
 
 * Click the `+` Button, then choose "PHP Remote Debug"
-* Click the `...` Button and add a new Host `127.0.0.1`, Port: `9001`
+* Click the `...` Button and add a new Host `localhost`, and HTTP-Port: `8080` or `8888` (depends on your setup)
+* Enable the `Use path mappings` checkbox
+* Enter the abosulte path on the server e.g. `/vagrant/my-project`.
 
-![image](https://user-images.githubusercontent.com/781074/51430812-94a6c780-1c20-11e9-9b40-1ef70c0cd282.png)
+![image](https://user-images.githubusercontent.com/781074/57547122-2ff1b300-735e-11e9-8d91-94315b310227.png)
 
 * Enter a IDE key (session key): `PHPSTORM`
 * Click OK
