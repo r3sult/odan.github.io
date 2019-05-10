@@ -50,8 +50,8 @@ Start your vagrant machine with: `vagrant up`.
 
 ![image](https://user-images.githubusercontent.com/781074/57547122-2ff1b300-735e-11e9-8d91-94315b310227.png)
 
-* Enter a IDE key (session key): `PHPSTORM`
-* Click OK
+* Enter the IDE key (session id): `PHPSTORM`
+* Click OK to save the new settings
 * Select the new configuration from the configuration menu
 * Start the Xdebug session
 
