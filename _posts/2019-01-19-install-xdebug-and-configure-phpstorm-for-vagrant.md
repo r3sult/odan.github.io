@@ -46,7 +46,7 @@ Start your vagrant machine with: `vagrant up`.
 * Click the `+` Button, then choose "PHP Remote Debug"
 * Click the `...` Button and add a new Host `localhost`, and HTTP-Port: `8080` or `8888` (depends on your setup)
 * Enable the `Use path mappings` checkbox
-* Enter the absoulte path on the server e.g. `/vagrant/my-project`.
+* Enter the absolute path on the server e.g. `/vagrant/my-project`.
 
 ![image](https://user-images.githubusercontent.com/781074/57547122-2ff1b300-735e-11e9-8d91-94315b310227.png)
 
