@@ -14,7 +14,9 @@ I'm already aware that people use dockers these days, but I was dissatisfied wit
 
 ## Install xdebug
 
-I'm using [Ubuntu, Apache and PHP 7.2 within a vagrant box](https://odan.github.io/2017/10/20/ubuntu-webserver-setup.html).
+I'm using [Ubuntu, Apache and PHP 7.2 vagrant box setup](https://odan.github.io/2018/10/09/vagrant-with-ubuntu-18-04-setup.html).
+
+If you have already setup another Vagrant box, please install and configure xdebug with this commands:
 
 ```bash
 # install the php xdebug extension
