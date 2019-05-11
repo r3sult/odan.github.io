@@ -224,7 +224,7 @@ class UserRepository
     public function getUserById(int $userId): array
     {
         $statement = $this->pdo->prepare('SELECT * FROM users WHERE id = :userId');
-        $statement->execute(['id' => $userId]);
+        $statement->execute(['userId' => $userId]);
         $row = $statement->fetch() ?: [];
 
         if (empty($row)) {
