@@ -20,6 +20,7 @@ This Tutorial shows how to create a very basic but flexible project for every us
 * [Business logic](#business-logic)
 * [Validation](#validation)
 * [Handling Ajax requests](#handling-ajax-requests)
+* [Conclusion](#conclusion)
 
 ## Requirements
 
@@ -356,3 +357,14 @@ $.ajax({
     alert('Server error');
 });
 ```
+
+## Conclusion
+
+Remember the relationships.
+
+* Slim - As routing framerwork
+* Single Action Controllers - To invoke the correct service method (model layer)
+* Dependency injection - For SOLID code and testability
+* Service classes - To handle business logic
+* Repositories - Data access
+* Validation - User input handling
