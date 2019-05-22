@@ -56,7 +56,7 @@ the controller class with exactly one public method for processing the request a
 
 Here is an example of a very simple single action controller:
 
-File: `src/Action/HomePingAction.php`
+File: `src/Action/PingAction.php`
 
 ```php
 namespace App\Action;
@@ -65,7 +65,7 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-class HomePingAction
+final class PingAction
 {
     public function __invoke(Request $request, Response $response): ResponseInterface
     {
@@ -77,7 +77,7 @@ class HomePingAction
 To register a new action handler we add a routing definition in `routes.php` like this:
 
 ```php
-$app->any('/ping', \App\Action\HomePingAction::class);
+$app->any('/ping', \App\Action\PingAction::class);
 ```
 
 The advantage of this syntax is that our IDE now knows exactly which class is responsible for the 
@@ -116,12 +116,12 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\Twig;
 
-class HomeIndexAction implements ActionInterface
+final class HomeIndexAction implements ActionInterface
 {
     /**
      * @var Twig
      */
-    protected $twig;
+    private $twig;
 
     /**
      * Constructor.
@@ -211,7 +211,7 @@ namespace App\Domain\User;
 use DomainException;
 use PDO;
 
-class UserRepository
+final class UserRepository
 {
 
     private $pdo;
@@ -273,7 +273,7 @@ Filename: `src/Domain/User/UserEdit.php`
 
 namespace App\Domain\User;
 
-class UserEdit
+final class UserEdit
 {
     /**
      * @var UserRepository
