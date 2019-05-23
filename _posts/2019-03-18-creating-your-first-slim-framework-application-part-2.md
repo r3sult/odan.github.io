@@ -226,13 +226,13 @@ final class UserRepository
     {
         $statement = $this->pdo->prepare('SELECT * FROM users WHERE id = :userId');
         $statement->execute(['userId' => $userId]);
-        $row = $statement->fetch() ?: [];
+        $row = $statement->fetch();
 
         if (empty($row)) {
             throw new DomainException(sprintf('User not found: %s', $userId));
         }
 
-        return $row;
+        return $row ?: [];
     }
 }
 ```
@@ -267,14 +267,14 @@ You could consider these two objects (service and repository) as bundled, becaus
 
 **Example**
 
-Filename: `src/Domain/User/UserEdit.php`
+Filename: `src/Domain/User/UserService.php`
 
 ```php
 <?php
 
 namespace App\Domain\User;
 
-final class UserEdit
+final class UserService
 {
     /**
      * @var UserRepository
@@ -296,15 +296,20 @@ final class UserEdit
      *
      * @param int $userId The user ID
      *
-     * @return User The data
+     * @return array The data
      */
-    public function getUserById(int $userId): User
+    public function getUserById(int $userId): array
     {
         // do complex things here, like validation, logging, calculation, 
         // external api requests, caching, generate csv, excel, pdf files and so on.
+        
         // ...
         
-        return $this->userRepository->getUserById($userId);
+        $userRow = $this->userRepository->getUserById($userId)
+        
+        // ...
+        
+        return $userRow;
     }
 }
 
