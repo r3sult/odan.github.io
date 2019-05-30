@@ -26,8 +26,13 @@ XML is great, because it is the first time that a good standard has been set up 
 
 JSON has its excellent use cases too, e.g. for browsers communicating via Ajax to the server.
 
-But how to validate JSON payload against a schema? Conceptionally RESTful API's where never designt to require
-a [JSON-Schema](https://json-schema.org/). Instead it became more and more polular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others - a good Esperanto looks different.
+But how to validate JSON payload against a schema? 
+
+Conceptually, RESTful API's where never designed in such a way that you need [JSON-Schema](https://json-schema.org/) for it. 
+
+Instead of a schema, only examples are usually used.
+
+Instead it became more and more polpular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others.
 
 A SOAP API is better suited in a larger enterprise context to ensure standardized and strong data structures within a communication between server to server.
 
