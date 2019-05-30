@@ -190,6 +190,39 @@ Console.WriteLine(result);
 
 [Source](https://stackoverflow.com/questions/3100458/soap-client-in-net-references-or-examples)
 
-Hope this helps, if you'll encounter any problem, let me know.
+Hope this helps. 
 
 And now have fun creating your own SOAP webservice :-)
+
+## Known issues
+
+If you'll encounter any issues, please create a detailed error description in the comments section.
+
+> It doesn't work on my machine
+
+or
+
+> this code sample never Runs!!!
+
+* This is a very unspecific description. Please give me more details about the issue.
+* Make sure you have installed composer
+* You just need to copy/paste the code from the tutorial. Then run `composer require zendframework/zend-soap`.
+
+> I want to use GET/PUT/PATCH methods
+
+* Don't confuse SOAP with a RESTful API. 
+* SOAP only uses a single endpoint and only the POST method. 
+
+> Is it possible to convert SOAP into a RESTful?
+
+* SOAP and REST is something completely different. Usually the API must be completely rewritten.
+* A SOAP endpoint itself could "translate" and forward the request to an RESTful API.
+
+> Can I use that in Laravel / Symfony / Slim / Framework X too?
+
+* This is a framework independent concept. It's possible.
+* Depending on the framework, just add the server code to the controller action method and transform the XML response into a PSR-7 response.
+
+
+
+
