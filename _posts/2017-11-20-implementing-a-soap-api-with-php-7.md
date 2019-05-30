@@ -205,13 +205,13 @@ or
 > this code sample never Runs!!!
 
 * This is a very unspecific description. Please give me more details about the issue.
-* Make sure you have installed composer
-* You just need to copy/paste the code from the tutorial. Then run `composer require zendframework/zend-soap`.
+* Make sure you have installed composer.
+* You just need to copy/paste the code from the tutorial. Then run `composer require zendframework/zend-soap`
 
 > I want to use GET/PUT/PATCH methods
 
 * Don't confuse SOAP with a RESTful API. 
-* SOAP only uses a single endpoint and only the POST method. 
+* SOAP uses the POST method and has a single endpoint (URL). 
 
 > Is it possible to convert SOAP into a RESTful?
 
@@ -221,7 +221,7 @@ or
 > Can I use that in Laravel / Symfony / Slim / Framework X too?
 
 * This is a framework independent concept. It's possible.
-* Depending on the framework, just add the server code to the controller action method and transform the XML response into a PSR-7 response.
+* Depending on the framework, add the server code to the controller action and transform the XML response into a (PSR-7) response.
 
 
 
