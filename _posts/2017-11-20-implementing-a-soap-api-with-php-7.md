@@ -22,31 +22,30 @@ It's 2017/2018 and you're probably wondering why I'm blogging about this topic, 
 
 Just because it comes from [Mr Torvalds does not necessarily make it right](http://www.kidstrythisathome.com/2014/03/why-linus-torvalds-is-wrong-about-xml/).
 
-And the question is what to use instead. Any self-developed file format? HTML? When XML is so similar and that's even more chaotic in practice? JSON? 
+XML is great, because it is the first time that a good standard has been set up to exchange data in a structured, machine-readable and validatable manner with minimal issues.
 
-XML is really great, because it is the first time that a good standard has been set up to exchange data in a structured, machine-readable and validatable manner with minimal issues.
+JSON has its excellent use cases too, e.g. for browsers communicating via Ajax to the server.
 
-All this is missing from JSON - which still has its excellent use cases.
+But how to validate JSON payload against a schema? Conceptionally RESTful API's where never designt to require
+a [JSON-Schema](https://json-schema.org/). Instead it became more and more polular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others - a good Esperanto looks different.
 
-Where is the validation capability at JSON? How to write comments?
-
-Moreover, JSON is often more chatty than XML, and even ALWAYS more chatty than countless other transmission methods. Also, its self-descriptiveness often leaves a lot to be desired, and it suffers from the fact that it was not as excellently written down as XML was. There are hundreds of libs, and quite a few interpret things completely differently than others - a good Esperanto looks different.
-
-Nothing against JSON (I like to use it), but turning down XML this way is really stupid, dear Linus.
+A SOAP API is better suited in a larger enterprise context to ensure a standardized and strong data structures within a communication between server to server.
 
 ## Creating a SOAP Endpoint
 
-The endpoint is the URL where your service can be accessed by a client application. To see the [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) you add `?wsdl` to the web service endpoint URL.
+The endpoint is the URL where your service can be accessed by a client application. To inspect the [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) you just add `?wsdl` to the web service endpoint URL.
 
 ### Requiremnts
 
-While in. NET it's very simple, in PHP you need some extras. However, these are very easy to install.
+While in .NET it's very simple, in PHP you need some extra work to get a SOAP interface working.
+
+However, these are very easy to install.
 
 * PHP 7+
 * Enable `extension=php_soap.dll` in your `php.ini` file
 * [zend-soap](https://docs.zendframework.com/zend-soap/)
 
-I choose the Zend SOAP library because it's compatible with .NET clients.
+I choosed the Zend SOAP library because it's compatible with .NET clients.
 
 ### Installation
 
@@ -82,7 +81,7 @@ class Hello
 
 }
 
-$serverUrl = "http://localhost/hello/server.php";
+$serverUrl = "http://localhost/server.php";
 $options = [
     'uri' => $serverUrl,
 ];
@@ -104,7 +103,7 @@ if (isset($_GET['wsdl'])) {
 }
 ```
 
-Open the browser to see the WSDL file: http://localhost/hello/server.php?wsdl
+Open the browser to check the WSDL file: http://localhost/server.php?wsdl
 
 ## Creating a SOAP Client
 
@@ -117,7 +116,7 @@ File content:
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new Zend\Soap\Client('http://localhost/hello/server.php?wsdl');
+$client = new Zend\Soap\Client('http://localhost/server.php?wsdl');
 $result = $client->sayHello(['firstName' => 'World']);
 
 echo $result->sayHelloResult;
@@ -129,11 +128,12 @@ The result (response) should look like this:
 Hello World
 ```
 
-As result you will receive a stdClass instance:
+As result you will receive a `stdClass` instance:
 
 ```php
 var_dump($result);
 ```
+
 ```php
 class stdClass#4 (1) {
   public $sayHelloResult =>
@@ -141,21 +141,21 @@ class stdClass#4 (1) {
 }
 ```
 
-It is possible that your PHP Static Analysis Tool (e.g. phpstan) has a problem with calling `$client->sayHello(...)`. The reason is that this method does not exist and is called internally via a magic method. To avoid this warning there is a simple trick. Instead, call the web service methods using `call(method, params)`-methode and simply pass the method name as a string. Note that the parameters must be passed in a double nested array.
+It is possible that your PHP static analysis tool (e.g. phpstan) has a problem with calling `$client->sayHello(...)`. The reason is that this method does not exist and is called internally via a magic method. To avoid this warning there is a simple trick. Instead, call the web service methods using the `$client->call(method, params)`. In this case you simply pass the method name as a string. Note that the parameters must be passed in a double nested array.
 
 This is the **wrong** way to use the `call` method:
 
-```
+```php
 $result = $client->call('sayHello', ['firstName' => 'World']);
 ```
 
-This example leads to this error:
+This example leads to the following error:
 
 > Fatal error: Uncaught SoapFault exception: [env:Receiver] Too few arguments 
 > to function Hello::sayHello(), 0 passed and exactly 1 expected in 
 > zendframework\zend-soap\src\Client.php on line 1166
 
-This is the **right** way to use the `call` method:
+In this way, the `call` method is used correctly:
 
 ```php
 $result = $client->call('sayHello', [['firstName' => 'World']]);
@@ -163,14 +163,14 @@ $result = $client->call('sayHello', [['firstName' => 'World']]);
 
 ## Creating a SOAP Client with C#
 
-Now, the simplest way is to generate proxy classes in C# application (this process is called adding service reference). There are 2 main way of doing this, .NET provides ASP.NET services, which is old way of doing SOA, and WCF, which is the latest framework from MS and provides many protocols, including open and MS proprietery ones.
+Now, the simplest way is to generate proxy classes in C# application (this process is called adding service reference). There are 2 main ways of doing this. Dotnet provides ASP.NET services, which is old way of doing SOA, and WCF, which is the latest framework from MS and provides many protocols, including open and MS proprietery ones.
 
 Now, enough theory and lets do it step by step.
 
 1. Open your project (or create a new one) in visual studio
 2. Right click on the project (on the project and not the solution) in Solution Explorer and click `Add Service Reference`
 3. A dialog should appear (Add service reference). 
-  Enter the url (`http://localhost/hello/server.php?wsdl`) of your wsdl file and click the `Go` button.
+  Enter the url (`http://localhost/server.php?wsdl`) of your wsdl file and click the `Go` button.
 4. Now you should see a `HelloService` (name may vary). You should see generated proxy class name and namespace. In my case, the namespace is `WindowsFormsApp1.ServiceReference1`, the name of proxy class is `HelloPortClient`. As I said above, class names may vary in your case. 
 5. Go to your C# source code. Add `using WindowsFormsApp1.ServiceReference1`.
 6. Now you can call the service this way:
