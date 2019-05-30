@@ -32,9 +32,9 @@ Conceptually, RESTful API's where never designed in such a way that you need [JS
 
 Instead of a schema, only examples are usually used.
 
-Instead it became more and more polpular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others.
+In the last years it became more and more polpular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others.
 
-A SOAP API is better suited in a larger enterprise context to ensure standardized and strong data structures within a communication between server to server.
+A SOAP API is better suited in a larger enterprise context to ensure standardized and strong data structures between a server to server communication.
 
 ## Creating a SOAP Endpoint
 
