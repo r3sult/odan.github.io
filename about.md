@@ -30,6 +30,7 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 
 ## My projects
 
+* [odan/psr7-skeleton](https://github.com/odan/psr7-skeleton) A PSR-7 / PSR-15 skeleton application
 * [odan/prisma](https://github.com/odan/prisma) A skeleton project for Slim 3
 * [odan/phinx-migrations-generator](https://github.com/odan/phinx-migrations-generator) Migration Code Generator for Phinx
 * [odan/twig-assets](https://github.com/odan/twig-assets) A Twig Assets Extension
@@ -57,7 +58,7 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 
 ## Conferences
 
-* [International PHP Conference - Berlin](https://phpconference.com/) (2015, 2016, 2017, 2018)
+* [International PHP Conference - Berlin](https://phpconference.com/) (2015, 2016, 2017, 2018, 2019)
 * [International PHP Conference - Munich](https://phpconference.com/) (2013)
 
 ## Contact me
