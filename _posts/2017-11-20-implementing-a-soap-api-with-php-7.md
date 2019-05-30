@@ -34,7 +34,7 @@ Instead of a schema, only examples are usually used.
 
 In the last years it became more and more polpular to use the (Swagger) [OpenAPI Specification](https://swagger.io/specification/), which defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the API. Of cource there are hundreds of libs, and quite a few interpret things completely differently than others.
 
-A SOAP API is better suited in a larger enterprise context to ensure standardized and strong data structures between a server to server communication.
+A SOAP API is better suited in a larger enterprise context to ensure standardized and strong data structures between server-to-server communications.
 
 ## Creating a SOAP Endpoint
 
