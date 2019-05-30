@@ -42,15 +42,13 @@ The endpoint is the URL where your service can be accessed by a client applicati
 
 ### Requiremnts
 
-While in .NET it's very simple, in PHP you need some extra work to get a SOAP interface working.
-
-However, these are very easy to install.
+While in .NET it's very simple, in PHP you need some extra work to get a SOAP API working.
 
 * PHP 7+
 * Enable `extension=php_soap.dll` in your `php.ini` file
 * [zend-soap](https://docs.zendframework.com/zend-soap/)
 
-I choosed the Zend SOAP library because it's compatible with .NET clients.
+I chose the Zend SOAP library because it's compatible with .NET clients.
 
 ### Installation
 
@@ -60,14 +58,14 @@ Install the zend-soap library:
 composer require zendframework/zend-soap
 ```
 
-Create a php file that acts as a SOAP endpoint. As filename I choose `server.php`.
-
 Let's create a simple hello world webservice.
 
-Content of `server.php`:
+Create a php file `api.php` that acts as a SOAP endpoint.
 
 ```php
 <?php
+
+// api.php
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -86,7 +84,7 @@ class Hello
 
 }
 
-$serverUrl = "http://localhost/server.php";
+$serverUrl = "http://localhost/api.php";
 $options = [
     'uri' => $serverUrl,
 ];
@@ -108,7 +106,7 @@ if (isset($_GET['wsdl'])) {
 }
 ```
 
-Open the browser to check the WSDL file: http://localhost/server.php?wsdl
+Open the browser to check the WSDL file: http://localhost/api.php?wsdl
 
 ## Creating a SOAP Client
 
@@ -121,7 +119,7 @@ File content:
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$client = new Zend\Soap\Client('http://localhost/server.php?wsdl');
+$client = new Zend\Soap\Client('http://localhost/api.php?wsdl');
 $result = $client->sayHello(['firstName' => 'World']);
 
 echo $result->sayHelloResult;
@@ -175,7 +173,7 @@ Now, enough theory and lets do it step by step.
 1. Open your project (or create a new one) in visual studio
 2. Right click on the project (on the project and not the solution) in Solution Explorer and click `Add Service Reference`
 3. A dialog should appear (Add service reference). 
-  Enter the url (`http://localhost/server.php?wsdl`) of your wsdl file and click the `Go` button.
+  Enter the url (`http://localhost/api.php?wsdl`) of your wsdl file and click the `Go` button.
 4. Now you should see a `HelloService` (name may vary). You should see generated proxy class name and namespace. In my case, the namespace is `WindowsFormsApp1.ServiceReference1`, the name of proxy class is `HelloPortClient`. As I said above, class names may vary in your case. 
 5. Go to your C# source code. Add `using WindowsFormsApp1.ServiceReference1`.
 6. Now you can call the service this way:
@@ -222,7 +220,3 @@ or
 
 * This is a framework independent concept. It's possible.
 * Depending on the framework, add the server code to the controller action and transform the XML response into a (PSR-7) response.
-
-
-
-
