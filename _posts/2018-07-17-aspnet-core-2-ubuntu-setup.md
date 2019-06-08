@@ -386,7 +386,7 @@ cd /var/aspnetcore/
 ls
 ```
 
-Create a file `/src/supervisor/conf.d/hellomvc.conf`
+Create a file `/etc/supervisor/conf.d/hellomvc.conf`
 
 ```bash
 sudo vim /etc/supervisor/conf.d/hellomvc.conf
