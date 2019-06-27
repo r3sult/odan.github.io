@@ -2,7 +2,7 @@
 title: Generating Doctrine Entities from Existing Database
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: php doctrine orm models
 ---
