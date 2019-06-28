@@ -12,7 +12,7 @@ keywords: php, mysql, css, html, bootstrap, slim, framework, c#, csharp, dotnet
 
 Hi, my name is Daniel Opitz
 
-I am a web developer located close to Basel, Switzerland. I am currently working at ORCA in Pratteln as a Software Engineer.
+I am a web developer located close to Basel, Switzerland. I am currently working at [ORCA](https://orca-services.ch/) in Pratteln as a Software Engineer.
 
 I am [@dopitz](https://twitter.com/dopitz) on Twitter which is a great way to reach me and if you prefer email you can always write to d.opitz (at) outlook.com.
 
