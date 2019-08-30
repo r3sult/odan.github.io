@@ -26,7 +26,7 @@ Type declarations were also known as "type hints" in PHP 5. Type declarations al
 
 ## Creating a data object
 
-First, we create a struct to store our data:
+First, we create a struct to store our data in-memory:
 
 ```php
 <?php
