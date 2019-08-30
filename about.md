@@ -25,6 +25,7 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 * HTML, CSS, jQuery, Bootstrap, Vue.js
 * Slim, Symfony, CakePHP
 * REST, SOAP, XML, JSON
+* SOLID, Clean Code
 * IT-Security
 * SEO, E-Commerce
 
@@ -36,6 +37,7 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 * [odan/twig-assets](https://github.com/odan/twig-assets) A Twig Assets Extension
 * [odan/twig-translation](https://github.com/odan/twig-translation) A Twig Translation Extension
 * [odan/session](https://github.com/odan/session) A secure and flexible session handler
+* [Selective PHP](https://github.com/selective-php) A collection of awesome PHP packages
 * [Learn modern PHP](https://odan.github.io/learn-php/)
 * [All projects](https://github.com/odan?tab=repositories)
 
