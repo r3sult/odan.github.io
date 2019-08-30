@@ -94,15 +94,23 @@ $users = new UserList();
 
 Then we add some new User objects to the collection:
 ```php
-$users->addUser(new User(1, 'admin'));
+$user = new User();
+$user->id = 1;
+$user->username = 'admin';
 
-$users->addUser(new User(2, 'max'));
+$users->addUser($user);
+
+$user = new User();
+$user->id = 2;
+$user->username = 'operator';
+
+$users->addUser($user);
 ```
 
 Now we can iterate over the collection with the method `$users->all()`:
 
 ```php
 foreach ($users->all() as $user) {
-    echo sprintf("ID: %s, Username: %s\n", $user->getId(), $user->getUsername());
+    echo sprintf("ID: %s, Username: %s\n", $user->id, $user->username);
 }
 ```
