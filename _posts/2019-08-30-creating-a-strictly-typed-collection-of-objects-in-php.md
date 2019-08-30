@@ -14,7 +14,7 @@ keywords: php array generics
 * [Creating a collection class](#creating-a-collection-class)
 * [Usage](#usage)
 
-## Intro </a>
+## Intro
 
 [Generics](https://wiki.php.net/rfc/generic-arrays) are still a long way off and whether they will ever come like this is questionable.
 
