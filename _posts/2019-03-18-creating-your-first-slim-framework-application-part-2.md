@@ -1,5 +1,5 @@
 ---
-title: Creating your first Slim Framework Application Part 2
+title: Creating your first Slim 3 Framework Application Part 2
 layout: post
 comments: true
 published: true
