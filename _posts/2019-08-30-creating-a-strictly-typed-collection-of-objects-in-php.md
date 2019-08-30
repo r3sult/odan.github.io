@@ -10,7 +10,7 @@ keywords: php array generics
 ## Table of contents
 
 * [Intro](#intro)
-* [Creating a value object](#creating-a-value-object)
+* [Creating a data object](#creating-a-data-object)
 * [Creating a collection class](#creating-a-collection-class)
 * [Usage](#usage)
 
@@ -24,7 +24,7 @@ We only need the features everyone should know since PHP 7: Arrays and [Type dec
 
 Type declarations were also known as "type hints" in PHP 5. Type declarations allow functions to require that parameters are of a certain type at call time. If the given value is of the incorrect type, then an error is generated.
 
-## Creating a value object <a name="intro">
+## Creating a data object
 
 First, we create a struct to store our data:
 
