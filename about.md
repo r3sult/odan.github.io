@@ -32,13 +32,13 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 ## My projects
 
 * [odan/psr7-skeleton](https://github.com/odan/psr7-skeleton) A PSR-7 / PSR-15 skeleton application
-* [odan/prisma](https://github.com/odan/prisma) A skeleton project for Slim 3
+* [odan/slim4-skeleton](https://github.com/odan/slim4-skeleton) A Slim 4 skeleton for apache
 * [odan/phinx-migrations-generator](https://github.com/odan/phinx-migrations-generator) Migration Code Generator for Phinx
 * [odan/twig-assets](https://github.com/odan/twig-assets) A Twig Assets Extension
 * [odan/twig-translation](https://github.com/odan/twig-translation) A Twig Translation Extension
 * [odan/session](https://github.com/odan/session) A secure and flexible session handler
 * [Selective PHP](https://github.com/selective-php) A collection of awesome PHP packages
-* [Learn modern PHP](https://odan.github.io/learn-php/)
+* [Learn modern PHP](https://odan.github.io/learn-php/) A curated list of resources for PHP
 * [All projects](https://github.com/odan?tab=repositories)
 
 ## Projects I contribute to
