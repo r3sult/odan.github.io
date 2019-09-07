@@ -19,7 +19,8 @@ Download and install the 32-Bit version of [OpenSSL](https://slproweb.com/produc
 
 ## Configuration
 
-* OpenSSL requires a "openssl.cnf" configuration file. Enter this command:
+* OpenSSL requires a configuration file: `openssl.cnf`
+* Enter this command:
 
 ```
 set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
@@ -30,7 +31,14 @@ set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg
 Run
 
 ```
+cd C:\OpenSSL-Win32\bin
 openssl req -new -nodes -keyout www_example_com.key -out www_example_com.csr -newkey rsa:2048
+```
+
+To create a [self-signed certificate with OpenSSL](https://stackoverflow.com/a/10176685/1461181) run:
+
+```php
+openssl req -x509 -newkey rsa:4096 -keyout server.key -out server.crt -days 365 -nodes
 ```
 
 Reade more: <https://www.psw-group.de/support/?p=20/>
@@ -48,12 +56,24 @@ Password: secret123
 Optional company name: keep empty, press enter
 ```
 
+* OpenSSl creates at least two files:
+  * www_example_com.csr
+  * www_example_com.key
+
 * Order a real SSL certificate, e.g. from <https://letsencrypt.org/>, psw.net, GlobalSign, Sectigo, Thawte with the certificate request file: `www_example_com.csr`
+
+* Important: Don't upload or share the private key file: `www_example_com.key`
+
+* If you just created a self-signed certificate, then copy these files:
+  * From `C:\OpenSSL-Win32\bin\server.key` to `C:\xampp\apache\conf\ssl.key\server.key`
+  * From `C:\OpenSSL-Win32\bin\server.crt` to `C:\xampp\apache\conf\ssl.crt\server.crt`
+  * Restart apache
+  * Open: https://localhost/
 
 ## Installing the SSL Certificate
 
 * Open the file `C:\xampp\apache\conf\extra\httpd-ssl.conf` with Notepad++
-* Add these lines:
+* Add these lines and adjust the path and filenames.:
 
 ```
 SSLCertificateFile "conf/ssl.crt/certificate.crt"
