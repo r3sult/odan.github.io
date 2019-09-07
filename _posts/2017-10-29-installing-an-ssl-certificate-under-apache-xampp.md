@@ -34,6 +34,7 @@ Run
 cd C:\OpenSSL-Win32\bin
 openssl req -new -nodes -keyout www_example_com.key -out www_example_com.csr -newkey rsa:2048
 ```
+* Reade more: <https://www.psw-group.de/support/?p=20/>
 
 To create a [self-signed certificate with OpenSSL](https://stackoverflow.com/a/10176685/1461181) run:
 
@@ -41,9 +42,8 @@ To create a [self-signed certificate with OpenSSL](https://stackoverflow.com/a/1
 openssl req -x509 -newkey rsa:4096 -keyout server.key -out server.crt -days 365 -nodes
 ```
 
-Reade more: <https://www.psw-group.de/support/?p=20/>
+Enter the certificate request data:
 
-e.g.
 ```
 Country: UK
 State: XX
@@ -64,7 +64,7 @@ Optional company name: keep empty, press enter
 
 * Important: Don't upload or share the private key file: `www_example_com.key`
 
-* If you just created a self-signed certificate, then copy these files:
+* If you created a self-signed certificate, then you don't have to order a certificate, just copy these files:
   * From `C:\OpenSSL-Win32\bin\server.key` to `C:\xampp\apache\conf\ssl.key\server.key`
   * From `C:\OpenSSL-Win32\bin\server.crt` to `C:\xampp\apache\conf\ssl.crt\server.crt`
   * Restart apache
