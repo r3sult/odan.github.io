@@ -187,7 +187,7 @@ function quote_values(PDO $pdo, array $values) {
             $value = 'NULL';
             return;
         }
-        $value = $pdo->quote((string)$value);
+        $value = $pdo->quote(is_bool($value) ? (int)$value:(string)$value);
     });
     
     return implode(',', $values);
@@ -204,7 +204,9 @@ $ids = [
     "'", 
     null,
     'string',
-    123.456
+    123.456,
+    true,
+    false,
 ];
 
 $pdo = new PDO('sqlite::memory:');
@@ -218,7 +220,7 @@ $statement->execute();
 Generated SQL:
 
 ```sql
-SELECT id FROM users WHERE id IN('1','2','3','\'',NULL,'string','123.456')
+SELECT id FROM users WHERE id IN('1','2','3','''',NULL,'string','123.456','1','0')
 ```
 
 Other solutions to create a IN clause:
