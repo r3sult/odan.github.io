@@ -187,7 +187,7 @@ function quote_values(PDO $pdo, array $values) {
             $value = 'NULL';
             return;
         }
-        $value = $pdo->quote(is_bool($value) ? (int)$value:(string)$value);
+        $value = $pdo->quote(is_bool($value) ? (int)$value : (string)$value);
     });
     
     return implode(',', $values);
