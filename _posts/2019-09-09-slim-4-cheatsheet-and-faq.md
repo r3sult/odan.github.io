@@ -21,6 +21,7 @@ keywords: slim4 php
 * [Reading the response body](#reading-the-response-body)
 * [Retrieving the base url](#retrieving-the-base-url)
 * [CSRF protection](#csrf-protection)
+* [SameSite cookies](#samesite-cookies)
 * [Dependency Injection](#dependency-injection)
 
 ## Documentation
@@ -39,9 +40,9 @@ keywords: slim4 php
 
 ## Skeletons
 
-* https://github.com/slimphp/Slim-Skeleton
-* https://github.com/odan/slim4-skeleton
-* https://github.com/adriansuter/Slim4-Skeleton
+* <https://github.com/slimphp/Slim-Skeleton>
+* <https://github.com/odan/slim4-skeleton>
+* <https://github.com/adriansuter/Slim4-Skeleton>
 
 ## Error 404
 
@@ -118,9 +119,12 @@ If the request body is still empty, it could be an bug or an issue with chunked 
 
 Take a look a the "official" [Slim-CSRF](https://github.com/slimphp/Slim-Csrf) package. 
 
-**Note**: With SameSite Cookies (available since PHP 7.3) you may no longer need CSRF protection:
-* <https://scotthelme.co.uk/csrf-is-really-dead/>
-* [SameSite Cookie Middlware](https://gist.github.com/odan/87d16795f368c48757a1b08da5bd9899) (Beta)
+## SameSite cookies
+
+With SameSite Cookies (available since PHP 7.3) you may no longer need CSRF protection:
+
+* [CSRF is (really) dead ](https://scotthelme.co.uk/csrf-is-really-dead/)
+* [SameSite Cookie Middlware](https://github.com/selective-php/samesite-cookie)
 
 ## Retrieving the base url
 
