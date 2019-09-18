@@ -20,29 +20,30 @@ keywords: slim4 php
 * [Receiving input](#receiving-input)
 * [Reading the response body](#reading-the-response-body)
 * [Retrieving the base url](#retrieving-the-base-url)
+* [CSRF protection](#csrf-protection)
 * [Dependency Injection](#dependency-injection)
 
-## Documentation <a name="documentation"></a>
+## Documentation
 
-* https://www.slimframework.com/docs/v4/
+* <https://www.slimframework.com/docs/v4/>
 
-## Slim 4 Changes <a name="slim-4-changes"></a>
+## Slim 4 Changes
 
-* https://github.com/slimphp/Slim/wiki/Slim-4-Roadmap
-* https://github.com/slimphp/Slim/issues/1686
-* http://www.slimframework.com/2019/04/25/slim-4.0.0-alpha-release.html
+* <https://github.com/slimphp/Slim/wiki/Slim-4-Roadmap>
+* <https://github.com/slimphp/Slim/issues/1686>
+* <http://www.slimframework.com/2019/04/25/slim-4.0.0-alpha-release.html>
 
-## Installation <a name="installation"></a>
+## Installation
 
-* http://www.slimframework.com/docs/v4/start/installation.html
+* <http://www.slimframework.com/docs/v4/start/installation.html>
 
-## Skeletons <a name="skeletons"></a>
+## Skeletons
 
 * https://github.com/slimphp/Slim-Skeleton
 * https://github.com/odan/slim4-skeleton
 * https://github.com/adriansuter/Slim4-Skeleton
 
-## Error 404 <a name="error-404"></a>
+## Error 404
 
 In the beginning many people have an issue with the error message: **Error 404 (Not found)**
 
@@ -67,27 +68,27 @@ $app->setBasePath('/my-base-path');
 
 This library can be used as a helper to determine the correct base path:
 
-* https://github.com/selective-php/basepath
+* <https://github.com/selective-php/basepath>
 
-## Retrieving the current route <a name="retrieving-the-current-route"></a>
+## Retrieving the current route
 
 ```php
 $route = \Slim\Routing\RouteContext::fromRequest($request)->getRoute();
 ```
 
-## Retrieving the current route arguments <a name="retrieving-the-current-route-arguments"></a>
+## Retrieving the current route arguments
 
 ```php
 $routeArguments = \Slim\Routing\RouteContext::fromRequest($request)->getRoute()->getArguments();
 ```
 
-## Accessing the RouteParser  <a name="accessing-the-routeparser"></a>
+## Accessing the RouteParser
 
 ```php
 $routeParser = \Slim\Routing\RouteContext::fromRequest($request)->getRouteParser();
 ```
 
-## Receiving input <a name="receiving-input"></a>
+## Receiving input
 
 To receive the submitted JSON / XML data you have to add the `BodyParsingMiddleware`:
 
@@ -101,9 +102,9 @@ $app->addBodyParsingMiddleware(); // <--- here
 $app->run();
 ```
 
-More details: https://akrabat.com/receiving-input-into-a-slim-4-application/
+More details: <https://akrabat.com/receiving-input-into-a-slim-4-application/>
 
-## Reading the response body <a name="reading-the-response-body"></a>
+## Reading the response body
 
 ```php
 $body = (string)$request->getBody();
@@ -111,23 +112,23 @@ $body = (string)$request->getBody();
 
 If the request body is still empty, it could be an bug or an issue with chunked requests:
 
-* https://www.jeffgeerling.com/blog/2017/apache-fastcgi-proxyfcgi-and-empty-post-bodies-chunked-transfer
+* <https://www.jeffgeerling.com/blog/2017/apache-fastcgi-proxyfcgi-and-empty-post-bodies-chunked-transfer>
 
-## CSRF protection <a name=""></a>
+## CSRF protection
 
 Take a look a the "official" [Slim-CSRF](https://github.com/slimphp/Slim-Csrf) package. 
 
 **Note**: With SameSite Cookies (available since PHP 7.3) you may no longer need CSRF protection:
-* https://scotthelme.co.uk/csrf-is-really-dead/
+* <https://scotthelme.co.uk/csrf-is-really-dead/>
 * [SameSite Cookie Middlware](https://gist.github.com/odan/87d16795f368c48757a1b08da5bd9899) (Beta)
 
-## Retrieving the base url <a name="retrieving-the-base-url"></a>
+## Retrieving the base url
 
 The `App::getBaseUrl` method has been removed in Slim 4, because it's not part of PSR-7.
 
 The decorated `UriInterface` method [Uri::getBaseUrl()](https://github.com/slimphp/Slim-Http#decorated-uri-object-methods) returns the fully qualified base URL of the underlying uri object. For this functionality you have to install the [slim/http](https://github.com/slimphp/Slim-Http) package.
 
-## Dependency Injection <a name="dependency-injection"></a>
+## Dependency Injection
 
 As a general rule:
 
