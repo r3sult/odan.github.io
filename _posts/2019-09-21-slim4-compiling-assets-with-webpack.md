@@ -103,10 +103,18 @@ body {
 
 Create a twig template file `templates/user/user.twig` with this content:
 
-```
+{% raw %}
+```twig
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
 {% webpack_entry_css 'user/user' %}
 {% webpack_entry_js 'user/user' %}
+</body>
+</html>
 ```
+{% endraw %}
 
 Now install the Twig Webpack extension:
 
