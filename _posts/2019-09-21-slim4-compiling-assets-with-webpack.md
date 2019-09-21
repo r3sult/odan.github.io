@@ -97,7 +97,7 @@ module.exports = {
 ```
 
 They key part is `entry`: this tells Webpack to load the `templates/user/user.js` file and follow all of the require statements. 
-It will then package everything together and - thanks to the first app argument - output final user.js and user.css files into the `public/assets` directory.
+It will then package everything together and - thanks to the first `user/user` parameter - output final user.js and user.css files into the `public/assets/user` directory.
 
 To install webpack and all dependencies, run:
 
@@ -187,5 +187,3 @@ To stop the webpack watch process, press `Ctrl+C`.
 ```
 npx webpack --watch
 ```
-
-
