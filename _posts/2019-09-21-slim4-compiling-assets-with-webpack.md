@@ -105,6 +105,8 @@ To install webpack and all dependencies, run:
 npm install
 ```
 
+## Add assets
+
 Next, create a new `templates/user/user.js` file with some basic JavaScript and import some JavaScript:
 
 ```js
@@ -135,6 +137,8 @@ Create a twig template file `templates/user/user.twig` with this content:
 </html>
 ```
 {% endraw %}
+
+### Twig Webpack extension setup
 
 Now install the Twig Webpack extension:
 
