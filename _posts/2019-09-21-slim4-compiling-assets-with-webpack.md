@@ -36,7 +36,27 @@ In this tutorial we are using [Webpack](https://webpack.js.org) to bundle (compi
 /public/assets/manifest.json   the generated manifest file (required for the twig extension)
 ```
 
-## Creating the webpack.config.js File
+## Webpack setup
+
+Create a new `package.json` file at the root of your project. This file lists the packages your project depends on:
+
+```json
+{
+    "name": "my-app",
+    "version": "1.0.0",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "clean-webpack-plugin": "^3.0.0",
+        "css-loader": "^3.2.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "webpack": "^4.40.2",
+        "webpack-assets-manifest": "^3.1.1",
+        "webpack-cli": "^3.3.9",
+        "webpack-manifest-plugin": "^2.0.4"
+    }
+}
+```
 
 Create a new `webpack.config.js` file at the root of your project. This is the main config file for Webpack:
 
