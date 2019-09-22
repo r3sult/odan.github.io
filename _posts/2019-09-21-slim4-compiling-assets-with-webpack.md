@@ -197,11 +197,12 @@ npx webpack --mode=production
 ## Useful tips
 
 Webpack can watch and recompile files whenever they change.
-To stop the webpack watch process, press `Ctrl+C`.
 
 ```
 npx webpack --watch
 ```
+
+To stop the webpack watch process, press `Ctrl+C`.
 
 Read more:
 * [Webpack Watch and WatchOptions](https://webpack.js.org/configuration/watch/)
