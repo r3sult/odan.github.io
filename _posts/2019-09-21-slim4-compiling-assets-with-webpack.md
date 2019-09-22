@@ -27,13 +27,13 @@ In this tutorial we are using [Webpack](https://webpack.js.org) to bundle (compi
 /composer.json
 /webpack.config.js             the main config file for Webpack
 /templates/
-/templates/user/user.js        the javascript for the user page
-/templates/user/user.css       the css for user page
-/templates/user/user.twig      the user page template
-/public/                       the webroot
-/public/index.php              the front controller
-/public/assets                 the compiled assets
-/public/assets/manifest.json   the generated manifest file (required for the twig extension)
+/templates/user/user.js        javascript for the user page
+/templates/user/user.css       css for the user page
+/templates/user/user.twig      the user page twig template
+/public/                       the webservers document root
+/public/index.php              the front controller (application entry point)
+/public/assets                 the compiled assets (webpack output)
+/public/assets/manifest.json   the generated manifest file (required by the webpack twig extension)
 ```
 
 ## Webpack setup
@@ -97,7 +97,7 @@ module.exports = {
 ```
 
 They key part is `entry`: this tells Webpack to load the `templates/user/user.js` file and follow all of the require statements. 
-It will then package everything together and - thanks to the first `user/user` parameter - output final user.js and user.css files into the `public/assets/user` directory.
+It will then package everything together and - thanks to the first `user/user` parameter - output final `user.js` and `user.css` files into the `public/assets/user/` directory.
 
 To install webpack and all dependencies, run:
 
@@ -107,7 +107,7 @@ npm install
 
 ## Add assets
 
-Next, create a new `templates/user/user.js` file with some basic JavaScript and import some JavaScript:
+Next, create a new `templates/user/user.js` file with some basic JavaScript and import some CSS with `require`:
 
 ```js
 require('./user.css');
@@ -115,7 +115,7 @@ require('./user.css');
 alert('Hello user');
 ```
 
-And the new `templates/user/user.css` file:
+Create the new `templates/user/user.css` file:
 
 ```css
 body {
@@ -138,9 +138,16 @@ Create a twig template file `templates/user/user.twig` with this content:
 ```
 {% endraw %}
 
+The `webpack_entry_css` and `webpack_entry_js` will fetch the url from the webpack `manifest.json` file and outputs the appropriate html tags. For example:
+
+```html
+<link type="text/css" href="/assets/user/user.css" rel="stylesheet">
+<script type="text/javascript" src="/assets/user/user.js"></script>  
+```
+
 ### Twig Webpack extension setup
 
-Now install the Twig Webpack extension:
+Now we install the Twig Webpack extension with composer:
 
 ```
 composer require fullpipe/twig-webpack-extension
@@ -149,7 +156,8 @@ composer require fullpipe/twig-webpack-extension
 Register the WebpackExtension Twig extension: 
 
 ```php
-// ...
+// $app is the Slim 4 App instance
+// We need the basePath to configure the correct public assets path
 $basePath = $app->getBasePath();
 
 // ...
@@ -157,11 +165,16 @@ $basePath = $app->getBasePath();
 $twig->addExtension(new \Fullpipe\TwigWebpackExtension\WebpackExtension(
     // must be a absolute path
     '/var/www/example.com/public/assets/manifest.json',
-    // url path
+    // url path for js
     $basePath . '/assets/',
+    // url path for css
     $basePath . '/assets/'
 ));
 ```
+
+* The first parameter (manifestFile) defines the location of youre `manifest.json` file.
+* The second parameter (publicPathJs) defines the public path for the js files.
+* The third parameter (publicPathCss) defines the public path for the css files.
 
 To build the assets for development, run:
 
