@@ -181,9 +181,15 @@ npx webpack --mode=production
 * `public/assets/user.css` (holds all the CSS for your "user/user" entry)
 * `public/assets/manifest.json` (holds all the entries and filenames)
 
-**Tip:** Webpack can watch and recompile files whenever they change.
+## Useful tips
+
+Webpack can watch and recompile files whenever they change.
 To stop the webpack watch process, press `Ctrl+C`.
 
 ```
 npx webpack --watch
 ```
+
+Read more:
+* [Webpack Watch and WatchOptions](https://webpack.js.org/configuration/watch/)
+
