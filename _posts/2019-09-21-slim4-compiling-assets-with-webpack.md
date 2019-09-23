@@ -75,6 +75,7 @@ Create a new `webpack.config.js` file at the root of your project. This is the m
 
 ```js
 const path = require('path');
+const webpack = require('webpack');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -98,7 +99,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
-        }],
+            }],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -106,13 +107,16 @@ module.exports = {
         new MiniCssExtractPlugin({
             ignoreOrder: false
         }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ],
     watchOptions: {
         ignored: ['./node_modules/']
     },
     mode: "development"
 };
-
 ```
 
 They key part is `entry`: This tells Webpack to load the `templates/home/home-index.js` file and follow all of the require statements. 
