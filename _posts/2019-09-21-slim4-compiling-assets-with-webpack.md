@@ -84,7 +84,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     entry: {
         'home/home-index': './templates/home/home-index.js'
-        // here you can add more entries for each page
+        // here you can add more entries for each page or global assets like jQuery and bootstrap
         // ...
     },
     output: {
@@ -144,27 +144,52 @@ body {
 }
 ```
 
-Create a twig template file `templates/home/home-index.twig` with this content:
+Create a twig template file `templates/layout/layout.twig` with this content:
 
 {% raw %}
 ```twig
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
+    <head>
+        <!-- ... -->
+        
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        <!-- ... -->
+        {% block content %}{% endblock %}
 
-{% webpack_entry_css 'home/home-index' %}
-
-{% webpack_entry_js 'home/home-index' %}
-
-</body>
+        {% block js %}{% endblock %}
+    </body>
 </html>
+```
+{% endraw %}
+
+Create a twig template file `templates/home/home-index.twig` with this content:
+
+{% raw %}
+```twig
+{% extends "layout/layout.twig" %}
+
+{% block css %}
+    {% webpack_entry_css 'home/home-index' %}
+{% endblock %}
+
+{% block js %}
+    {% webpack_entry_js 'time/time-index' %}
+{% endblock %}
+
+{% block content %}
+
+Welcome
+
+{% endblock %}
 ```
 {% endraw %}
 
 Notice: The 'home/home-index' must match the first key of the `entry` item in webpack.config.js.
 
-The `webpack_entry_css` and `webpack_entry_js` will fetch the url from the webpack `manifest.json` file and outputs the appropriate html tags. For example:
+The `webpack_entry_css` and `webpack_entry_js` will fetch the url from the webpack `manifest.json` file and outputs the appropriate html link tags. For example:
 
 ```html
 <link type="text/css" href="/assets/home/home-index.css" rel="stylesheet">
