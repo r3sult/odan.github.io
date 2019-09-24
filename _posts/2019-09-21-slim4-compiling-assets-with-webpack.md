@@ -490,7 +490,7 @@ module.exports = {
     entry: {
         'layout/layout': './templates/layout/layout.js',     // <- jquery is loaded here
         'layout/datatables': './templates/layout/datatables.js', // <-- add this line
-        'user/user-index': './templates/user/user-index.js', // <-- add this line
+        'user/user-list': './templates/user/user-list.js', // <-- add this line
         // other pages ...
     },
     // ...
@@ -504,7 +504,7 @@ window.$.fn.DataTable = require('datatables.net-bs4');
 import 'datatables.net-bs4/css/dataTables.bootstrap4.css';
 ```
 
-Create a new Twig template: `templates/users/user-index.twig`:
+Create a new Twig template: `templates/user/user-list.twig`:
 
 {% raw %}
 ```twig
@@ -516,7 +516,7 @@ Create a new Twig template: `templates/users/user-index.twig`:
 
 {% block js %}
     {% webpack_entry_js 'layout/datatables' %}
-    {% webpack_entry_js 'user/user-index' %}
+    {% webpack_entry_js 'user/user-list' %}
 {% endblock %}
 
 {% block content %}
@@ -542,7 +542,7 @@ Create a new Twig template: `templates/users/user-index.twig`:
 ```
 {% endraw %}
 
-Call this single function in `templates/user/user-index.js`:
+Call this single function in `templates/user/user-list.js`:
 
 ```js
 $(function() {
