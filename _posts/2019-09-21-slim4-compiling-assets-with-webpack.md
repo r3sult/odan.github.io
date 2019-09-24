@@ -20,6 +20,8 @@ keywords: slim4 php webpack assets js css
   * [Recompiling on change](#recompiling-on-change)
   * [Loading jQuery with Webpack](#loading-jquery-with-webpack)
   * [Loading Bootstrap with Webpack](#loading-bootstrap-with-webpack)
+  * [Loading Fontawesome with Webpack](#loading-fontawesome-with-webpack)
+  * [Loading SweetAlert2 with Webpack](#loading-sweetalert2-with-webpack)
 
 ## Requirements
 
@@ -363,4 +365,70 @@ Compile all assets:
 
 ```
 npx webpack
+```
+
+### Loading Fontawesome with Webpack
+
+[Fontawesome](https://fontawesome.com/) is the world's most popular and easiest to use icon set.
+
+To install Fontawesome, run:
+
+```
+npm install @fortawesome/fontawesome-free
+```
+
+Import Fontawesome in a global available webpack entry point like: `templates/layout/layout.js`:
+
+You can import all fontawesome icons...
+```js
+// 
+import '@fortawesome/fontawesome-free/js/all';
+```
+
+... or you can import only a specific set of icons:
+
+```js
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/v4-shims';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/brands';
+```
+
+Compile all assets:
+
+```
+npx webpack
+```
+
+### Loading SweetAlert2 with Webpack
+
+[SweetAlert2]https://sweetalert2.github.io/) is a A beautiful, responsive, customizable and accessible replacement for JavaScript's popup boxes.
+
+To install Fontawesome, run:
+
+```
+npm install sweetalert2
+```
+
+Import sweetalert2 and bind `Swal` to the global scope:
+
+```js
+window.Swal = require('sweetalert2');
+```
+
+Compile all assets:
+
+```
+npx webpack
+```
+
+Example:
+
+```js
+Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+);
 ```
