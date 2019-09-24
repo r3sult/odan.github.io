@@ -22,6 +22,7 @@ keywords: slim4 php webpack assets js css
   * [Loading Bootstrap with Webpack](#loading-bootstrap-with-webpack)
   * [Loading Fontawesome with Webpack](#loading-fontawesome-with-webpack)
   * [Loading SweetAlert2 with Webpack](#loading-sweetalert2-with-webpack)
+  * [Loading DataTables with Webpack](#loading-datatables-with-webpack)
 
 ## Requirements
 
@@ -455,7 +456,7 @@ Swal.fire(
 );
 ```
 
-### Loading datatables.net with Webpack
+### Loading DataTables with Webpack
 
 [DataTables.net](https://datatables.net/) is a very flexible table plug-in for jQuery.
 
