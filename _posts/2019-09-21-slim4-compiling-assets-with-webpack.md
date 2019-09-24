@@ -482,6 +482,7 @@ module.exports = {
     },
     // ...
 };
+```
 
 Import boostrap in a global available webpack entry point like: `templates/layout/datatables.js`:
 
