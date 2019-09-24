@@ -7,6 +7,19 @@ description:
 keywords: slim4 php webpack assets js css
 ---
 
+## Table of contents
+
+* [Requirements](#requirements)
+* [Introduction](#introduction)
+* [Directory structure](#directory-structure)
+* [Webpack setup](#webpack-setup)
+* [Twig Webpack extension setup](#twig-webpack-extension-setup)
+* [Creating assets](#assets)
+* [Compiling assets](#compiling-assets)
+* [Useful tips](#usefil-tips)
+  * [Recompiling on change](#recompiling-on-change)
+  * [Loading jQuery with Webpack](#loading-jquery-with-webpack)
+
 ## Requirements
 
 * [Slim 4](http://www.slimframework.com/docs/v4/start/installation.html)
@@ -125,7 +138,38 @@ To install webpack and all dependencies, run:
 npm install
 ```
 
-## Add assets
+### Twig Webpack extension setup
+
+Now we install the Twig Webpack extension with composer:
+
+```
+composer require fullpipe/twig-webpack-extension
+```
+
+Register the WebpackExtension Twig extension: 
+
+```php
+// $app is the Slim 4 App instance
+// We need the basePath to configure the correct public assets path
+$basePath = $app->getBasePath();
+
+// ...
+
+$twig->addExtension(new \Fullpipe\TwigWebpackExtension\WebpackExtension(
+    // must be a absolute path
+    '/var/www/example.com/public/assets/manifest.json',
+    // url path for js
+    $basePath . '/assets/',
+    // url path for css
+    $basePath . '/assets/'
+));
+```
+
+* The first parameter (manifestFile) defines the location of youre `manifest.json` file. You can also use `__PATH__` here.
+* The second parameter (publicPathJs) defines the public path for the js files.
+* The third parameter (publicPathCss) defines the public path for the css files.
+
+## Creating assets
 
 Next, create a new `templates/home/home-index.js` file with some basic JavaScript and import some CSS with `require`:
 
@@ -195,36 +239,7 @@ The `webpack_entry_css` and `webpack_entry_js` will fetch the url from the webpa
 <script type="text/javascript" src="/assets/home/home-index.js"></script>  
 ```
 
-### Twig Webpack extension setup
-
-Now we install the Twig Webpack extension with composer:
-
-```
-composer require fullpipe/twig-webpack-extension
-```
-
-Register the WebpackExtension Twig extension: 
-
-```php
-// $app is the Slim 4 App instance
-// We need the basePath to configure the correct public assets path
-$basePath = $app->getBasePath();
-
-// ...
-
-$twig->addExtension(new \Fullpipe\TwigWebpackExtension\WebpackExtension(
-    // must be a absolute path
-    '/var/www/example.com/public/assets/manifest.json',
-    // url path for js
-    $basePath . '/assets/',
-    // url path for css
-    $basePath . '/assets/'
-));
-```
-
-* The first parameter (manifestFile) defines the location of youre `manifest.json` file. You can also use `__PATH__` here.
-* The second parameter (publicPathJs) defines the public path for the js files.
-* The third parameter (publicPathCss) defines the public path for the css files.
+## Compiling assets
 
 To build the assets for development, run:
 
@@ -259,7 +274,7 @@ To stop the webpack watch process, press `Ctrl+C`.
 Read more:
 * [Webpack Watch and WatchOptions](https://webpack.js.org/configuration/watch/)
 
-### Managing jQuery in Webpack
+### Loading jQuery with Webpack
 
 jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we just have to bind the qQuery instance to the global scope manually. We just need two lines of code to archive this.
 
