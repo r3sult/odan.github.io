@@ -306,8 +306,7 @@ window.jQuery = require('jquery');
 window.$ = window.jQuery;
 ```
 
-Now add the assets ` webpack_entry_css 'layout/layout'` and `{% webpack_entry_js 'layout/layout' %}` to the Twig template
-`layout/layout.twig`:
+Now add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} and {% raw %}`{% webpack_entry_js 'layout/layout' %}`{% endraw %} to the Twig template `layout/layout.twig`:
 
 {% raw %}
 ```twig
