@@ -377,6 +377,14 @@ To install Fontawesome, run:
 npm install @fortawesome/fontawesome-free
 ```
 
+We want to copy the Fontawesome fonts automatically into the assets directory. The copy-webpack-plugin copies individual files or entire directories, which already exist, to the build directory.
+
+To install the copy-webpack-plugin, run:
+
+```
+npm install copy-webpack-plugin --save-dev
+```
+
 Import Fontawesome in a global available webpack entry point like: `templates/layout/layout.js`:
 
 You can import all fontawesome icons...
@@ -392,6 +400,18 @@ import '@fortawesome/fontawesome-free/js/v4-shims';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/brands';
+```
+
+To copy the fonts into the `assets/webfonts/` directory, add this entry to your `webpack.config.js` file:
+
+```js
+  plugins: [
+        // ...
+        new CopyPlugin([
+            // Fontawesome
+            {from: './node_modules/@fortawesome/fontawesome-free/webfonts/', to: 'webfonts/'},
+        ]),
+    ],
 ```
 
 Compile all assets:
