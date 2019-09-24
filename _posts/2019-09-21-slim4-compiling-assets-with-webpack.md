@@ -377,45 +377,59 @@ To install Fontawesome, run:
 npm install @fortawesome/fontawesome-free
 ```
 
-We want to copy the Fontawesome fonts automatically into the assets directory. The copy-webpack-plugin copies individual files or entire directories, which already exist, to the build directory.
-
-To install the copy-webpack-plugin, run:
+We also need the file-loader for the webfonts:
 
 ```
-npm install copy-webpack-plugin --save-dev
+npm install file-loader --save-dev
 ```
 
-Import Fontawesome in a global available webpack entry point like: `templates/layout/layout.js`:
+We want to copy the Fontawesome fonts automatically into the assets directory. The file-loader copies the font files, to the build directory.
+
+To install the file-loader, run:
+
+```
+npm install file-loader --save-dev
+```
+
+Import Fontawesome in a global available webpack entry like: `templates/layout/layout.js`:
 
 You can import all fontawesome icons...
+
 ```js
-import '@fortawesome/fontawesome-free/js/all';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 ```
 
 ... or you can import only a specific set of icons:
 
 ```js
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/v4-shims';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/brands';
+import '@fortawesome/fontawesome-free/css/fontawesome.css';
+import '@fortawesome/fontawesome-free/css/v4-shims.css';
+import '@fortawesome/fontawesome-free/css/regular.css';
+import '@fortawesome/fontawesome-free/css/solid.css';
+import '@fortawesome/fontawesome-free/css/brands.css';
 ```
 
-To copy the fonts into the `assets/webfonts/` directory, add this entry to your `webpack.config.js` file:
+**Note:** We don't install the js dependencies here, because it would blow up your js build to >1 MB of usless javascript. We only need the plain css files for fontawesome.
+
+To copy the fonts into the `assets/webfonts/` directory, add this rule to your `webpack.config.js` file:
 
 ```js
-const CopyPlugin = require('copy-webpack-plugin');
-```
-
-```js
-  plugins: [
-        // ...
-        new CopyPlugin([
-            // Fontawesome
-            {from: './node_modules/@fortawesome/fontawesome-free/webfonts/', to: 'webfonts/'},
-        ]),
-    ],
+ module: {
+        rules: [
+            // ...
+            {
+                test: /\.(ttf|eot|svg|woff|woff2)(\?[\s\S]+)?$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'webfonts',
+                        publicPath: '../webfonts',
+                    },
+                }
+            },
+        ],
+    },
 ```
 
 Compile all assets:
