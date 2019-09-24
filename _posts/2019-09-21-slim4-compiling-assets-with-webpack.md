@@ -454,3 +454,89 @@ Swal.fire(
   'success'
 );
 ```
+
+### Loading datatables.net with Webpack
+
+[DataTables.net](https://datatables.net/) is a very flexible table plug-in for jQuery.
+
+You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
+
+To install DataTables, run:
+
+```
+npm install datatables.net-bs4
+npm install datatables.net-responsive-bs4
+npm install datatables.net-select-bs4
+```
+
+Add a new weback entry in `webpack.config.js`:
+
+```js
+module.exports = {
+    entry: {
+        'layout/layout': './templates/layout/layout.js',     // <- jquery is loaded here
+        'layout/datatables': './templates/layout/datatables.js', // <-- add this line
+        'user/user-index': './templates/user/user-index.js', // <-- add this line
+        // other pages ...
+    },
+    // ...
+};
+
+Import boostrap in a global available webpack entry point like: `templates/layout/datatables.js`:
+
+```js
+window.$.fn.DataTable = require('datatables.net-bs4');
+import 'datatables.net-bs4/css/dataTables.bootstrap4.css';
+```
+
+Create a new Twig template: `templates/users/user-index.twig`:
+
+{% raw %}
+```twig
+{% extends "layout/layout.twig" %}
+
+{% block css %}
+    {% webpack_entry_css 'layout/datatables' %}
+{% endblock %}
+
+{% block js %}
+    {% webpack_entry_js 'layout/datatables' %}
+    {% webpack_entry_js 'user/user-index' %}
+{% endblock %}
+
+{% block content %}
+  <div id="content" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><i class="fas fa-user"></i> User list</h1>
+                <hr>
+                <table id="my-data-table" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed">
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>E-Mail</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                    </tr>
+                    <tfoot></tfoot>
+                </table>
+                <p></p>
+            </div>
+        </div>
+{% endblock %}
+```
+{% endraw %}
+
+Call this single function in `templates/user/user-index.js`:
+
+```js
+$(function() {
+    $('#my-data-table').DataTable();
+});
+```
+
+Compile all assets:
+
+```
+npx webpack
+```
