@@ -19,6 +19,7 @@ keywords: slim4 php webpack assets js css
 * [Useful tips](#useful-tips)
   * [Recompiling on change](#recompiling-on-change)
   * [Loading jQuery with Webpack](#loading-jquery-with-webpack)
+  * [Loading Bootstrap with Webpack](#loading-bootstrap-with-webpack)
 
 ## Requirements
 
@@ -330,6 +331,33 @@ Add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} an
 </html>
 ```
 {% endraw %}
+
+Compile all assets:
+
+```
+npx webpack
+```
+
+### Loading Bootstrap with Webpack
+
+Bootstrap 4 is based jQuery. You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
+
+To install Bootstrap, run:
+
+```
+npm install bootstrap
+```
+
+Import boostrap in a global available webpack entry point like: `templates/layout/layout.js`:
+
+```js
+window.jQuery = require('jquery');
+window.$ = window.jQuery;
+
+import 'bootstrap';
+import 'popper.js';
+import 'bootstrap/dist/css/bootstrap.css';
+```
 
 Compile all assets:
 
