@@ -26,10 +26,9 @@ In this tutorial we are using [Webpack](https://webpack.js.org) to bundle (compi
 /                              the root of your project
 /composer.json
 /webpack.config.js             the main config file for Webpack
-/templates/
-/templates/user/user.js        javascript for the user page
-/templates/user/user.css       css for the user page
-/templates/user/user.twig      the user page twig template
+/templates/                    the twig templates and page specific assets
+/templates/home/               
+/templates/user/
 /public/                       the webservers document root
 /public/index.php              the front controller (application entry point)
 /public/assets                 the compiled assets (webpack output)
@@ -47,25 +46,18 @@ Create a new `package.json` file at the root of your project. This file lists th
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.7.0",
-        "bootstrap": "^4.2.1",
-        "datatables.net-bs4": "^1.10.19",
-        "datatables.net-responsive-bs4": "^2.2.3",
-        "datatables.net-select-bs4": "^1.3.0",
-        "jquery": "^3.3.1",
-        "popper.js": "^1.14.7",
-        "sweetalert2": "^8.13.0"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^3.0.0",
+        "copy-webpack-plugin": "^5.0.4",
         "css-loader": "^3.2.0",
         "mini-css-extract-plugin": "^0.8.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "terser-webpack-plugin": "latest",
         "webpack": "^4.40.2",
         "webpack-assets-manifest": "^3.1.1",
         "webpack-cli": "^3.3.9",
-        "webpack-manifest-plugin": "^2.0.4",
-        "terser-webpack-plugin": "latest"
+        "webpack-manifest-plugin": "^2.0.4"
     }
 }
 
@@ -76,11 +68,12 @@ Create a new `webpack.config.js` file at the root of your project. This is the m
 ```js
 const path = require('path');
 const webpack = require('webpack');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -94,12 +87,17 @@ module.exports = {
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
+    performance: {
+        maxEntrypointSize: 1024000,
+        maxAssetSize: 1024000
+    },
     module: {
         rules: [
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
-            }],
+            }
+        ],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -107,16 +105,13 @@ module.exports = {
         new MiniCssExtractPlugin({
             ignoreOrder: false
         }),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
     ],
     watchOptions: {
         ignored: ['./node_modules/']
     },
     mode: "development"
 };
+
 ```
 
 They key part is `entry`: This tells Webpack to load the `templates/home/home-index.js` file and follow all of the require statements. 
@@ -227,7 +222,7 @@ $twig->addExtension(new \Fullpipe\TwigWebpackExtension\WebpackExtension(
 ));
 ```
 
-* The first parameter (manifestFile) defines the location of youre `manifest.json` file.
+* The first parameter (manifestFile) defines the location of youre `manifest.json` file. You can also use `__PATH__` here.
 * The second parameter (publicPathJs) defines the public path for the js files.
 * The third parameter (publicPathCss) defines the public path for the css files.
 
@@ -245,11 +240,13 @@ npx webpack --mode=production
 
 **Congrats!** You now have three new files:
 
-* `public/assets/home/home-index.js`  (holds all the JavaScript for your "user/user" entry)
-* `public/assets/home/home-index.css` (holds all the CSS for your "user/user" entry)
+* `public/assets/home/home-index.js`  (holds all the JavaScript for your "home/home-index" entry)
+* `public/assets/home/home-index.css` (holds all the CSS for your "home/home-index" entry)
 * `public/assets/manifest.json` (holds all the entries and filenames)
 
 ## Useful tips
+
+### Recompiling on change
 
 Webpack can watch and recompile files whenever they change.
 
@@ -262,3 +259,60 @@ To stop the webpack watch process, press `Ctrl+C`.
 Read more:
 * [Webpack Watch and WatchOptions](https://webpack.js.org/configuration/watch/)
 
+### Managing jQuery in Webpack
+
+jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we just have to bind the qQuery instance to the global scope manually. We just need two lines of code to archive this.
+
+To install jQuery, run:
+
+```
+npm install jquery
+```
+
+The browser must load jQuery before other jQuery libryries can be used.
+For this reason I would recommend to bundle jQuery in a general available asset file.
+
+Add a new weback entry in `webpack.config.js`:
+
+```js
+module.exports = {
+    entry: {
+        'layout/layout': './templates/layout/layout.js',
+        // ...
+    },
+    // ...
+};
+```
+
+Then bind jQuery to the global scope in your webpack entry point `templates/layout/layout.js`:
+
+```js
+window.jQuery = require('jquery');
+window.$ = window.jQuery;
+```
+
+Now add the assets ` webpack_entry_css 'layout/layout'` and `{% webpack_entry_js 'layout/layout' %}` to the Twig template
+`layout/layout.twig`:
+
+{% raw %}
+```twig
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- ... -->
+        
+        {% webpack_entry_css 'layout/layout' %}
+        
+        {% block css %}{% endblock %}
+        
+        {% webpack_entry_js 'layout/layout' %}
+    </head>
+    <body>
+        <!-- ... -->
+        {% block content %}{% endblock %}
+
+        {% block js %}{% endblock %}
+    </body>
+</html>
+```
+{% endraw %}
