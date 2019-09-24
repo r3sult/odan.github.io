@@ -26,8 +26,6 @@ keywords: slim4 php webpack assets js css
 ## Requirements
 
 * [Slim 4](http://www.slimframework.com/docs/v4/start/installation.html)
-* [Slim Framework Twig View](https://github.com/slimphp/Twig-View) `^3.0.0-beta`
-* [Twig Webpack extension](https://github.com/fullpipe/twig-webpack-extension)
 * [NPM](https://nodejs.org/en/download/)
 
 ## Introduction
