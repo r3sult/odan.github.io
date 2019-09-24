@@ -381,7 +381,6 @@ Import Fontawesome in a global available webpack entry point like: `templates/la
 
 You can import all fontawesome icons...
 ```js
-// 
 import '@fortawesome/fontawesome-free/js/all';
 ```
 
@@ -403,15 +402,15 @@ npx webpack
 
 ### Loading SweetAlert2 with Webpack
 
-[SweetAlert2]https://sweetalert2.github.io/) is a A beautiful, responsive, customizable and accessible replacement for JavaScript's popup boxes.
+[SweetAlert2](https://sweetalert2.github.io/) is a beautiful, responsive, customizable and accessible replacement for JavaScript's popup boxes.
 
-To install Fontawesome, run:
+To install SweetAlert2, run:
 
 ```
 npm install sweetalert2
 ```
 
-Import sweetalert2 and bind `Swal` to the global scope:
+Import the sweetalert2 module and bind `Swal` to the global scope:
 
 ```js
 window.Swal = require('sweetalert2');
