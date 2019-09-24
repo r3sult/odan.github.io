@@ -405,6 +405,10 @@ import '@fortawesome/fontawesome-free/js/brands';
 To copy the fonts into the `assets/webfonts/` directory, add this entry to your `webpack.config.js` file:
 
 ```js
+const CopyPlugin = require('copy-webpack-plugin');
+```
+
+```js
   plugins: [
         // ...
         new CopyPlugin([
