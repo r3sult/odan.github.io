@@ -128,8 +128,8 @@ module.exports = {
 
 ```
 
-They key part is `entry`: This tells Webpack to load the `templates/home/home-index.js` file and follow all of the require statements. 
-It will then package everything together and - thanks to the first `user/user` parameter - output final `home-index.js` and `home-index.css` files into the `public/assets/home/` directory. Later you can add more page-specific JavaScript or CSS to the `entry` object.
+They key part is `entry`: This tells Webpack to load the `templates/home/home-index.js` file and follow all of the require / import statements. 
+It will then package everything together and - thanks to the first `home/home-index` key - output final `home/home-index.js` and `home/home-index.css` files into the `public/assets/` directory. Later you can add more page-specific JavaScript or CSS to the `entry` object.
 
 Note that Webpack uses the [TerserWebpackPlugin](https://webpack.js.org/plugins/terser-webpack-plugin/) to minify your JavaScript and the [OptimizeCSSAssetsPlugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin) to minify your CSS files.
 
