@@ -342,7 +342,8 @@ npx webpack
 
 ### Loading Bootstrap with Webpack
 
-Bootstrap 4 is based jQuery. You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
+Bootstrap 4 uses jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).
+You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
 
 To install Bootstrap, run:
 
