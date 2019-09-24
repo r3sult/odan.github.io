@@ -16,7 +16,7 @@ keywords: slim4 php webpack assets js css
 * [Twig Webpack extension setup](#twig-webpack-extension-setup)
 * [Creating assets](#assets)
 * [Compiling assets](#compiling-assets)
-* [Useful tips](#usefil-tips)
+* [Useful tips](#useful-tips)
   * [Recompiling on change](#recompiling-on-change)
   * [Loading jQuery with Webpack](#loading-jquery-with-webpack)
 
@@ -276,7 +276,7 @@ Read more:
 
 ### Loading jQuery with Webpack
 
-jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we just have to bind the qQuery instance to the global scope manually. We just need two lines of code to archive this.
+jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we have to bind the jQuery instance to the global scope manually.
 
 To install jQuery, run:
 
@@ -284,8 +284,8 @@ To install jQuery, run:
 npm install jquery
 ```
 
-The browser must load jQuery before other jQuery libryries can be used.
-For this reason I would recommend to bundle jQuery in a general available asset file.
+The browser must load jQuery before other jQuery plugins can be used.
+For this reason, I would recommend bundling jQuery into a generally available asset file.
 
 Add a new weback entry in `webpack.config.js`:
 
@@ -299,14 +299,14 @@ module.exports = {
 };
 ```
 
-Then bind jQuery to the global scope in your webpack entry point `templates/layout/layout.js`:
+Bind jQuery to the global scope in your webpack entry point `templates/layout/layout.js`:
 
 ```js
 window.jQuery = require('jquery');
 window.$ = window.jQuery;
 ```
 
-Now add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} and {% raw %}`{% webpack_entry_js 'layout/layout' %}`{% endraw %} to the Twig template `layout/layout.twig`:
+Add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} and {% raw %}`{% webpack_entry_js 'layout/layout' %}`{% endraw %} to the Twig template `layout/layout.twig`:
 
 {% raw %}
 ```twig
@@ -330,3 +330,9 @@ Now add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %
 </html>
 ```
 {% endraw %}
+
+Compile all assets:
+
+```
+npx webpack
+```
