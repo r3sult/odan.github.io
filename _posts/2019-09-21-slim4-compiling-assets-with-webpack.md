@@ -93,7 +93,7 @@ module.exports = {
     entry: {
         'home/home-index': './templates/home/home-index.js'
         // here you can add more entries for each page or global assets like jQuery and bootstrap
-        // ...
+        // 'layout/layout': './templates/layout/layout.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/assets'),
