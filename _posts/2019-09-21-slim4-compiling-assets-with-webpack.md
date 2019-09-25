@@ -249,6 +249,12 @@ To build the assets for development, run:
 npx webpack --mode=development
 ```
 
+or just:
+
+```
+npx webpack
+```
+
 To compile and minify the assets for production, run:
 
 ```
@@ -333,12 +339,6 @@ Add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} an
 ```
 {% endraw %}
 
-Compile all assets:
-
-```
-npx webpack
-```
-
 ### Bootstrap setup
 
 Bootstrap 4 uses jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).
@@ -359,12 +359,6 @@ window.$ = window.jQuery;
 require('bootstrap');
 require('popper.js');
 require('bootstrap/dist/css/bootstrap.css');
-```
-
-Compile all assets:
-
-```
-npx webpack
 ```
 
 ### Fontawesome setup
@@ -433,12 +427,6 @@ To copy the fonts into the `assets/webfonts/` directory, add this rule to your `
     },
 ```
 
-Compile all assets:
-
-```
-npx webpack
-```
-
 ### SweetAlert2 setup
 
 [SweetAlert2](https://sweetalert2.github.io/) is a beautiful, responsive, customizable and accessible replacement for JavaScript's popup boxes.
@@ -455,13 +443,7 @@ Import the sweetalert2 module and bind `Swal` to the global scope:
 window.Swal = require('sweetalert2');
 ```
 
-Compile all assets:
-
-```
-npx webpack
-```
-
-Example:
+Usage:
 
 ```js
 Swal.fire(
@@ -480,9 +462,7 @@ You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
 To install DataTables, run:
 
 ```
-npm install datatables.net-bs4
-npm install datatables.net-responsive-bs4
-npm install datatables.net-select-bs4
+npm install datatables.net-bs4 datatables.net-responsive-bs4 datatables.net-select-bs4
 ```
 
 Add a new weback entry in `webpack.config.js`:
@@ -499,7 +479,7 @@ module.exports = {
 };
 ```
 
-Import boostrap in a global available webpack entry point like: `templates/layout/datatables.js`:
+Import datatables in a global available webpack entry point like: `templates/layout/datatables.js`:
 
 ```js
 window.$.fn.DataTable = require('datatables.net-bs4');
@@ -550,12 +530,6 @@ Call this single function in `templates/user/user-list.js`:
 $(function() {
     $('#my-data-table').DataTable();
 });
-```
-
-Compile all assets:
-
-```
-npx webpack
 ```
 
 ## Babel setup
