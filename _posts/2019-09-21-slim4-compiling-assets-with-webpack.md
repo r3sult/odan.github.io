@@ -18,11 +18,12 @@ keywords: slim4 php webpack assets js css
 * [Compiling assets](#compiling-assets)
 * [Useful tips](#useful-tips)
   * [Recompiling on change](#recompiling-on-change)
-  * [Loading jQuery with Webpack](#loading-jquery-with-webpack)
-  * [Loading Bootstrap with Webpack](#loading-bootstrap-with-webpack)
-  * [Loading Fontawesome with Webpack](#loading-fontawesome-with-webpack)
-  * [Loading SweetAlert2 with Webpack](#loading-sweetalert2-with-webpack)
-  * [Loading DataTables with Webpack](#loading-datatables-with-webpack)
+  * [jQuery setup](#jquery-setup)
+  * [Bootstrap setup](#bootstrap-setup)
+  * [Fontawesome setup](#fontawesome-setup)
+  * [SweetAlert2 setup](#sweetalert2-setup)
+  * [DataTables setup](#datatables-setup)
+  * [Babel setup](#babel-setup)
 
 ## Requirements
 
@@ -275,7 +276,7 @@ To stop the webpack watch process, press `Ctrl+C`.
 Read more:
 * [Webpack Watch and WatchOptions](https://webpack.js.org/configuration/watch/)
 
-### Loading jQuery with Webpack
+### jQuery setup
 
 jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we have to bind the jQuery instance to the global scope manually.
 
@@ -338,7 +339,7 @@ Compile all assets:
 npx webpack
 ```
 
-### Loading Bootstrap with Webpack
+### Bootstrap setup
 
 Bootstrap 4 uses jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).
 You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
@@ -355,9 +356,9 @@ Import boostrap in a global available webpack entry point like: `templates/layou
 window.jQuery = require('jquery');
 window.$ = window.jQuery;
 
-import 'bootstrap';
-import 'popper.js';
-import 'bootstrap/dist/css/bootstrap.css';
+require('bootstrap');
+require('popper.js');
+require('bootstrap/dist/css/bootstrap.css');
 ```
 
 Compile all assets:
@@ -366,7 +367,7 @@ Compile all assets:
 npx webpack
 ```
 
-### Loading Fontawesome with Webpack
+### Fontawesome setup
 
 [Fontawesome](https://fontawesome.com/) is the world's most popular and easiest to use icon set.
 
@@ -395,17 +396,17 @@ Import Fontawesome in a global available webpack entry like: `templates/layout/l
 You can import all fontawesome icons...
 
 ```js
-import '@fortawesome/fontawesome-free/css/all.min.css';
+require('@fortawesome/fontawesome-free/css/all.min.css');
 ```
 
 ... or you can import only a specific set of icons:
 
 ```js
-import '@fortawesome/fontawesome-free/css/fontawesome.css';
-import '@fortawesome/fontawesome-free/css/v4-shims.css';
-import '@fortawesome/fontawesome-free/css/regular.css';
-import '@fortawesome/fontawesome-free/css/solid.css';
-import '@fortawesome/fontawesome-free/css/brands.css';
+require('@fortawesome/fontawesome-free/css/fontawesome.css');
+require('@fortawesome/fontawesome-free/css/v4-shims.css');
+require('@fortawesome/fontawesome-free/css/regular.css');
+require('@fortawesome/fontawesome-free/css/solid.css');
+require('@fortawesome/fontawesome-free/css/brands.css');
 ```
 
 **Note:** We don't install the js dependencies here, because it would blow up your js build to >1 MB of usless javascript. We only need the plain css files for fontawesome.
@@ -418,6 +419,7 @@ To copy the fonts into the `assets/webfonts/` directory, add this rule to your `
             // ...
             {
                 test: /\.(ttf|eot|svg|woff|woff2)(\?[\s\S]+)?$/,
+                include: path.resolve(__dirname, './node_modules/@fortawesome/fontawesome-free/webfonts'),
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -437,7 +439,7 @@ Compile all assets:
 npx webpack
 ```
 
-### Loading SweetAlert2 with Webpack
+### SweetAlert2 setup
 
 [SweetAlert2](https://sweetalert2.github.io/) is a beautiful, responsive, customizable and accessible replacement for JavaScript's popup boxes.
 
@@ -469,7 +471,7 @@ Swal.fire(
 );
 ```
 
-### Loading DataTables with Webpack
+### DataTables setup
 
 [DataTables.net](https://datatables.net/) is a very flexible table plug-in for jQuery.
 
@@ -501,7 +503,7 @@ Import boostrap in a global available webpack entry point like: `templates/layou
 
 ```js
 window.$.fn.DataTable = require('datatables.net-bs4');
-import 'datatables.net-bs4/css/dataTables.bootstrap4.css';
+require('datatables.net-bs4/css/dataTables.bootstrap4.css');
 ```
 
 Create a new Twig template: `templates/user/user-list.twig`:
@@ -554,4 +556,34 @@ Compile all assets:
 
 ```
 npx webpack
+```
+
+## Babel setup
+
+Installation:
+
+```
+npm install --save-dev babel-loader @babel/core @babel/preset-env webpack
+```
+
+Add this rule to your `webpack.config.js` file:
+
+```js
+ module: {
+        rules: [
+            // ...
+            {
+                test: /\.js$/,
+                exclude: path.resolve('node_modules'),
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env']
+                        ]
+                    }
+                }]
+            },
+        ],
+    },
 ```
