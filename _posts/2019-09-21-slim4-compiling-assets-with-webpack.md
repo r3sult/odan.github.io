@@ -14,7 +14,7 @@ keywords: slim4 php webpack assets js css
 * [Directory structure](#directory-structure)
 * [Webpack setup](#webpack-setup)
 * [Twig Webpack extension setup](#twig-webpack-extension-setup)
-* [Creating assets](#assets)
+* [Creating assets](#creating-assets)
 * [Compiling assets](#compiling-assets)
 * [Useful tips](#useful-tips)
   * [Recompiling on change](#recompiling-on-change)
