@@ -67,6 +67,8 @@ Second, make sure that the correct base path is set:
 $app->setBasePath('/my-base-path');
 ```
 
+[Run Slim 4 From a Sub-Directory](http://www.slimframework.com/docs/v4/start/web-servers.html#run-from-a-sub-directory)
+
 This library can be used as a helper to determine the correct base path:
 
 * <https://github.com/selective-php/basepath>
