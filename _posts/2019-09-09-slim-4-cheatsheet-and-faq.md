@@ -121,6 +121,15 @@ $app->addBodyParsingMiddleware(); // <--- here
 $app->run();
 ```
 
+Notice: The `BodyParsingMiddleware` will only parse the body if the request header `Content-Type` contains a supported value. Supported values are:
+
+* `application/json`
+* `application/x-www-form-urlencoded`
+* `application/xml`
+* `text/xml`
+
+The `BodyParsingMiddleware` also suports `PUT` requests.
+
 More details: <https://akrabat.com/receiving-input-into-a-slim-4-application/>
 
 ## CSRF protection
