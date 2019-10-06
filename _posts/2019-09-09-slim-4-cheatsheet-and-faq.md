@@ -17,9 +17,9 @@ keywords: slim4 php
 * [Retrieving the current route](#retrieving-the-current-route)
 * [Retrieving the current route arguments](#retrieving-the-current-route-arguments)
 * [Accessing the RouteParser](#accessing-the-routeparser)
-* [Receiving input](#receiving-input)
+* [Retrieving the base path](#retrieving-the-base-path)
 * [Reading the response body](#reading-the-response-body)
-* [Retrieving the base url](#retrieving-the-base-url)
+* [Receiving input](#receiving-input)
 * [CSRF protection](#csrf-protection)
 * [SameSite cookies](#samesite-cookies)
 * [Dependency Injection](#dependency-injection)
@@ -91,6 +91,22 @@ $routeArguments = \Slim\Routing\RouteContext::fromRequest($request)->getRoute()-
 $routeParser = \Slim\Routing\RouteContext::fromRequest($request)->getRouteParser();
 ```
 
+## Retrieving the base path
+
+```php
+$basePath = \Slim\Routing\RouteContext::fromRequest($request)->getBasePath(),
+```
+
+## Reading the response body
+
+```php
+$body = (string)$request->getBody();
+```
+
+If the request body is still empty, it could be an bug or an issue with chunked requests:
+
+* <https://www.jeffgeerling.com/blog/2017/apache-fastcgi-proxyfcgi-and-empty-post-bodies-chunked-transfer>
+
 ## Receiving input
 
 To receive the submitted JSON / XML data you have to add the `BodyParsingMiddleware`:
@@ -107,16 +123,6 @@ $app->run();
 
 More details: <https://akrabat.com/receiving-input-into-a-slim-4-application/>
 
-## Reading the response body
-
-```php
-$body = (string)$request->getBody();
-```
-
-If the request body is still empty, it could be an bug or an issue with chunked requests:
-
-* <https://www.jeffgeerling.com/blog/2017/apache-fastcgi-proxyfcgi-and-empty-post-bodies-chunked-transfer>
-
 ## CSRF protection
 
 Take a look a the "official" [Slim-CSRF](https://github.com/slimphp/Slim-Csrf) package. 
@@ -127,12 +133,6 @@ With SameSite Cookies (available since PHP 7.3) you may no longer need CSRF prot
 
 * [CSRF is (really) dead ](https://scotthelme.co.uk/csrf-is-really-dead/)
 * [SameSite Cookie Middlware](https://github.com/selective-php/samesite-cookie)
-
-## Retrieving the base url
-
-The `App::getBaseUrl` method has been removed in Slim 4, because it's not part of PSR-7.
-
-The decorated `UriInterface` method [Uri::getBaseUrl()](https://github.com/slimphp/Slim-Http#decorated-uri-object-methods) returns the fully qualified base URL of the underlying uri object. For this functionality you have to install the [slim/http](https://github.com/slimphp/Slim-Http) package.
 
 ## Dependency Injection
 
