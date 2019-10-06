@@ -48,7 +48,7 @@ keywords: slim4 php
 
 In the beginning many people have an issue with the error message: **Error 404 (Not found)**
 
-As first make sure you added the `RoutingMiddleware`:
+First, make sure that you added the `RoutingMiddleware`:
 
 ```php
 $app = AppFactory::create();
