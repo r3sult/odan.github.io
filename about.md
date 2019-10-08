@@ -48,6 +48,10 @@ You can find all my open source code on [GitHub](https://github.com/odan).
 * [cakephp/cakephp](https://github.com/cakephp/cakephp) A rapid development framework for PHP
 * [cakephp/chronos](https://github.com/cakephp/chronos) A standalone DateTime library
 
+## Services
+
+* PHP and Slim Framework consultancy
+
 ## Tools
 
 * [IT News Feed](https://odan-online.com/tools/feeds/) 
