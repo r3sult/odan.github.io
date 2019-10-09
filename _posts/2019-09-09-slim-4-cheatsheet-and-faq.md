@@ -43,6 +43,7 @@ keywords: slim4 php
 * <https://github.com/slimphp/Slim-Skeleton>
 * <https://github.com/odan/slim4-skeleton>
 * <https://github.com/adriansuter/Slim4-Skeleton>
+* <https://github.com/akrabat/slim4-starter>
 
 ## Error 404
 
