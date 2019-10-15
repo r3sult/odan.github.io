@@ -7,13 +7,23 @@ description:
 keywords: openapi, swagger, yaml, documentation, rest, restful
 ---
 
-## Requirements
+## api2html
+
+This is my favorite. With api2html you can transform Swagger / OpenAPI files to beautiful HTML:
+
+* https://github.com/tobilg/api2html
+
+Other tools...
+
+## Widdershins
+
+### Requirements
 
 * [NPM](https://nodejs.org/en/download/)
 * [widdershins](https://github.com/Mermade/widdershins)
 * A OpenAPI v3 file, example [petstore.yaml](https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml)
 
-## Installation
+### Installation
 
 With widdershins you can produce static documentation from your OpenAPI 3.0 / Swagger 2.0 / AsyncAPI 1.x / Semoasa 0.1.0 definition.
 
@@ -25,7 +35,7 @@ cd widdershins
 npm install widdershins
 ```
 
-## Conversion into a Markdown file
+### Conversion into a Markdown file
 
 Create a config file for widdershins: `widdershins.json`
 
@@ -58,7 +68,9 @@ Windows:
 > call node_modules\.bin\widdershins.cmd --environment widdershins.json petstore.yaml -o resources.md
 ```
 
-## Conversion into a HTML documentation
+## Mkdocs
+
+### Conversion into a HTML documentation
 
 Mkdocs helps you create beautiful API documentation.
 
@@ -137,10 +149,11 @@ Screenshot:
 
 ![image](https://user-images.githubusercontent.com/781074/53407600-d283d200-39bc-11e9-8d8d-2b094fc4772e.png)
 
+## Pandoc
 
-## Conversion into a single HTML file
+### Conversion into a single HTML file
 
-## Requirements
+### Requirements
 
 * pandoc: [Download](https://pandoc.org/installing.html#windows)
 
@@ -167,13 +180,13 @@ Screenshot:
 ![image](https://user-images.githubusercontent.com/781074/53409319-ed584580-39c0-11e9-8d34-6a3518ffd63b.png)
 
 
-## Conversion into a DOCX file
+### Conversion into a DOCX file
 
 ```bash
 pandoc -s index.md security.md resources.md -o petstore.docx
 ```
 
-## Conversion into a PDF file
+### Conversion into a PDF file
 
 Just open the docx file with Microsoft Word and export the file to PDF.
 
