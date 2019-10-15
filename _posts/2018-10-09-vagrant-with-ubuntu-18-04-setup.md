@@ -7,7 +7,8 @@ description:
 keywords: 
 ---
 
-This tutorial shows you how to install a LAMP stack under **Ubuntu 18.04 LTS (Bionic Beaver)**.
+This tutorial shows you how to install a development LAMP stack with Vagrant.
+All required components (Apache, MySQL and PHP) will be installed from the official package sources.
 
 ## Requirements
 
@@ -32,8 +33,6 @@ end
 ```
 
 * Create a file: `bootstrap.sh` in `c:\xampp\htdocs`.
-
-All required components (Apache, MySQL and PHP) will be installed from the official package sources. 
 
 ```sh
 #!/usr/bin/env bash
