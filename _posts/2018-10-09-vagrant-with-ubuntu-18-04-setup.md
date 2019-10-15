@@ -8,7 +8,7 @@ keywords:
 ---
 
 This tutorial shows you how to install a development LAMP stack with Vagrant.
-All required components (Apache, MySQL and PHP) will be installed from the official package sources.
+All required components (Apache, MySQL and PHP) will be installed from the official sources.
 
 ## Requirements
 
@@ -100,8 +100,12 @@ Read more:
 * <https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html>
 * <https://mariadb.com/kb/en/library/mysql_secure_installation/>
 * [How to setup a restricted SFTP server on Ubuntu?](https://askubuntu.com/questions/420652/how-to-setup-a-restricted-sftp-server-on-ubuntu)
+* [Correct owner and permissions of apache "var/www/html"](https://odan.github.io/2019/02/17/correct-owner-and-permissions-of-var-www-html.html)
+* [Using Xdebug with Vagrant and PHPStorm](https://odan.github.io/2019/01/19/install-xdebug-and-configure-phpstorm-for-vagrant.html)
 
 ### Up and Running
+
+To start the vagrant box under windows, run:
 
 ```
 cd c:\xampp\htdocs
