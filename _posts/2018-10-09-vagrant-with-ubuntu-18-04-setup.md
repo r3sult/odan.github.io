@@ -11,10 +11,7 @@ This tutorial shows you how to install a LAMP stack under **Ubuntu 18.04 LTS (Bi
 
 ## Requirements
 
-* Windows
-* Vagrant
-* The Ubuntu 18.04 LTS (Bionic Beaver) [ISO](http://releases.ubuntu.com/18.04/ubuntu-18.04.1.0-live-server-amd64.iso) 
-from the [Ubuntu  download page](http://releases.ubuntu.com/18.04//)
+* [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ### Setup
 
@@ -80,9 +77,9 @@ service apache2 restart
 # apt-get install mysql-server -y
 
 # Change mysql root password
-# service mysql start
-# mysql -u root --password="" -e "update mysql.user set authentication_string=password(''), plugin='mysql_native_password' where user='root';"
-# mysql -u root --password="" -e "flush privileges;"
+service mysql start
+mysql -u root --password="" -e "update mysql.user set authentication_string=password(''), plugin='mysql_native_password' where user='root';"
+mysql -u root --password="" -e "flush privileges;"
 
 # Install composer
 cd ~
