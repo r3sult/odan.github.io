@@ -8,7 +8,7 @@ keywords:
 ---
 
 This tutorial shows you how to install a development LAMP stack with Vagrant.
-All required components (Apache, MySQL and PHP) will be installed from the official sources.
+All required components (Apache, MySQL and PHP) will be installed from the official repositories.
 
 ## Requirements
 
@@ -76,9 +76,9 @@ service apache2 restart
 # apt-get install mysql-server -y
 
 # Change mysql root password
-#service mysql start
-#mysql -u root --password="" -e "update mysql.user set authentication_string=password(''), plugin='mysql_native_password' where user='root';"
-#mysql -u root --password="" -e "flush privileges;"
+# service mysql start
+# mysql -u root --password="" -e "update mysql.user set authentication_string=password(''), plugin='mysql_native_password' where user='root';"
+# mysql -u root --password="" -e "flush privileges;"
 
 # Install composer
 cd ~
@@ -93,7 +93,7 @@ mkdir /var/www
 ln -s /vagrant/ /var/www/html
 ```
 
-**Note** On a production server you should now run `sudo mysql_secure_installation` to improve the security of your MySQL installation.
+**Note** On a production server you should run `sudo mysql_secure_installation` to improve the security of your MySQL installation.
 
 Read more:
 
