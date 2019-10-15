@@ -7,10 +7,14 @@ description:
 keywords: 
 ---
 
+This tutorial shows you how to install a LAMP stack under **Ubuntu 18.04 LTS (Bionic Beaver)**.
+
 ## Requirements
 
 * Windows
-* Vagrant (+ VirtualBox)
+* Vagrant
+* The Ubuntu 18.04 LTS (Bionic Beaver) [ISO](http://releases.ubuntu.com/18.04/ubuntu-18.04.1.0-live-server-amd64.iso) 
+from the [Ubuntu  download page](http://releases.ubuntu.com/18.04//)
 
 ### Setup
 
@@ -30,7 +34,9 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-* Create a file: `bootstrap.sh` in `c:\xampp\htdocs` 
+* Create a file: `bootstrap.sh` in `c:\xampp\htdocs`.
+
+All required components (Apache, MySQL and PHP) will be installed from the official package sources. 
 
 ```sh
 #!/usr/bin/env bash
@@ -90,6 +96,14 @@ rm -rf /var/www
 mkdir /var/www
 ln -s /vagrant/ /var/www/html
 ```
+
+**Note** On a production server you should now run `sudo mysql_secure_installation` to improve the security of your MySQL installation.
+
+Read more:
+
+* <https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html>
+* <https://mariadb.com/kb/en/library/mysql_secure_installation/>
+* [How to setup a restricted SFTP server on Ubuntu?](https://askubuntu.com/questions/420652/how-to-setup-a-restricted-sftp-server-on-ubuntu)
 
 ### Up and Running
 
