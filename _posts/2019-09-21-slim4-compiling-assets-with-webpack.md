@@ -284,7 +284,7 @@ Read more:
 
 ### jQuery setup
 
-jQuery uses a a global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we have to bind the jQuery instance to the global scope manually.
+jQuery uses the global variable `window.jQuery` and the alias `window.$`. The problem ist that Webpack will wrap all modules within a closure function to protect the global scope. For this reason we have to bind the jQuery instance to the global scope manually.
 
 To install jQuery, run:
 
@@ -342,7 +342,7 @@ Add the assets {% raw %}`{% webpack_entry_css 'layout/layout' %}`{% endraw %} an
 ### Bootstrap setup
 
 Bootstrap 4 uses jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).
-You have to [setup jQuery for Webpack](#loading-jquery-with-webpack) first.
+You have to [setup jQuery for Webpack](#jquery-setup) first.
 
 To install Bootstrap, run:
 
@@ -403,7 +403,7 @@ require('@fortawesome/fontawesome-free/css/solid.css');
 require('@fortawesome/fontawesome-free/css/brands.css');
 ```
 
-**Note:** We don't install the js dependencies here, because it would blow up your js build to >1 MB of usless javascript. We only need the plain css files for fontawesome.
+**Note:** We don't install the js dependencies here, because it would blow up your js build to >1 MB of usless javascript. We only need the plain css and webfont files for fontawesome.
 
 To copy the fonts into the `assets/webfonts/` directory, add this rule to your `webpack.config.js` file:
 
