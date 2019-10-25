@@ -7,15 +7,11 @@ description:
 keywords: apache, ubuntu
 ---
 
-Using Apache2 with Ubuntu may cause problems with permissions and FTP clients. 
+Using Apache2 with Ubuntu may cause permission issues in combination with PHP scripts and FTP clients. 
+To address this issue, we need to set the correct user group and directory 
+permissions for all sub-directories.
 
-Some CMSes and Wordpress is especially bad about that because it's actually in the code to use the web user.
-
-BTW you should never need to use `root` for ftp. `www-data` the default apache user on ubuntu should own your web files/directory to work properly with many cmses.
-
-So this is what has worked before and what we did for clients with the same issue. 
-
-chown the whole web root as `www-data` for both `user and group`.
+**General:** You should never need to use `root` for ftp. `www-data` the default apache user on ubuntu should own your web files/directory to work properly with many cmses.
 
 ### Add your FTP user to the `www-data` group
 
@@ -41,9 +37,7 @@ sudo chown -R www-data: /var/www/html/
 sudo chmod -R 2775 /var/www/html/
 ```
 
-You must login again with the SFTP client
-
-This setup should allow you to manage files for the PHP scripts and the FTP client.
+The FTP users must log in again for the changes to take effect.
 
 ### Read more
 
