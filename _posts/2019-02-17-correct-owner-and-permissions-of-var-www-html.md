@@ -11,7 +11,7 @@ Using Apache2 with Ubuntu may cause permission issues in combination with PHP sc
 To address this issue, we need to set the correct user group and directory 
 permissions for all sub-directories.
 
-**General:** You should never need to use `root` for ftp. `www-data` the default apache user on ubuntu should own your web files/directory to work properly with many cmses.
+**General:** You should never need to use `root` for FTP. 
 
 ### Add your FTP user to the `www-data` group
 
