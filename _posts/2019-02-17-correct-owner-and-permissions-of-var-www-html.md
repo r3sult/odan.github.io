@@ -1,5 +1,5 @@
 ---
-title: Correct owner and permissions of apache "var/www/html"
+title: Setting up permissions for apache var/www/html
 layout: post
 comments: true
 published: true
