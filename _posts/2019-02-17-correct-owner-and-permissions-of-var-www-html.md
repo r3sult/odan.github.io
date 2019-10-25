@@ -29,7 +29,8 @@ Replace `usename` with your FTP client username.
 
 ### Change the group and set the correct permissions
 
-If your document root is `/var/www/html` run this to change ownership on all files and directories.
+If your document root is `/var/www/html`, run these commands to fix 
+the ownership and permissions for all files and directories.
 
 ```
 sudo chgrp -R www-data /var/www/html/
@@ -37,7 +38,7 @@ sudo chown -R www-data: /var/www/html/
 sudo chmod -R 2775 /var/www/html/
 ```
 
-The FTP users must log in again for the changes to take effect.
+All FTP users have login again for the changes to take effect.
 
 ### Read more
 
