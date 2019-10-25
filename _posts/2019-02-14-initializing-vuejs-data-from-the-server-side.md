@@ -2,7 +2,7 @@
 title: Initializing Vue.js data from the server side
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: vuejs, ssr, php, twig
 ---
