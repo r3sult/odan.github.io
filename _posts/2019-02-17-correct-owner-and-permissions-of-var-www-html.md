@@ -25,9 +25,9 @@ usermod -a -G www-data username
 sudo adduser username www-data
 ```
 
-Replace usename with your SFTP client username.
+Replace `usename` with your FTP client username.
 
-### Change the group, owner and set the permissions
+### Change the group and set the correct permissions
 
 If your document root is `/var/www/html` run this to change ownership on all files and directories.
 
