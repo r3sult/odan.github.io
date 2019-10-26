@@ -7,11 +7,9 @@ description:
 keywords: apache, ubuntu
 ---
 
-Using Apache2 with Ubuntu may cause permission issues in combination with PHP scripts and FTP clients. 
+Using Apache with Ubuntu may cause permission issues in combination with PHP scripts and FTP clients. 
 To address this issue, we need to set the correct user group and directory 
 permissions for all sub-directories.
-
-**General:** You should never need to use `root` for FTP. 
 
 ### Add your FTP user to the `www-data` group
 
