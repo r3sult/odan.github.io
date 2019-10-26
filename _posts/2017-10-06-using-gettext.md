@@ -2,7 +2,7 @@
 title: Using gettext
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
