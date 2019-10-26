@@ -38,7 +38,7 @@ sudo chown -R www-data: /var/www/html/
 sudo chmod -R 2775 /var/www/html/
 ```
 
-All FTP users have login again for the changes to take effect.
+All FTP users have to login again for the changes to take effect.
 
 ### Read more
 
