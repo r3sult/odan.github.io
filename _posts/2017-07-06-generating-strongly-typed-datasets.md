@@ -2,7 +2,7 @@
 title: Generating Strongly Typed DataSets
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: csharp, poco, database
 ---

@@ -2,7 +2,7 @@
 title: Finding coordinates by address with the Google Maps API
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: php
 ---

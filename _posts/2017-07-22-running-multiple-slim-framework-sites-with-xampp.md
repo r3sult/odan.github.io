@@ -2,7 +2,7 @@
 title: Running multiple Slim Framework sites with XAMPP
 layout: post
 comments: true
-published: true
+published: false
 description: 
 keywords: 
 ---
